@@ -7,15 +7,16 @@ import WarehouseEdit from "../../components/WarehouseEdit/WarehouseEdit";
 import WarehouseDetails from "../../components/WarehouseDetails/WarehouseDetails";
 
 import { Link } from "react-router-dom";
+import Header from "../../components/Header/Header";
 
 function WarehousePage() {
   return (
     <>
-    <WarehouseList />
-    <WarehouseDetails />
-    <WarehouseAdd />
-    <WarehouseEdit />
-    <WarehouseDelete />
+      <WarehouseList />
+      <WarehouseDetails />
+      <WarehouseAdd />
+      <WarehouseEdit />
+      <WarehouseDelete />
     </>
   );
 }
