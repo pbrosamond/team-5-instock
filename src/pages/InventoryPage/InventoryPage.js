@@ -7,15 +7,17 @@ import InventoryEdit from "../../components/InventoryEdit/InventoryEdit";
 import InventoryDetails from "../../components/InventoryDetails/InventoryDetails";
 
 import { Link } from "react-router-dom";
+import Header from "../../components/Header/Header";
 
 function InventoryPage() {
   return (
     <>
-    <InventoryList />
-    <InventoryDetails />
-    <InventoryAdd />
-    <InventoryEdit />
-    <InventoryDelete />
+      <Header className="inventoryHeader" />
+      <InventoryList />
+      <InventoryDetails />
+      <InventoryAdd />
+      <InventoryEdit />
+      <InventoryDelete />
     </>
   );
 }

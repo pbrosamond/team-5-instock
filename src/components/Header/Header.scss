@@ -2,3 +2,70 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
+
+// @use "../styles/partials/global" as *;
+// @use "../styles/partials/typography" as *;
+// @use "../styles/partials/variables" as *;
+// @use "../styles/partials/mixins" as *;
+
+.header {
+  background-color: $color-graphite;
+
+  &__navigation {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      padding: 0rem 1rem;
+    }
+
+    @include desktop {
+      padding: 0rem 5rem;
+    }
+  }
+
+  &__logo {
+    @include flexbox;
+    // display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
+
+    @include tablet {
+      padding-top: 0;
+      margin-left: 1rem;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    padding: 0;
+  }
+
+  &__item {
+    list-style: none;
+    min-width: 50%;
+    text-align: center;
+  }
+
+  &__button {
+    @include h3-mobile;
+    @include navlink-default;
+
+    &:hover {
+      @include navlink-default-hover;
+    }
+
+    // &:active {
+    //   @include navlink-active;
+
+      @include tablet {
+        padding: 1rem;
+        margin: 0;
+      }
+    }
+
+    @include tablet {
+      padding: 1rem;
+      margin: 0.25rem;
+    }
+  }
+}
