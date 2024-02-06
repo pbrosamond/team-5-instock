@@ -13,8 +13,11 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/warehouse" element={<WarehousePage />} />
-        <Route path="/inventory" element={<InventoryPage />} />
+        <Route path="/" element={<WarehousePage />} />
+        <Route path="/api/warehouses" element={<WarehousePage />} />
+        <Route path="/api/warehouses/:id" element={<WarehousePage />} />
+        <Route path="/api/inventories" element={<InventoryPage />} />
+        <Route path="/api/inventories/:id" element={<InventoryPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
