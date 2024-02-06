@@ -12,7 +12,6 @@ import Header from "../../components/Header/Header";
 function WarehousePage() {
   return (
     <>
-      <Header className="warehouseHeader" />
       <WarehouseList />
       <WarehouseDetails />
       <WarehouseAdd />

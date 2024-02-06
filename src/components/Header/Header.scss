@@ -3,17 +3,12 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 
-// @use "../styles/partials/global" as *;
-// @use "../styles/partials/typography" as *;
-// @use "../styles/partials/variables" as *;
-// @use "../styles/partials/mixins" as *;
-
 .header {
   background-color: $color-graphite;
 
   &__navigation {
     @include tablet {
-      display: flex;
+      @include flexbox;
       justify-content: space-between;
       padding: 0rem 1rem;
     }
@@ -25,7 +20,6 @@
 
   &__logo {
     @include flexbox;
-    // display: flex;
     justify-content: center;
     padding-top: 1.5rem;
 
@@ -36,36 +30,38 @@
   }
 
   &__menu {
-    display: flex;
-    padding: 0;
+    @include flexbox(row, 1rem);
+    padding: 1rem 0;
+    margin: 0;
+    justify-content: center;
   }
 
   &__item {
     list-style: none;
-    min-width: 50%;
     text-align: center;
   }
 
   &__button {
     @include h3-mobile;
+    padding: 0.5rem 2.5rem;
+
     @include navlink-default;
+    font-weight: $regular;
 
     &:hover {
       @include navlink-default-hover;
     }
 
-    // &:active {
-    //   @include navlink-active;
+    &.active {
+      @include navlink-active;
 
       @include tablet {
-        padding: 1rem;
-        margin: 0;
+        padding: 0.5rem 1rem;
       }
     }
 
     @include tablet {
-      padding: 1rem;
-      margin: 0.25rem;
+      padding: 0.5rem 1rem;
     }
   }
 }

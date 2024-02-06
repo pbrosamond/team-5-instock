@@ -12,7 +12,6 @@ import Header from "../../components/Header/Header";
 function InventoryPage() {
   return (
     <>
-      <Header className="inventoryHeader" />
       <InventoryList />
       <InventoryDetails />
       <InventoryAdd />
