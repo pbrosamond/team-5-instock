@@ -2,3 +2,17 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
+
+.footer {
+  position: relative;
+  height: 95vh;
+  //   width: 100%;
+
+  &__copyright {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    color: $color-slate;
+  }
+}
