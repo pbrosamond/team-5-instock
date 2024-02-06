@@ -27,6 +27,7 @@
   padding-right: 2rem;
   padding-bottom: 2rem;
   padding-left: 2rem;
+  max-width: 80rem;
 }
 
 @mixin padding-desktop {
@@ -82,12 +83,189 @@
 }
 
 // Text Links 
-@mixin navlink-default {
+@mixin textlink-default {
   color: $color-indigo;
 }
 
-@mixin navlink-default-hover {
+@mixin textlink-default-hover {
   text-decoration: underline;
+}
+
+//Mobile Form Fields
+@mixin form-mobile-default {
+  height: 2.25rem;
+  width: 100%;
+  border-radius: 1.25rem;
+  background-color: $color-white;
+  color: $color-slate;
+  border: .0625rem solid $color-slate;
+}
+
+@mixin form-mobile-active {
+  color: $color-black;
+  border: .0625rem solid $color-indigo;
+}
+
+@mixin form-mobile-error {
+  color: $color-slate;
+  border: .0625rem solid $color-red;
+}
+
+//Tablet Form Fields
+@mixin form-tablet-default {
+  height: 2.375rem;
+  padding: 0 1rem;
+  border-radius: 1.25rem;
+  background-color: $color-white;
+  color: $color-slate;
+  border: .0625rem solid $color-slate;
+}
+
+@mixin form-tablet-active {
+  color: $color-black;
+  border: .0625rem solid $color-indigo;
+}
+
+@mixin form-tablet-error {
+  color: $color-slate;
+  border: .0625rem solid $color-red;
+}
+
+// Tables
+@mixin tables-mobile {
+  height: 12.375rem;
+  border-top: .0625rem solid $color-cloud;
+}
+
+@mixin tables-tablet {
+  height: 6.25rem;
+
+}
+
+@mixin tables-desktop {
+  height: 4.75rem;
+
+}
+
+@mixin tables-desktop-hover {
+  background-color: rgba(46, 102, 229, 0.07); /* RGB values for #2E66E5 with 7% opacity */
+}
+
+
+
+// Mobile Button CTA
+@mixin button-mobile-default {
+  height: 2.25rem;
+  width: 100%;
+  border-radius: 1.25rem;
+  background-color: $color-indigo;
+  color: $color-white;
+  border: none;
+}
+
+@mixin button-mobile-active {
+  background-color: $color-black;
+}
+
+@mixin button-mobile-cancel-default {
+  height: 2.25rem;
+  width: 100%;
+  border-radius: 1.25rem;
+  background-color: $color-white;
+  color: $color-cloud;
+  border: .0625rem solid $color-cloud;
+}
+
+@mixin button-mobile-cancel-active {
+border: $color-indigo;
+color: $color-indigo;
+}
+
+@mixin button-mobile-delete-default {
+  height: 2.25rem;
+  width: 100%;
+  border-radius: 1.25rem;
+  background-color: $color-red;
+  color: $color-white;
+  border: none;
+}
+
+@mixin button-mobile-delete-active {
+  background-color: $color-black;
+}
+
+// Tablet Button CTA
+@mixin button-tablet-default {
+  height: 2.375rem;
+  padding: 0 1rem;
+  border-radius: 1.25rem;
+  background-color: $color-indigo;
+  color: $color-white;
+  border: none;
+}
+
+@mixin button-tablet-hover {
+  background-color: $color-black;
+}
+
+@mixin button-tablet-cancel-default {
+  height: 2.375rem;
+  padding: 0 1rem;
+  border-radius: 1.25rem;
+  background-color: $color-white;
+  color: $color-cloud;
+  border: .0625rem solid $color-cloud;
+}
+
+@mixin button-tablet-cancel-hover {
+border: $color-indigo;
+color: $color-indigo;
+}
+
+@mixin button-tablet-delete-default {
+  height: 2.375rem;
+  padding: 0 1rem; 
+  border-radius: 1.25rem;
+  background-color: $color-red;
+  color: $color-white;
+  border: none;
+}
+
+@mixin button-tablet-delete-hover {
+  background-color: $color-black;
+}
+
+// Tags
+@mixin tag-mobile-red {
+  height: 1.5rem;
+  color: $color-red;
+  background-color: rgba(201, 69, 21, 0.07);
+  padding: .25rem .5rem;
+  border-radius: 1.25rem;
+}
+
+@mixin tag-mobile-green {
+  height: 1.5rem;
+  color: $color-green;
+  background-color: rgba(21, 132, 99, 0.07);  
+  padding: .25rem .5rem;
+  border-radius: 1.25rem;
+}
+
+@mixin tag-desktop-red {
+  height: 1.625rem;
+  color: $color-red;
+  background-color: rgba(201, 69, 21, 0.07);
+  padding: .25rem .5rem;
+  border-radius: 1.25rem;
+}
+
+@mixin tag-desktop-green {
+  height: 1.625rem;
+  color: $color-green;
+  background-color: rgba(21, 132, 99, 0.07);  
+  padding: .25rem .5rem;
+  border-radius: 1.25rem;
 }
 
 // Mobile Fonts
@@ -210,93 +388,6 @@
 
 
 
-
-//no hover for mobile buttons or links only active
-
-
-
-
-// Mobile Button CTA
-@mixin button-mobile-default {
-  height: 2.25rem;
-  width: 100%;
-  border-radius: 1.25rem;
-  background-color: $color-indigo;
-  color: $color-white;
-  border: none;
-}
-
-@mixin button-mobile-active {
-  background-color: $color-black;
-}
-
-@mixin button-mobile-cancel-default {
-  height: 2.25rem;
-  width: 100%;
-  border-radius: 1.25rem;
-  background-color: $color-white;
-  color: $color-cloud;
-  border: .0625rem solid $color-cloud;
-}
-
-@mixin button-mobile-cancel-active {
-border: $color-indigo;
-color: $color-indigo;
-}
-
-@mixin button-mobile-delete-default {
-  height: 2.25rem;
-  width: 100%;
-  border-radius: 1.25rem;
-  background-color: $color-red;
-  color: $color-white;
-  border: none;
-}
-
-@mixin button-mobile-delete-active {
-  background-color: $color-black;
-}
-
-// Tablet Button CTA
-@mixin button-tablet-default {
-  height: 2.375rem;
-  padding: 0 1rem;
-  border-radius: 1.25rem;
-  background-color: $color-indigo;
-  color: $color-white;
-  border: none;
-}
-
-@mixin button-tablet-active {
-  background-color: $color-black;
-}
-
-@mixin button-tablet-cancel-default {
-  height: 2.375rem;
-  padding: 0 1rem;
-  border-radius: 1.25rem;
-  background-color: $color-white;
-  color: $color-cloud;
-  border: .0625rem solid $color-cloud;
-}
-
-@mixin button-tablet-cancel-active {
-border: $color-indigo;
-color: $color-indigo;
-}
-
-@mixin button-tablet-delete-default {
-  height: 2.375rem;
-  padding: 0 1rem; 
-  border-radius: 1.25rem;
-  background-color: $color-red;
-  color: $color-white;
-  border: none;
-}
-
-@mixin button-tablet-delete-active {
-  background-color: $color-black;
-}
 
 // Form Fields
 @mixin form-field {
