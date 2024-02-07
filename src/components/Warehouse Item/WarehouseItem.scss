@@ -12,6 +12,7 @@
     border-top: none;
     border-bottom: 0.0625rem solid $color-cloud;
     @include flexbox;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem 2.25rem 2rem;
 
@@ -41,6 +42,7 @@
     @include tablet {
         @include flexbox;
         align-items: center;
+        width: fit-content;
     }
   }
 
@@ -91,5 +93,10 @@
     @include flexbox;
     justify-content: space-between;
     padding: 0 1.5rem 0 1rem;
+
+    @include tablet {
+        @include flexbox (row, 1rem);
+        padding: 0;
+    }
   }
 }
