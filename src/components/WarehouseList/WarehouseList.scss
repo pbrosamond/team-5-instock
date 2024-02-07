@@ -7,6 +7,7 @@
     margin: 0 2.25rem;
     @include padding-mobile;
     @include flexbox(column, 1rem);
+    // position: relative;
 
     &__header {
         @include flexbox(column, 1rem);
@@ -25,19 +26,36 @@
     }
 
     &__filter {
-        @include flexbox(row);
-        justify-content: space-between;
-        background-color: $color-lightgrey;
-        height: 2.5rem;
-        padding: 0 36px;
+       
+        display: none;
+
+        @include tablet{
+            display: block;
+            @include flexbox(row);
+            justify-content: space-between;
+            background-color: $color-lightgrey;
+            height: 2.5rem;
+            padding: 0 36px;    
+        } 
     }
 
     &__sorts {
-        @include flexbox(row, .25rem);
+
+        display: none;
+
+        @include tablet {
+            display: block;
+            @include flexbox(row, .25rem);
         align-items: center;
+        }
     }
 
     &__subtitle {
-        @include h4-mobile;
+        display: none;
+
+        @include tablet {
+            display: block;
+            @include h4-mobile;
+        } 
     }
 }
