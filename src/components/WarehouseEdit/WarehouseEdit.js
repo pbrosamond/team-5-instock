@@ -39,7 +39,7 @@ const WarehouseEdit = ({id}) => {
         <main className="form__container">
         <h1 className="form__title">Edit Warehouse</h1>
         <form onSubmit={handleSubmit}>
-          <section className="form">
+          <section className="form__section__container">
             <section className="form__section">
               <h2 className="form__section__title">Warehouse Details</h2>
               <div className="form__questions">
@@ -59,6 +59,7 @@ const WarehouseEdit = ({id}) => {
                   <input type="text" name="country" className="form__input" placeholder={`${currentWarehouse.country}`} value={`${currentWarehouse.country}`} onChange={handleChange} required></input>
               </div>
             </section>
+            {/* <div className="divider">hi</div> */}
             <section className="form__section divider">
               <h2 className="form__section__title">Contact Details</h2>
               <div className="form__questions">
@@ -77,10 +78,6 @@ const WarehouseEdit = ({id}) => {
                   <label htmlFor="contact_email" className="form__label">Email</label>
                   <input type="email" name="contact_email" className="form__input" placeholder={`${currentWarehouse.contact_email}`} value={`${currentWarehouse.contact_email}`} onChange={handleChange} required></input>
               </div>
-              {/* <div className="form__button__container">
-                  <button className="form__button-cancel" onClick={handleCancel}>CANCEL</button>
-                  <button type="submit" className="form__button-save">SAVE</button>
-              </div> */}
             </section>
             </section>
             <div className="form__button__container">

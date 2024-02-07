@@ -3,35 +3,14 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 
-//delete body, using for testing
-body {
-    background-color: $color-lightgrey;
-}
-
 .divider {
     border-left: 1px solid $color-cloud;
-    height: 80%;
-}
-
-.form__section {
-    border-top: 1px solid $color-cloud;
-    // border-left: 1px solid $color-cloud;
-    width: 100%;
-    // margin: 1rem 0;
-
-}
-
-.form {
-    @include tablet {
-        @include flexbox;
-    }
 }
 
 .form {
     &__container {
         min-width: 20rem;
         width: 90%;
-        // height: 100%;
         margin: 0 auto;
         background-color: $color-white;
         border-radius: .25rem;
@@ -40,23 +19,56 @@ body {
 
     &__title {
         @include h1-mobile;
-        margin: 2rem 1.5rem 1.5rem 1.5rem;
-        padding-top: 2rem;
+        @include padding-mobile;
+
+        @include tablet {
+            @include h1-tablet;
+            @include padding-tablet;
+            border-bottom: 1px solid $color-cloud;
+        }
     }
-    &__section__title {
-        @include h2-mobile;
-        margin: 1rem 1.5rem 1.5rem 1.5rem;
+
+    &__section__container{
+        @include tablet {
+            @include flexbox;
+            padding: 1.5rem 0;
+        }
+    }
+
+    &__section {
+        border-top: 1px solid $color-cloud;
+        width: 100%;
+
+        @include tablet {
+            border-top: none;
+        }
+
+        &__title {
+            @include h2-mobile;
+            margin: 1rem 1.5rem 1.5rem 1.5rem;
+
+            @include tablet {
+                @include h2-tablet;
+                margin: 0 1.5rem 2rem 1.5rem;
+
+            }
+        }
     }
 
     &__questions {
         @include flexbox;
         flex-direction: column;
-        margin: 1rem 1.5rem;
+        margin: 0 1.5rem 1rem 1.5rem;
     }
 
     &__label {
         @include h3-mobile;
         margin-bottom: .25rem;
+
+        @include tablet {
+            @include h3-tablet;
+            margin-bottom: .25rem;
+        }
     }
 
     &__input {
@@ -72,45 +84,59 @@ body {
         }
 
     }
-    &__button__container {
+    &__button {
+        &__container {
         background-color: rgba(247, 248, 249, 0.7);
         padding: 1rem 1.5rem;
         display: flex;
         justify-content: space-between;
-        // position: relative;
-        // bottom: 0rem;
 
         @include tablet {
             justify-content: flex-end;
+            }
+        }
+
+        &-cancel {
+            @include h3-mobile;
+            @include button-mobile-cancel-default;
+            margin-right: 1rem;
+
+            @include tablet {
+                @include h3-tablet;
+                @include button-tablet-cancel-default;
+                margin-right: 1rem
+            }
+
+            &:hover {
+                @include button-tablet-cancel-hover;
+            }
+            @include tablet {
+                @include button-tablet-cancel-default;
+                width: auto;
+             }
+        }
+
+        &-save {
+            @include h3-mobile;
+            @include button-mobile-default;
+            margin-left:1rem;
+
+            @include tablet {
+                @include h3-tablet;
+                @include button-tablet-default;
+                margin-right: 1rem
+            }
+    
+            &:hover {
+                @include button-tablet-delete-hover;
+            }
+    
+            @include tablet {
+                @include button-tablet-default;
+                width: auto;
+            }
         }
     }
-
-    &__button-cancel {
-        @include h3-mobile;
-        @include button-mobile-cancel-default;
-        margin-right: 1rem;
-
-        &:hover {
-            @include button-tablet-cancel-hover;
-        }
-        @include tablet {
-            @include button-tablet-cancel-default;
-            width: auto;
-        }
+   
     }
 
-    &__button-save {
-        @include h3-mobile;
-        @include button-mobile-default;
-        margin-left:1rem;
-
-        &:hover {
-            @include button-tablet-delete-hover;
-        }
-
-        @include tablet {
-            @include button-tablet-default;
-            width: auto;
-        }
-    }
-}
