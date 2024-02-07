@@ -8,16 +8,30 @@ body {
     background-color: $color-lightgrey;
 }
 
-.section-divider {
-    border-bottom: 1px solid $color-cloud;
-    margin: 1.5rem 0 1rem 0;
+.divider {
+    border-left: 1px solid $color-cloud;
+    height: 80%;
+}
+
+.form__section {
+    border-top: 1px solid $color-cloud;
+    // border-left: 1px solid $color-cloud;
+    width: 100%;
+    // margin: 1rem 0;
+
+}
+
+.form {
+    @include tablet {
+        @include flexbox;
+    }
 }
 
 .form {
     &__container {
         min-width: 20rem;
         width: 90%;
-        height: 100%;
+        // height: 100%;
         margin: 0 auto;
         background-color: $color-white;
         border-radius: .25rem;
@@ -63,6 +77,12 @@ body {
         padding: 1rem 1.5rem;
         display: flex;
         justify-content: space-between;
+        // position: relative;
+        // bottom: 0rem;
+
+        @include tablet {
+            justify-content: flex-end;
+        }
     }
 
     &__button-cancel {
@@ -73,6 +93,10 @@ body {
         &:hover {
             @include button-tablet-cancel-hover;
         }
+        @include tablet {
+            @include button-tablet-cancel-default;
+            width: auto;
+        }
     }
 
     &__button-save {
@@ -82,6 +106,11 @@ body {
 
         &:hover {
             @include button-tablet-delete-hover;
+        }
+
+        @include tablet {
+            @include button-tablet-default;
+            width: auto;
         }
     }
 }
