@@ -1,6 +1,8 @@
 import "./WarehouseList.scss";
 import sort from "../../assets/icons/sort-default-24px.svg";
 
+import WarehouseItem from "../Warehouse Item/WarehouseItem"
+
 import { Link } from "react-router-dom";
 
 function WarehouseList() {
@@ -33,6 +35,9 @@ function WarehouseList() {
           <h4 className="warehouse__subtitle">ACTIONS</h4>
         </div>
       </section>
+
+      <WarehouseItem />
+
     </section>
   );
 }

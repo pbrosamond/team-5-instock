@@ -4,10 +4,19 @@
 @use "../../styles/partials/typography" as *;
 
 .warehouse {
-    margin: 0 2.25rem;
+    margin: 0 1rem;
     @include padding-mobile;
-    @include flexbox(column, 1rem);
-    // position: relative;
+    @include flexbox(column, 1.5rem);
+
+    @include tablet {
+        margin: 0 2rem;
+        @include padding-tablet;
+    }
+
+    @include desktop {
+        margin: 0 8.125rem;
+        @include padding-desktop;
+    }
 
     &__header {
         @include flexbox(column, 1rem);

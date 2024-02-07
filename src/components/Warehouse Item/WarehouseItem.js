@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 function WarehouseItem() {
   return (
-    <div>
+    <section className="item">
       
-    </div>
+    </section>
   );
 }
 
