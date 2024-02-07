@@ -9,10 +9,15 @@
   @include flexbox(column, 1rem);
 
   @include tablet {
-    @include tables-tablet;
+    border-top: none;
+    border-bottom: 0.0625rem solid $color-cloud;
     @include flexbox;
     align-items: center;
-    padding: 0 2.25rem;
+    padding: 1rem 0 2.25rem 0;
+
+    &:last-child {
+        border-bottom: none;
+    }
   }
 
   &__section {

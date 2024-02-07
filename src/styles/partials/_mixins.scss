@@ -141,19 +141,10 @@
 
 // Tables
 @mixin tables-mobile {
-  height: 12.375rem;
   border-top: 0.0625rem solid $color-cloud;
 }
 
-@mixin tables-tablet {
-  height: 6.25rem;
-}
-
-@mixin tables-desktop {
-  height: 4.75rem;
-}
-
-@mixin tables-desktop-hover {
+@mixin taåbles-desktop-hover {
   background-color: rgba(
     46,
     102,
