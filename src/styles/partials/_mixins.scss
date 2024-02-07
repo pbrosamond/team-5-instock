@@ -412,7 +412,7 @@
 // Search Bar
 @mixin search {
   min-height: 2.25rem;
-  min-width: 15rem;
+  width: 100%;
   border: 0.0625rem solid $color-cloud;
   border-radius: 1.25rem;
   padding: .5rem 1rem;

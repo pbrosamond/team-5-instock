@@ -10,8 +10,10 @@ function WarehouseList() {
     <section className="warehouse">
       <div className="warehouse__header">
         <h1 className="warehouse__title">Warehouses</h1>
+        <div className="warehouse__actions">
         <input className="warehouse__search" placeholder="Search..."></input>
         <button className="warehouse__button">+ Add New Warehouse</button>
+        </div>
       </div>
 
       <section className="warehouse__filter">
@@ -36,6 +38,12 @@ function WarehouseList() {
         </div>
       </section>
 
+      <WarehouseItem />
+      <WarehouseItem />
+      <WarehouseItem />
+      <WarehouseItem />
+      <WarehouseItem />
+      <WarehouseItem />
       <WarehouseItem />
 
     </section>

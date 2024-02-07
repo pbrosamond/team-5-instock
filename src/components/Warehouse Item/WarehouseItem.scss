@@ -5,7 +5,7 @@
 
 .item {
   @include tables-mobile;
-  padding: 1rem 0 1.5rem 0;
+  padding: 1rem 0 0 0;
   @include flexbox(column, 1rem);
 
   @include tablet {
@@ -17,6 +17,7 @@
 
   &__section {
     @include flexbox(row, 2.8125rem);
+    padding: 0 1rem;
 
     @include tablet {
         gap: 0;
@@ -28,7 +29,7 @@
 
     @include tablet {
         @include flexbox;
-
+        align-items: center;
     }
   }
 
@@ -69,5 +70,6 @@
   &__icons {
     @include flexbox;
     justify-content: space-between;
+    padding: 0 1.5rem 0 1rem;
   }
 }
