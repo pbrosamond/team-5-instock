@@ -32,7 +32,9 @@ const WarehouseEdit = ({id}) => {
 
     return (
         <>
+        <div className="body__block"></div>
         <main className="form__container">
+        {/* <div className="block"></div> */}
         <h1 className="form__title">Edit Warehouse</h1>
         <form onSubmit={handleSubmit}>
           <section className="form__section__container">
