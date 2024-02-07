@@ -37,6 +37,10 @@
 
     &__title {
         @include h1-mobile;
+
+        @include tablet {
+            @include h1-tablet
+        }
     }
 
     &__actions {
@@ -50,21 +54,40 @@
     &__search {
         @include search;
         background: url("../../assets/icons/search-24px.svg") no-repeat right 0.75rem center;
+        
+        &::placeholder {
+            @include p2-mobile;
+        }
 
         @include tablet {
-            width: 10.5rem;
+            width: 11rem;
+
+            &::placeholder {
+                @include p2-tablet;
+            }
         }
 
         @include desktop {
             width: 17.125rem;
         }
+
+        &:active {
+            @include search-active;
+        }
+
+        
     }
 
     &__button {
         @include button-mobile-default;
 
         @include tablet {
-            width: 10.5rem;
+            @include button-tablet-default;
+            width: 11rem;
+        }
+
+        &:hover {
+            @include button-tablet-hover;
         }
     }
 

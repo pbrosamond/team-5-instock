@@ -408,3 +408,7 @@
   border-radius: 1.25rem;
   padding: .5rem 1rem;
 }
+
+@mixin search-active {
+  border: 0.0625rem solid $color-indigo;
+}

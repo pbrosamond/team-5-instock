@@ -53,6 +53,7 @@
 
     @include tablet {
         display: none;
+        @include h4-tablet
     }
   }
 
@@ -67,6 +68,10 @@
   &__link {
     @include h3-mobile;
     @include textlink-default;
+
+    @include tablet {
+        @include h3-tablet;
+    }
   }
 
   &__img {
@@ -76,6 +81,10 @@
   &__info {
     @include p2-mobile;
     max-width: 6.9375rem;
+
+    @include tablet {
+        @include p2-tablet
+    }
   }
 
   &__icons {
