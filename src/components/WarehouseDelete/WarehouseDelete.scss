@@ -1,4 +1,85 @@
-@use "../../styles/partials/global" as *;
-@use "../../styles/partials/variables" as *;
-@use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/typography" as *;
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+
+.overlay {
+  @include tablet {
+    opacity: 0.5;
+    background: #000;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: fixed;
+  }
+}
+
+.delete {
+  @include padding-mobile(3.75rem);
+  padding-bottom: 2.5rem;
+  background-color: $color-white;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include tablet {
+    padding-left: 4rem;
+    padding-top: 2.5rem;
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+    height: fit-content;
+  }
+
+  @include desktop {
+    @include padding-desktop();
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      justify-content: flex-end;
+    }
+  }
+
+  &__button {
+    &-cancel {
+      @include button-mobile-cancel-default();
+      width: 48%;
+
+      @include tablet {
+        width: 5rem;
+        margin-right: 1rem;
+      }
+      &:active {
+        @include button-mobile-cancel-active();
+      }
+      &:hover {
+        @include button-tablet-cancel-hover();
+      }
+    }
+
+    &-delete {
+      @include button-mobile-delete-default();
+      width: 48%;
+      @include tablet {
+        width: 5rem;
+      }
+      &:active {
+        @include button-mobile-delete-active();
+      }
+      &:hover {
+        @include button-tablet-delete-hover();
+      }
+    }
+  }
+}
