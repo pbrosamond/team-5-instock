@@ -4,5 +4,70 @@
 @use "../../styles/partials/typography" as *;
 
 .item {
-    @include tables-mobile;
+  @include tables-mobile;
+  padding: 1rem 0 1.5rem 0;
+  @include flexbox(column, 1rem);
+
+  @include tablet {
+    @include tables-tablet;
+    @include flexbox;
+    align-items: center;
+    padding: 0 2.25rem;
+  }
+
+  &__section {
+    @include flexbox(row, 2.8125rem);
+
+    @include tablet {
+        gap: 0;
+      }
+  }
+
+  &__subsection {
+    @include flexbox(column, 1rem);
+
+    @include tablet {
+        @include flexbox;
+
+    }
+  }
+
+  &__container {
+    @include flexbox(column, 0.25rem);
+  }
+
+  &__title {
+    @include h4-mobile;
+
+    @include tablet {
+        display: none;
+    }
+  }
+
+  &__subcontainer {
+    @include flexbox(row, 0.25rem);
+  }
+
+  &__subcontainer2 {
+    @include flexbox(column, 0.25rem);
+  }
+
+  &__link {
+    @include h3-mobile;
+    @include textlink-default;
+  }
+
+  &__img {
+    height: 1.25rem;
+  }
+
+  &__info {
+    @include p2-mobile;
+    max-width: 6.9375rem;
+  }
+
+  &__icons {
+    @include flexbox;
+    justify-content: space-between;
+  }
 }

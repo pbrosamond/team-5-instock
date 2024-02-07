@@ -7,6 +7,8 @@
     margin: 0 1rem;
     @include padding-mobile;
     @include flexbox(column, 1.5rem);
+    box-shadow: 0 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: .1875rem;
 
     @include tablet {
         margin: 0 2rem;
