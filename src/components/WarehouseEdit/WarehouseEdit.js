@@ -9,7 +9,6 @@ const WarehouseEdit = ({id}) => {
 
     const warehouse = data[id];
     const [currentWarehouse, setWarehouse] = useState(warehouse)
-    console.log(warehouse)
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -22,15 +21,12 @@ const WarehouseEdit = ({id}) => {
         setWarehouse(warehouse);
     }
 
-    console.log(warehouse);
     const handleSubmit = (e) => {
         e.preventDefault();
 
         const updatedData = data.map((warehouse) =>
             warehouse.id === currentWarehouse.id ? currentWarehouse : warehouse
         );
-
-        console.log(updatedData[0])
     }
 
 
@@ -59,7 +55,6 @@ const WarehouseEdit = ({id}) => {
                   <input type="text" name="country" className="form__input" placeholder={`${currentWarehouse.country}`} value={`${currentWarehouse.country}`} onChange={handleChange} required></input>
               </div>
             </section>
-            {/* <div className="divider">hi</div> */}
             <section className="form__section divider">
               <h2 className="form__section__title">Contact Details</h2>
               <div className="form__questions">

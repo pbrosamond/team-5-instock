@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 
 function WarehouseEditPage() {
     const { id } = useParams()
-    console.log(useParams());
 
 
   return (
