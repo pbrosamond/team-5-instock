@@ -13,10 +13,15 @@
     border-bottom: 0.0625rem solid $color-cloud;
     @include flexbox;
     align-items: center;
-    padding: 1rem 0 2.25rem 0;
+    padding: 1rem 2rem 2.25rem 2rem;
+
+    @include desktop {
+        padding: 1rem 2.5rem 2.25rem 2.5rem;
+    }
 
     &:last-child {
         border-bottom: none;
+        padding-bottom: 1rem;
     }
   }
 
@@ -26,6 +31,7 @@
 
     @include tablet {
         gap: 0;
+        padding: 0;
       }
   }
 

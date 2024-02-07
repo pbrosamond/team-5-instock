@@ -27,7 +27,11 @@
         @include tablet {
             @include flexbox(row, 1rem);
             justify-content: space-between;
-            padding: 2rem;
+            padding: 1.5rem 2rem 0.25rem;
+        }
+
+        @include desktop {
+            padding: 2rem 2.5rem 0.25rem;
         }
     }
 
@@ -45,9 +49,14 @@
 
     &__search {
         @include search;
+        background: url("../../assets/icons/search-24px.svg") no-repeat right 0.75rem center;
 
         @include tablet {
             width: 10.5rem;
+        }
+
+        @include desktop {
+            width: 17.125rem;
         }
     }
 
@@ -71,6 +80,10 @@
             height: 2.5rem;
             padding: 0 2rem;    
         } 
+
+        @include desktop {
+            padding: 0 2.5rem;
+        }
     }
 
     &__sorts {

@@ -11,7 +11,7 @@ function WarehouseList() {
       <div className="warehouse__header">
         <h1 className="warehouse__title">Warehouses</h1>
         <div className="warehouse__actions">
-        <input className="warehouse__search" placeholder="Search..."></input>
+        <input className="warehouse__search" type="text" id="search" placeholder="Search..."></input>
         <button className="warehouse__button">+ Add New Warehouse</button>
         </div>
       </div>
