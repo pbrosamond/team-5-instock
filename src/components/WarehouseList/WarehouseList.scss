@@ -2,3 +2,21 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
+
+.warehouse {
+    width: 100%;
+    @include padding-mobile;
+
+    &__header {
+        @include flexbox(column, 1rem);
+
+    }
+
+    &__title {
+        @include h1-mobile;
+    }
+
+    &__search {
+        @include search;
+    }
+}
