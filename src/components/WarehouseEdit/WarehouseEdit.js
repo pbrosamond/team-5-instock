@@ -1,14 +1,50 @@
 import "./WarehouseEdit.scss";
-import data from '../../data/warehouses.json';
-import { useState} from 'react';
+// import data from '../../data/warehouses.json';
+import { useState, useEffect} from 'react';
+import axios from "axios";
+const { REACT_APP_API_BASE_PATH } = process.env
+
 
 // import { Link } from "react-router-dom";
 
 
 const WarehouseEdit = ({id}) => {
+    const paramId = Number(id);
 
-    const warehouse = data[id];
-    const [currentWarehouse, setWarehouse] = useState(warehouse)
+    // console.log(getWarehouse());
+    // console.log(getWarehouse);
+    // console.log(useState());
+
+    const [currentWarehouse, setWarehouse] = useState({
+        warehouse_name: '',
+        address: '',
+        city: '',
+        country: '',
+        contact_name: '',
+        contact_position: '',
+        contact_phone: '',
+        contact_email: '',
+      })
+    // const [currentWarehouse, setWarehouse] = useState(warehouse)
+ 
+    useEffect(() => {
+        const fetchWarehouse = async () => {
+            try {
+            const response = await axios.get(`${REACT_APP_API_BASE_PATH}/warehouses/${paramId}`);
+            const data = response.data;
+            console.log(data);
+            setWarehouse(data);
+            } catch (error) {
+            console.error(`Cannot get warehouse information`, error);
+            }
+    };
+
+    fetchWarehouse();
+    }, [paramId]);
+
+    console.log();
+
+    // const warehouse = data.find(item => item.id === paramId)
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -17,24 +53,46 @@ const WarehouseEdit = ({id}) => {
             [name]: value,
         }));
     };
+    // const handleCancel = () => {
+    //     setWarehouse(warehouse);
+    // }
     const handleCancel = () => {
-        setWarehouse(warehouse);
-    }
+        // Reset the form fields to the initial values
+        setWarehouse({
+          warehouse_name: '',
+          address: '',
+          city: '',
+          country: '',
+          contact_name: '',
+          contact_position: '',
+          contact_phone: '',
+          contact_email: '',
+        });
+      };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const updatedData = data.map((warehouse) =>
-            warehouse.id === currentWarehouse.id ? currentWarehouse : warehouse
-        );
+        // const updatedData = data.map((warehouse) =>
+        //     warehouse.id === currentWarehouse.id ? currentWarehouse : warehouse
+        // );
+
+        // editWarehouse(updatedData);
     }
+    // const editWarehouse = async(updatedData) => {
+    //     try {
+    //         const putResponse = await axios.post(`${REACT_APP_API_BASE_PATH}/warehouses/${paramId}`, updatedData);
+    //         console.log(putResponse)
+    //     } catch(error) {
+    //         console.error(`cannot post new video`,error);
+    //     }
+    // }
 
 
     return (
         <>
         <div className="body__block"></div>
         <main className="form__container">
-        {/* <div className="block"></div> */}
         <h1 className="form__title">Edit Warehouse</h1>
         <form onSubmit={handleSubmit}>
           <section className="form__section__container">
