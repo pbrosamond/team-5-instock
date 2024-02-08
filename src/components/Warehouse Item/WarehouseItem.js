@@ -7,44 +7,32 @@ import { Link } from "react-router-dom";
 
 function WarehouseItem() {
   return (
-    <section className="item">
-      <div className="item__section">
-        <div className="item__subsection">
-          <div className="item__container">
-            <h4 className="item__title">WAREHOUSE</h4>
-            <div className="item__subcontainer">
-              <h3 className="item__link">Manhattan</h3>
-              <img className="item__img" src={chevronIcon}></img>
-            </div>
-          </div>
-          <div className="item__container">
-            <h4 className="item__title">ADDRESS</h4>
-            <div className="item__subcontainer">
-              <h3 className="item__info">503 Broadway, New York, USA</h3>
-            </div>
-          </div>
-        </div>
-
-        <div className="item__subsection">
-          <div className="item__container">
-            <h4 className="item__title">CONTACT NAME</h4>
-            <div className="item__subcontainer">
-              <h3 className="item__info">Parmin Aujla</h3>
-            </div>
-          </div>
-          <div className="item__container">
-            <h4 className="item__title">CONTACT INFORMATION</h4>
-            <div className="item__subcontainer2">
-              <h3 className="item__info">+1 (629) 555-0129</h3>
-              <h3 className="item__info">paujla@instock.com</h3>
-            </div>
-          </div>
+    <section className="wrapper">
+      <div>
+        <h4 className="wrapper__titles">WAREHOUSE</h4>
+        <div className="wrapper__link">
+        <h3 className="wrapper__textlink">Manhattan</h3>
+        <img className="wrapper__icon" src={chevronIcon}></img>
         </div>
       </div>
-
-      <div className="item__icons">
-        <img src={deleteIcon}/>
-        <img src={editIcon}/>
+      <div className="wrapper__name">
+        <h4 className="wrapper__titles">CONTACT NAME</h4>
+        <p className="wrapper__details">Parmin Aujla</p>
+      </div>
+      <div className="wrapper__address">
+        <h4 className="wrapper__titles">ADDRESS</h4>
+        <p className="wrapper__details">503 Broadway New York, USA</p>
+      </div>
+      <div>
+        <div className="wrapper__contact">
+          <h4 className="wrapper__titles">CONTACT INFORMATION</h4>
+          <p className="wrapper__details">+1 (629) 555-0129</p>
+          <p className="wrapper__details">paujla@instock.com</p>
+        </div>
+      </div>
+      <div className="wrapper__icons">
+        <img className="wrapper__icon" src={deleteIcon}></img>
+        <img className="wrapper__icon" src={editIcon}></img>
       </div>
     </section>
   );
