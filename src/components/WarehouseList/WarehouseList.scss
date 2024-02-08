@@ -4,128 +4,127 @@
 @use "../../styles/partials/typography" as *;
 
 .warehouse {
-    margin: 0 1rem;
-    padding: 1rem 0;
-    @include flexbox(column, 1.5rem);
-    box-shadow: 0 2px 5px rgba(19, 24, 44, 0.1);
-    border-radius: .1875rem;
+  margin: 0 1rem;
+  padding: 1rem 0;
+  @include flexbox(column, 1.5rem);
+  box-shadow: 0 2px 5px rgba(19, 24, 44, 0.1);
+  border-radius: .1875rem;
+
+  @include tablet {
+    margin: 0 2rem;
+  }
+
+  @include desktop {
+    margin: 0 8.125rem;
+    @include padding-desktop;
+  }
+
+  &__header {
+    @include flexbox(column, 1rem);
+    padding: 1rem 1rem 0 1rem;
 
     @include tablet {
-        margin: 0 2rem;
-        
+      @include flexbox(row, 1rem);
+      justify-content: space-between;
+      padding: 1.5rem 2rem 0.25rem;
     }
 
     @include desktop {
-        margin: 0 8.125rem;
-        @include padding-desktop;
+      padding: 2rem 2.5rem 0.25rem;
+    }
+  }
+
+  &__title {
+    @include h1-mobile;
+
+    @include tablet {
+      @include h1-tablet
+    }
+  }
+
+  &__actions {
+    @include flexbox(column, 1rem);
+
+    @include tablet {
+      @include flexbox(row, 1rem);
+    }
+  }
+
+  &__search {
+    @include search;
+    background: url("../../assets/icons/search-24px.svg") no-repeat right 0.75rem center;
+
+    &::placeholder {
+      @include p2-mobile;
     }
 
-    &__header {
-        @include flexbox(column, 1rem);
-        padding: 1rem 1rem 0 1rem;
+    @include tablet {
+      width: 11rem;
 
-        @include tablet {
-            @include flexbox(row, 1rem);
-            justify-content: space-between;
-            padding: 1.5rem 2rem 0.25rem;
-        }
-
-        @include desktop {
-            padding: 2rem 2.5rem 0.25rem;
-        }
+      &::placeholder {
+        @include p2-tablet;
+      }
     }
 
-    &__title {
-        @include h1-mobile;
-
-        @include tablet {
-            @include h1-tablet
-        }
+    @include desktop {
+      width: 17.125rem;
     }
 
-    &__actions {
-        @include flexbox(column, 1rem);
+    &:active {
+      @include search-active;
+    }
+  }
 
-        @include tablet {
-            @include flexbox(row, 1rem);
-        }
+  &__button {
+    @include button-mobile-default;
+
+    @include tablet {
+      @include button-tablet-default;
+      width: 11rem;
     }
 
-    &__search {
-        @include search;
-        background: url("../../assets/icons/search-24px.svg") no-repeat right 0.75rem center;
-        
-        &::placeholder {
-            @include p2-mobile;
-        }
+    &:hover {
+      @include button-tablet-hover;
+    }
+  }
 
-        @include tablet {
-            width: 11rem;
+  &__filter {
+    display: none;
 
-            &::placeholder {
-                @include p2-tablet;
-            }
-        }
-
-        @include desktop {
-            width: 17.125rem;
-        }
-
-        &:active {
-            @include search-active;
-        }
-
-        
+    @include tablet {
+      display: grid;
+      grid-template-columns: 1.2fr 1.2fr 1.4fr 1.5fr 0.6fr;
+      align-items: center;
+      grid-gap: 1rem;
+      padding: 0 2rem;
+      background-color: $color-lightgrey;
+      height: 2.5rem;
     }
 
-    &__button {
-        @include button-mobile-default;
-
-        @include tablet {
-            @include button-tablet-default;
-            width: 11rem;
-        }
-
-        &:hover {
-            @include button-tablet-hover;
-        }
+    @include desktop {
+      padding: 0 2.5rem;
+      grid-template-columns: 1.1fr 1.5fr 1.1fr 1.6fr 0.5fr;
     }
 
-    &__filter {
-       
-        display: none;
+  }
 
-        @include tablet{
-            display: block;
-            @include flexbox(row);
-            justify-content: space-between;
-            background-color: $color-lightgrey;
-            height: 2.5rem;
-            padding: 0 2rem;    
-        } 
+  &__sorts {
+    display: none;
 
-        @include desktop {
-            padding: 0 2.5rem;
-        }
+    @include tablet {
+      display: block;
+      @include flexbox(row, .25rem);
+      align-items: center;
     }
+  }
 
-    &__sorts {
+  &__subtitle {
+    display: none;
 
-        display: none;
+    @include tablet {
+      display: block;
+      @include h4-mobile;
 
-        @include tablet {
-            display: block;
-            @include flexbox(row, .25rem);
-        align-items: center;
-        }
     }
-
-    &__subtitle {
-        display: none;
-
-        @include tablet {
-            display: block;
-            @include h4-mobile;
-        } 
-    }
+  }
 }
