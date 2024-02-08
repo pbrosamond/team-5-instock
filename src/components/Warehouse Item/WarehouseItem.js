@@ -10,10 +10,12 @@ function WarehouseItem() {
     <section className="wrapper">
       <div>
         <h4 className="wrapper__titles">WAREHOUSE</h4>
+        <Link to='/api/warehouse/details'>
         <div className="wrapper__link">
         <h3 className="wrapper__textlink">Manhattan</h3>
         <img className="wrapper__icon" src={chevronIcon}></img>
         </div>
+        </Link>
       </div>
       <div className="wrapper__name">
         <h4 className="wrapper__titles">CONTACT NAME</h4>
