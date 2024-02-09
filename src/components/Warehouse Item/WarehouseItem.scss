@@ -44,6 +44,10 @@
     }
   }
 
+  &__decoration {
+    text-decoration: none;
+  }
+
   &__textlink {
     @include h3-mobile;
     @include textlink-default;
@@ -103,4 +107,9 @@
   &__icon {
     height: 1.5rem;
   }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
 }

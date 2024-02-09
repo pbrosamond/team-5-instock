@@ -33,7 +33,7 @@ function WarehouseList() {
           <h4 className="warehouse__subtitle">CONTACT INFORMATION</h4>
           <img src={sort}></img>
         </div>
-        <div className="warehouse__sorts">
+        <div className="warehouse__sorts actions">
           <h4 className="warehouse__subtitle">ACTIONS</h4>
         </div>
       </section>
