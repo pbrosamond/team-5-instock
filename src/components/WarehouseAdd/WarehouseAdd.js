@@ -340,7 +340,7 @@ function WarehouseAdd() {
           <div className="addForm__button__container">
             <button
               className="addForm__button-cancel"
-              onClick={() => navigate('./warehoouses')}
+              onClick={() => navigate('/warehouses')}
             >
               CANCEL
             </button>
