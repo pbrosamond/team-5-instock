@@ -1,50 +1,12 @@
 import "./WarehouseEdit.scss";
-// import data from '../../data/warehouses.json';
-import { useState, useEffect} from 'react';
+import { useState} from 'react';
 import axios from "axios";
 const { REACT_APP_API_BASE_PATH } = process.env
-
-
 // import { Link } from "react-router-dom";
 
 
-const WarehouseEdit = ({id}) => {
-    const paramId = Number(id);
-
-    // console.log(getWarehouse());
-    // console.log(getWarehouse);
-    // console.log(useState());
-
-    const [currentWarehouse, setWarehouse] = useState({
-        warehouse_name: '',
-        address: '',
-        city: '',
-        country: '',
-        contact_name: '',
-        contact_position: '',
-        contact_phone: '',
-        contact_email: '',
-      })
-    // const [currentWarehouse, setWarehouse] = useState(warehouse)
- 
-    useEffect(() => {
-        const fetchWarehouse = async () => {
-            try {
-            const response = await axios.get(`${REACT_APP_API_BASE_PATH}/warehouses/${paramId}`);
-            const data = response.data;
-            console.log(data);
-            setWarehouse(data);
-            } catch (error) {
-            console.error(`Cannot get warehouse information`, error);
-            }
-    };
-
-    fetchWarehouse();
-    }, [paramId]);
-
-    console.log();
-
-    // const warehouse = data.find(item => item.id === paramId)
+const WarehouseEdit = ({warehouse}) => {
+    const [currentWarehouse,setWarehouse] = useState(warehouse)
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -52,42 +14,35 @@ const WarehouseEdit = ({id}) => {
             ...prevWarehouse,
             [name]: value,
         }));
-    };
-    // const handleCancel = () => {
-    //     setWarehouse(warehouse);
-    // }
-    const handleCancel = () => {
-        // Reset the form fields to the initial values
-        setWarehouse({
-          warehouse_name: '',
-          address: '',
-          city: '',
-          country: '',
-          contact_name: '',
-          contact_position: '',
-          contact_phone: '',
-          contact_email: '',
-        });
-      };
 
-    const handleSubmit = (e) => {
+    };
+    const handleCancel = () => {
+        setWarehouse(warehouse);
+    }
+
+
+    const handleSubmit = async(e) => {
         e.preventDefault();
 
-        // const updatedData = data.map((warehouse) =>
-        //     warehouse.id === currentWarehouse.id ? currentWarehouse : warehouse
-        // );
-
-        // editWarehouse(updatedData);
-    }
-    // const editWarehouse = async(updatedData) => {
-    //     try {
-    //         const putResponse = await axios.post(`${REACT_APP_API_BASE_PATH}/warehouses/${paramId}`, updatedData);
-    //         console.log(putResponse)
-    //     } catch(error) {
-    //         console.error(`cannot post new video`,error);
-    //     }
-    // }
-
+        try {
+            const updatedWarehouse = {
+                warehouse_name: currentWarehouse.warehouse_name,
+                address: currentWarehouse.address,
+                city: currentWarehouse.city,
+                country: currentWarehouse.country,
+                contact_name: currentWarehouse.contact_name,
+                contact_position: currentWarehouse.contact_position,
+                contact_phone: currentWarehouse.contact_phone,
+                contact_email: currentWarehouse.contact_email,
+            };
+            const response = await axios.put(
+              `${REACT_APP_API_BASE_PATH}/api/warehouses/${warehouse.id}`,updatedWarehouse);
+          } catch (error) {
+            console.error('Error updating warehouse:', error);
+   
+          }
+        };
+        
 
     return (
         <>
@@ -136,7 +91,7 @@ const WarehouseEdit = ({id}) => {
             </section>
             </section>
             <div className="form__button__container">
-                <button className="form__button-cancel" onClick={handleCancel}>CANCEL</button>
+                <button className="form__button-cancel" onClick={handleCancel} >CANCEL</button>
                 <button type="submit" className="form__button-save">SAVE</button>
             </div>
         </form>
@@ -146,5 +101,4 @@ const WarehouseEdit = ({id}) => {
     )
 
 }
-
 export default WarehouseEdit;
