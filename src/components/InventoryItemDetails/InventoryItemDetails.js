@@ -4,7 +4,7 @@ import backArrow from "../../assets/icons/arrow_back-24px.svg";
 
 import { Link } from "react-router-dom";
 
-function InventoryItemDetails({ item }) {
+function InventoryItemDetails() {
   return (
     <>
       <div className="body__block"></div>
@@ -14,7 +14,7 @@ function InventoryItemDetails({ item }) {
             <button className="item__back-button">
               <img src={backArrow} />
             </button>
-            <h1 className="item__name">Television {item.name}</h1>
+            <h1 className="item__name">Television</h1>
           </div>
           <button className="item__edit-button">
             <img src={editButton} />
@@ -26,31 +26,31 @@ function InventoryItemDetails({ item }) {
             <h4 className="item__subtitle">ITEM DESCRIPTION:</h4>
             <p>
               This 50", 4K LED TV provides a crystal-clear picture and vivid
-              colors.{item.description}
+              colors.
             </p>
           </div>
           <div className="item__block">
             <h4 className="item__subtitle">CATEGORY:</h4>
-            <p>Electronics{item.category}</p>
+            <p>Electronics</p>
           </div>
           <div>
             <div className="item__wrap">
               <div>
                 <div className="item__block">
                   <h4 className="item__subtitle">STATUS:</h4>
-                  <p>In Stock{item.status}</p>
+                  <p>In Stock</p>
                 </div>
               </div>
               <div>
                 <div className="item__block">
                   <h4 className="item__subtitle">QUANTITY:</h4>
-                  <p>500{item.quantity}</p>
+                  <p>500</p>
                 </div>
               </div>
             </div>
             <div className="item__block">
               <h4 className="item__subtitle">WAREHOUSE:</h4>
-              <p>Manhattan{item.warehouse}</p>
+              <p>Manhattan</p>
             </div>
           </div>
         </div>
