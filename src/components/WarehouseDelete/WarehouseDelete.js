@@ -1,9 +1,13 @@
+import axios from 'axios';
 import './WarehouseDelete.scss';
+const { REACT_APP_API_BASE_PATH } = process.env;
 
-import { Link, useNavigate } from 'react-router-dom';
-
-function WarehouseDelete() {
-  const navigate = useNavigate();
+function WarehouseDelete({ id, showModal, updateList }) {
+  const handleDelete = async (id) => {
+    await axios.delete(`${REACT_APP_API_BASE_PATH}/api/warehouses/${id}`);
+    updateList(id);
+    showModal();
+  };
 
   return (
     <>
@@ -19,11 +23,14 @@ function WarehouseDelete() {
         <div className="delete__button-container">
           <button
             className="delete__button delete__button-cancel"
-            onClick={() => navigate('/warehouses')}
+            onClick={showModal}
           >
             Cancel
           </button>
-          <button className="delete__button delete__button-delete">
+          <button
+            className="delete__button delete__button-delete"
+            onClick={() => handleDelete(id)}
+          >
             Delete
           </button>
         </div>

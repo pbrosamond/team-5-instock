@@ -6,6 +6,7 @@ import InventoryPage from './pages/InventoryPage/InventoryPage';
 import Footer from './components/Footer/Footer';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import WarehouseEditPage from './pages/WarehouseEditPage/WarehouseEditPage';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<WarehousePage />} />
         <Route path="/warehouses" element={<WarehousePage />} />
-        <Route path="/warehouses/:id" element={<WarehousePage />} />
+        <Route path="/warehouses/:id" element={<WarehouseEditPage />} />
         <Route path="/inventories" element={<InventoryPage />} />
         <Route path="/inventories/:id" element={<InventoryPage />} />
       </Routes>
