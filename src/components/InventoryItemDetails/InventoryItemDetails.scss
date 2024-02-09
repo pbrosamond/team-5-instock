@@ -37,14 +37,7 @@ p {
     @include flexbox;
     align-items: center;
     border: none;
-    background-color: white;
-  }
-  &__name {
-    // padding: 1rem;
-    // background-image: url("../../assets/icons/arrow_back-24px.svg");
-    // background-repeat: no-repeat;
-    // background-position: left bottom 40%;
-    // background-position-x: 1rem;
+    background-color: $color-white;
   }
 
   &__edit-button {
