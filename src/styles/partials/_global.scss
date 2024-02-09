@@ -5,6 +5,7 @@
 // Global Classes
 * {
   box-sizing: border-box;
+  font-family: $font-family; // Sets default font to Avenir or Sans-Serif
 }
 
 html {
@@ -14,4 +15,17 @@ html {
 body {
   margin: 0; // Removes white border of entire website
   font-family: $font-family; // Sets default font to Avenir or Sans-Serif
+}
+
+.body__block {
+  background-color: $color-graphite;
+  position: absolute;
+  left:0;
+  height: 4rem;
+  width: 100vw;
+
+  @include tablet {
+      height: 5.875rem;
+      width: 100vw;
+  }
 }
