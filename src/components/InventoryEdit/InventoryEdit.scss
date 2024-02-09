@@ -2,3 +2,36 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
+
+.radio {
+    @include flexbox;
+    align-items: center;
+
+    &__button {
+        width: 1rem;
+        height: 1rem;
+
+        &:checked + label {
+            color: $color-black;
+        }
+    }
+
+    &__label {
+        width: 100%;
+        @include p2-mobile;
+        color: $color-slate;
+
+        @include tablet {
+            @include p2-tablet;
+            color: $color-slate;
+        }
+    }
+}
+
+.custom__input {
+    height: 120px;
+    line-height: 1; 
+    vertical-align: top;
+    color: $color-slate;
+    padding-top:1rem;
+  }
