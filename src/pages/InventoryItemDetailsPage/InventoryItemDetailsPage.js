@@ -14,7 +14,7 @@ function InventoryItemDetailsPage() {
   const fetchInventoryID = async (id) => {
     try {
       const response = await axios.get(
-        `${REACT_APP_API_BASE_PATH}/inventories/${id}`
+        `${REACT_APP_API_BASE_PATH}/api/inventories/${id}`
       );
       const data = response.data;
       console.log(data);
