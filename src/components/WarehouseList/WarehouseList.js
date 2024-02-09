@@ -7,7 +7,10 @@ import { Link } from "react-router-dom";
 
 function WarehouseList() {
   return (
-    <section className="warehouse">
+    <>
+    <div className="body__block"></div>
+
+    <section className="warehouse form__container">
       <div className="warehouse__header">
         <h1 className="warehouse__title">Warehouses</h1>
         <div className="warehouse__actions">
@@ -37,7 +40,7 @@ function WarehouseList() {
           <h4 className="warehouse__subtitle">ACTIONS</h4>
         </div>
       </section>
-
+      
       <WarehouseItem />
       <WarehouseItem />
       <WarehouseItem />
@@ -47,6 +50,7 @@ function WarehouseList() {
       <WarehouseItem />
 
     </section>
+    </>
   );
 }
 
