@@ -1,8 +1,10 @@
 import './WarehouseDelete.scss';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function WarehouseDelete() {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="overlay"></div>
@@ -15,7 +17,10 @@ function WarehouseDelete() {
           </p>
         </div>
         <div className="delete__button-container">
-          <button className="delete__button delete__button-cancel">
+          <button
+            className="delete__button delete__button-cancel"
+            onClick={() => navigate('/warehouses')}
+          >
             Cancel
           </button>
           <button className="delete__button delete__button-delete">
