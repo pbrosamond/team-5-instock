@@ -2,3 +2,158 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
+
+.divider {
+    @include tablet {
+        border-left: 1px solid $color-cloud;
+    }
+}
+
+.form {
+    &__container {
+        min-width: 20rem;
+        width: 90%;
+        margin: 0 auto;
+        background-color: $color-white;
+        border-radius: .25rem;
+        box-shadow: 0px 2px 5px 0px #13182C1A;
+        position: relative;
+    }
+
+    &__title {
+        @include h1-mobile;
+        @include padding-mobile;
+        padding-left: 3rem;
+        background-image: url("../../assets/icons/arrow_back-24px.svg");
+        background-repeat: no-repeat;
+        background-position: left bottom 40%;
+        background-position-x: 1rem;
+
+        @include tablet {
+            @include h1-tablet;
+            padding: 2rem 2rem 1.375rem 3.5rem;
+            background-position-x: 1.25rem;
+            border-bottom: 1px solid $color-cloud;
+        }
+
+        @include desktop {
+            padding: 2rem 2.5rem 1.375rem 2.5rem;
+        }
+    }
+
+    &__section__container{
+        @include tablet {
+            @include flexbox;
+            padding: 1.5rem 0rem;
+        }
+
+        @include desktop {
+            padding: 1.5rem 1rem;
+        }
+    }
+
+    &__section {
+        border-top: 1px solid $color-cloud;
+        width: 100%;
+
+        @include tablet {
+            border-top: none;
+        }
+
+        &__title {
+            @include h2-mobile;
+            margin: 1rem 1.5rem 1.5rem 1.5rem;
+
+            @include tablet {
+                @include h2-tablet;
+                margin: 0 1.5rem 2rem 1.5rem;
+
+            }
+        }
+    }
+
+    &__questions {
+        @include flexbox;
+        flex-direction: column;
+        margin: 0 1.5rem 1rem 1.5rem;
+    }
+
+    &__label {
+        @include h3-mobile;
+        margin-bottom: .25rem;
+
+        @include tablet {
+            @include h3-tablet;
+            margin-bottom: .25rem;
+        }
+    }
+
+    &__input {
+        @include form-mobile-default;
+        padding-left: 1rem;
+        
+        &:active {
+            @include form-mobile-active;
+        }
+
+        &:invalid {
+            @include form-field-error;
+        }
+
+    }
+    &__button {
+        &__container {
+        background-color: rgba(247, 248, 249, 0.7);
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet {
+            justify-content: flex-end;
+            }
+        }
+
+        &-cancel {
+            @include h3-mobile;
+            @include button-mobile-cancel-default;
+            margin-right: 1rem;
+
+            @include tablet {
+                @include h3-tablet;
+                @include button-tablet-cancel-default;
+                margin-right: 1rem
+            }
+
+            &:hover {
+                @include button-tablet-cancel-hover;
+            }
+            @include tablet {
+                @include button-tablet-cancel-default;
+                width: auto;
+             }
+        }
+
+        &-save {
+            @include h3-mobile;
+            @include button-mobile-default;
+            margin-left:1rem;
+
+            @include tablet {
+                @include h3-tablet;
+                @include button-tablet-default;
+                margin-right: 1rem
+            }
+    
+            &:hover {
+                @include button-tablet-delete-hover;
+            }
+    
+            @include tablet {
+                @include button-tablet-default;
+                width: auto;
+            }
+        }
+    }
+   
+    }
+
