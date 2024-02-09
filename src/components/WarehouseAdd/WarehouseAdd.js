@@ -161,6 +161,7 @@ function WarehouseAdd() {
 
   return (
     <>
+      <div className="body__block"></div>
       <main className="addForm__container">
         <h1 className="addForm__title">Add Warehouse</h1>
         <form id="addForm__form" onSubmit={handleSubmit}>
@@ -337,7 +338,12 @@ function WarehouseAdd() {
             </section>
           </section>
           <div className="addForm__button__container">
-            <button className="addForm__button-cancel">CANCEL</button>
+            <button
+              className="addForm__button-cancel"
+              onClick={() => navigate('./warehoouses')}
+            >
+              CANCEL
+            </button>
             <button type="submit" className="addForm__button-save">
               + Add Warehouse
             </button>
