@@ -1,14 +1,12 @@
 import "./WarehouseEdit.scss";
-import data from '../../data/warehouses.json';
 import { useState} from 'react';
-
+import axios from "axios";
+const { REACT_APP_API_BASE_PATH } = process.env
 // import { Link } from "react-router-dom";
 
 
-const WarehouseEdit = ({id}) => {
-
-    const warehouse = data[id];
-    const [currentWarehouse, setWarehouse] = useState(warehouse)
+const WarehouseEdit = ({warehouse}) => {
+    const [currentWarehouse,setWarehouse] = useState(warehouse)
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -16,25 +14,40 @@ const WarehouseEdit = ({id}) => {
             ...prevWarehouse,
             [name]: value,
         }));
+
     };
     const handleCancel = () => {
         setWarehouse(warehouse);
     }
 
-    const handleSubmit = (e) => {
+
+    const handleSubmit = async(e) => {
         e.preventDefault();
 
-        const updatedData = data.map((warehouse) =>
-            warehouse.id === currentWarehouse.id ? currentWarehouse : warehouse
-        );
-    }
-
+        try {
+            const updatedWarehouse = {
+                warehouse_name: currentWarehouse.warehouse_name,
+                address: currentWarehouse.address,
+                city: currentWarehouse.city,
+                country: currentWarehouse.country,
+                contact_name: currentWarehouse.contact_name,
+                contact_position: currentWarehouse.contact_position,
+                contact_phone: currentWarehouse.contact_phone,
+                contact_email: currentWarehouse.contact_email,
+            };
+            const response = await axios.put(
+              `${REACT_APP_API_BASE_PATH}/api/warehouses/${warehouse.id}`,updatedWarehouse);
+          } catch (error) {
+            console.error('Error updating warehouse:', error);
+   
+          }
+        };
+        
 
     return (
         <>
         <div className="body__block"></div>
         <main className="form__container">
-        {/* <div className="block"></div> */}
         <h1 className="form__title">Edit Warehouse</h1>
         <form onSubmit={handleSubmit}>
           <section className="form__section__container">
@@ -78,7 +91,7 @@ const WarehouseEdit = ({id}) => {
             </section>
             </section>
             <div className="form__button__container">
-                <button className="form__button-cancel" onClick={handleCancel}>CANCEL</button>
+                <button className="form__button-cancel" onClick={handleCancel} >CANCEL</button>
                 <button type="submit" className="form__button-save">SAVE</button>
             </div>
         </form>
@@ -88,5 +101,4 @@ const WarehouseEdit = ({id}) => {
     )
 
 }
-
 export default WarehouseEdit;
