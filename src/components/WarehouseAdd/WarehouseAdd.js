@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import './WarehouseAdd.scss';
 import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 function WarehouseAdd() {
   const [fields, setFields] = useState({});
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const chkPhone = (phone) => {
     var cleaned = phone.replace(/\ |\(|\)|-/g, '');
@@ -51,23 +53,25 @@ function WarehouseAdd() {
       }
     });
 
-    if (formIsValid) {
+    if (formIsValid || !formErrors['contact_phone']) {
       // Phone must match the format
       if (!chkPhone(formFields['contact_phone'])) {
         formIsValid = false;
         formErrors['contact_phone'] =
-          'Must follow this format (236) 332-1115 or +1 (236) 332-1115';
+          'Use format: (236) 332-1115 or +1 (236) 332-1115';
         document
           .getElementById('contact_phone')
           .classList.add('addForm__input-invalid');
       }
     }
 
-    if (formIsValid) {
+    console.log(formFields['contact_email']);
+
+    if (formIsValid || !formErrors['contact_email']) {
       //Email must include @
       if (!chkEmail(formFields['contact_email'])) {
         formIsValid = false;
-        formFields['contact_email'] = 'Email is not valid';
+        formErrors['contact_email'] = 'Email is not valid';
         document
           .getElementById('contact_email')
           .classList.add('addForm__input-invalid');
@@ -117,9 +121,7 @@ function WarehouseAdd() {
         document
           .getElementById(input.id)
           .classList.add('addForm__input-invalid');
-        errorMsg[
-          input.id
-        ] = `Invalid Phone Number. Must follow this format (236) 332-1115 or +1 (236) 332-1115`;
+        errorMsg[input.id] = 'Use format (236) 332-1115 or +1 (236) 332-1115';
         setErrors(errorMsg);
       }
     } else {
@@ -150,10 +152,10 @@ function WarehouseAdd() {
       }
       AddWarehouse(newWarehouse).then((res) => {
         console.log(res);
+        navigate('/api/warehouses');
       });
-      alert('Form submitted');
     } else {
-      alert('Form has errors.');
+      return;
     }
   };
 
@@ -166,9 +168,14 @@ function WarehouseAdd() {
             <section className="addForm__section">
               <h2 className="addForm__section__title">Warehouse Details</h2>
               <div className="addForm__questions">
-                <label htmlFor="warehouse_name" className="addForm__label">
-                  Warehouse Name
-                </label>
+                <div className="addForm__label-container">
+                  <label htmlFor="warehouse_name" className="addForm__label">
+                    Warehouse Name
+                  </label>
+                  <span className="addForm__error-msg">
+                    {errors['warehouse_name']}
+                  </span>
+                </div>
                 <input
                   id="warehouse_name"
                   type="text"
@@ -181,14 +188,16 @@ function WarehouseAdd() {
                   onBlur={(e) => requiredField(e.target)}
                   value={fields['warehouse_name']}
                 ></input>
-                <span className="addForm__error-msg">
-                  {errors['warehouse_name']}
-                </span>
               </div>
               <div className="addForm__questions">
-                <label htmlFor="address" className="addForm__label">
-                  Street Address
-                </label>
+                <div className="addForm__label-container">
+                  <label htmlFor="address" className="addForm__label">
+                    Street Address
+                  </label>
+                  <span className="addForm__error-msg">
+                    {errors['address']}
+                  </span>
+                </div>
                 <input
                   id="address"
                   type="text"
@@ -199,12 +208,14 @@ function WarehouseAdd() {
                   value={fields['address']}
                   onBlur={(e) => requiredField(e.target)}
                 ></input>
-                <span className="addForm__error-msg">{errors['address']}</span>
               </div>
               <div className="addForm__questions">
-                <label htmlFor="city" className="addForm__label">
-                  City
-                </label>
+                <div className="addForm__label-container">
+                  <label htmlFor="city" className="addForm__label">
+                    City
+                  </label>
+                  <span className="addForm__error-msg">{errors['city']}</span>
+                </div>
                 <input
                   id="city"
                   type="text"
@@ -215,12 +226,16 @@ function WarehouseAdd() {
                   value={fields['city']}
                   onBlur={(e) => requiredField(e.target)}
                 ></input>
-                <span className="addForm__error-msg">{errors['city']}</span>
               </div>
               <div className="addForm__questions">
-                <label htmlFor="country" className="addForm__label">
-                  Country
-                </label>
+                <div className="addForm__label-container">
+                  <label htmlFor="country" className="addForm__label">
+                    Country
+                  </label>
+                  <span className="addForm__error-msg">
+                    {errors['country']}
+                  </span>
+                </div>
                 <input
                   id="country"
                   type="text"
@@ -231,15 +246,19 @@ function WarehouseAdd() {
                   value={fields['country']}
                   onBlur={(e) => requiredField(e.target)}
                 ></input>
-                <span className="addForm__error-msg">{errors['country']}</span>
               </div>
             </section>
             <section className="addForm__section divider">
               <h2 className="addForm__section__title">Contact Details</h2>
               <div className="addForm__questions">
-                <label htmlFor="contact_name" className="addForm__label">
-                  Contact Name
-                </label>
+                <div className="addForm__label-container">
+                  <label htmlFor="contact_name" className="addForm__label">
+                    Contact Name
+                  </label>
+                  <span className="addForm__error-msg">
+                    {errors['contact_name']}
+                  </span>
+                </div>
                 <input
                   id="contact_name"
                   type="text"
@@ -250,14 +269,16 @@ function WarehouseAdd() {
                   value={fields['contact_name']}
                   onBlur={(e) => requiredField(e.target)}
                 ></input>
-                <span className="addForm__error-msg">
-                  {errors['contact_name']}
-                </span>
               </div>
               <div className="addForm__questions">
-                <label htmlFor="contact_position" className="addForm__label">
-                  Position
-                </label>
+                <div>
+                  <label htmlFor="contact_position" className="addForm__label">
+                    Position
+                  </label>
+                  <span className="addForm__error-msg">
+                    {errors['contact_position']}
+                  </span>
+                </div>
                 <input
                   id="contact_position"
                   type="text"
@@ -270,14 +291,16 @@ function WarehouseAdd() {
                   value={fields['contact_position']}
                   onBlur={(e) => requiredField(e.target)}
                 ></input>
-                <span className="addForm__error-msg">
-                  {errors['contact_position']}
-                </span>
               </div>
               <div className="addForm__questions">
-                <label htmlFor="contact_phone" className="addForm__label">
-                  Phone Number
-                </label>
+                <div>
+                  <label htmlFor="contact_phone" className="addForm__label">
+                    Phone Number
+                  </label>
+                  <span className="addForm__error-msg">
+                    {errors['contact_phone']}
+                  </span>
+                </div>
                 <input
                   id="contact_phone"
                   name="contact_phone"
@@ -289,14 +312,16 @@ function WarehouseAdd() {
                   value={fields['contact_phone']}
                   onBlur={(e) => requiredField(e.target)}
                 ></input>
-                <span className="addForm__error-msg">
-                  {errors['contact_phone']}
-                </span>
               </div>
               <div className="addForm__questions">
-                <label htmlFor="contact_email" className="addForm__label">
-                  Email
-                </label>
+                <div className="addForm__label-container">
+                  <label htmlFor="contact_email" className="addForm__label">
+                    Email
+                  </label>
+                  <span className="addForm__error-msg">
+                    {errors['contact_email']}
+                  </span>
+                </div>
                 <input
                   id="contact_email"
                   name="contact_email"
@@ -308,9 +333,6 @@ function WarehouseAdd() {
                   value={fields['contact_email']}
                   onBlur={(e) => requiredField(e.target)}
                 ></input>
-                <span className="addForm__error-msg">
-                  {errors['contact_email']}
-                </span>
               </div>
             </section>
           </section>

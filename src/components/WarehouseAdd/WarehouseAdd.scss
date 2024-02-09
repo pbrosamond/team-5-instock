@@ -20,6 +20,11 @@
     position: relative;
   }
 
+  &__label-container {
+    display: flex;
+    align-items: center;
+  }
+
   &__title {
     @include h1-mobile;
     @include padding-mobile;
@@ -101,7 +106,10 @@
   }
 
   &__error-msg {
+    padding-left: 0.5rem;
     color: $color-red;
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
   }
 
   &__button {
