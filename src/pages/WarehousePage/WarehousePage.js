@@ -10,7 +10,7 @@ function WarehousePage() {
   return (
     <>
       <WarehouseList />
-      <WarehouseDetails />
+      {/* <WarehouseDetails /> */}
       {/* <WarehouseDelete /> */}
     </>
   );
