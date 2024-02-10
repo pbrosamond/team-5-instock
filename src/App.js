@@ -1,4 +1,4 @@
-import "./App.scss";
+import './App.scss';
 
 import Header from "./components/Header/Header";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
@@ -9,7 +9,8 @@ import InventoryItemDetailsPage from "./pages/InventoryItemDetailsPage/Inventory
 
 import Footer from "./components/Footer/Footer";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import WarehouseEditPage from './pages/WarehouseEditPage/WarehouseEditPage';
 
 function App() {
   return (

@@ -15,7 +15,6 @@ function WarehousePage() {
       <WarehouseDetails />
       <WarehouseAdd />
       {/* <WarehouseEdit /> */}
-      <WarehouseDelete />
     </>
   );
 }
