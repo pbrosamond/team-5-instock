@@ -8,15 +8,11 @@ import { useState } from 'react';
 import WarehouseDelete from '../WarehouseDelete/WarehouseDelete';
 
 function WarehouseItem({ showModal, warehouse }) {
-  console.log(warehouse);
   const {
     id,
     warehouse_name,
     address,
-    city,
-    country,
     contact_name,
-    contact_position,
     contact_phone,
     contact_email,
   } = warehouse;

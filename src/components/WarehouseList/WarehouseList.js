@@ -78,8 +78,11 @@ function WarehouseList() {
             );
           })}
       </section>
-      {showDelete && (
+      {warehouseList && showDelete && (
         <WarehouseDelete
+          warehouse={warehouseList.find(
+            (warehouse) => warehouse.id === warehouseId
+          )}
           showModal={showModal}
           id={warehouseId}
           updateList={updateList}
