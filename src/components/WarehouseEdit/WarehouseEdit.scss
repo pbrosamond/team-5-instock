@@ -91,7 +91,6 @@
     &__input {
         @include form-mobile-default;
         padding-left: 1rem;
-        padding-right: 1rem;
         
         &:active {
             @include form-mobile-active;

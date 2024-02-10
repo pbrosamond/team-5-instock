@@ -141,10 +141,19 @@
 
 // Tables
 @mixin tables-mobile {
+  height: 12.375rem;
   border-top: 0.0625rem solid $color-cloud;
 }
 
-@mixin taåbles-desktop-hover {
+@mixin tables-tablet {
+  height: 6.25rem;
+}
+
+@mixin tables-desktop {
+  height: 4.75rem;
+}
+
+@mixin tables-desktop-hover {
   background-color: rgba(
     46,
     102,
@@ -386,7 +395,7 @@
 @mixin form-field {
   min-height: 2.25rem;
   min-width: 15rem;
-  border: 0.0625rem solid $color-cloud;
+  border: 0.0625rem solid $color-mercury;
   border-radius: 0.25rem;
   padding: 0.75rem;
 }
@@ -398,17 +407,4 @@
 
 @mixin form-field-error {
   border: 0.0625rem solid $color-red;
-}
-
-// Search Bar
-@mixin search {
-  min-height: 2.25rem;
-  width: 100%;
-  border: 0.0625rem solid $color-cloud;
-  border-radius: 1.25rem;
-  padding: .5rem 1rem;
-}
-
-@mixin search-active {
-  border: 0.0625rem solid $color-indigo;
 }

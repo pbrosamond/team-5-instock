@@ -5,11 +5,6 @@
 
 .header {
   background-color: $color-graphite;
-  height: 12.5rem;
-
-  @include tablet {
-    height: 11.625rem
-  }
 
   &__navigation {
     @include tablet {
@@ -19,7 +14,7 @@
     }
 
     @include desktop {
-      padding: 0rem 8rem;
+      padding: 0rem 5rem;
     }
   }
 
