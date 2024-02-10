@@ -5,12 +5,11 @@ import editIcon from '../../assets/icons/edit-24px.svg';
 
 import { Link } from 'react-router-dom';
 
-function InventoryItem({ inventory }) {
+function InventoryItem({ showModal, inventory }) {
   const {
     id,
     warehouse_id,
     item_name,
-    description,
     category,
     status,
     quantity,
@@ -46,7 +45,11 @@ function InventoryItem({ inventory }) {
         <p className="wrapper2__details">{warehouse_name ?? warehouse_id}</p>
       </div>
       <div className="wrapper2__icons">
-        <img className="wrapper2__icon" src={deleteIcon}></img>
+        <img
+          className="wrapper2__icon"
+          src={deleteIcon}
+          onClick={() => showModal(id)}
+        ></img>
         <img className="wrapper2__icon" src={editIcon}></img>
       </div>
     </section>
