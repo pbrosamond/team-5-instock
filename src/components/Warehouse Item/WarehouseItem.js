@@ -40,13 +40,11 @@ function WarehouseItem({ showModal, warehouse }) {
           <h4 className="wrapper__titles">ADDRESS</h4>
           <p className="wrapper__details">{address}</p>
         </div>
-        <div>
           <div className="wrapper__contact">
             <h4 className="wrapper__titles">CONTACT INFORMATION</h4>
             <p className="wrapper__details">{contact_phone}</p>
             <p className="wrapper__details">{contact_email}</p>
           </div>
-        </div>
         <div className="wrapper__icons">
           <img
             className="wrapper__icon"

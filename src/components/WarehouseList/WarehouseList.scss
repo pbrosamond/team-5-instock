@@ -94,9 +94,8 @@
 
     @include tablet {
       display: grid;
-      grid-template-columns: 1.2fr 1.2fr 1.4fr 1.5fr 0.6fr;
+      grid-template-columns: repeat(5, 1fr);
       align-items: center;
-      grid-gap: 1rem;
       padding: 0 2rem;
       background-color: $color-lightgrey;
       height: 2.5rem;
@@ -104,7 +103,7 @@
 
     @include desktop {
       padding: 0 2.5rem;
-      grid-template-columns: 1.1fr 1.5fr 1.1fr 1.6fr 0.5fr;
+      grid-template-columns: repeat(5, 1fr);
     }
 
   }

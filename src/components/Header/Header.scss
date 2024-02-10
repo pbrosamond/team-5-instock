@@ -7,19 +7,20 @@
   background-color: $color-graphite;
   height: 8.5rem;
 
+
   @include tablet {
-    height: 5.75rem
+    height: 5.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__navigation {
     @include tablet {
       @include flexbox;
       justify-content: space-between;
-      padding: 0rem 1rem;
-    }
-
-    @include desktop {
-      padding: 0rem 8rem;
+      width: 90%;
+      margin: 0 auto;
     }
   }
 
@@ -27,16 +28,16 @@
     @include flexbox;
     justify-content: center;
     padding-top: 1.5rem;
+    margin-bottom: 0.5rem;
 
     @include tablet {
       padding-top: 0;
-      margin-left: 1rem;
     }
   }
 
   &__menu {
     @include flexbox(row, 1rem);
-    padding: 1rem 0;
+    padding-left: 0;
     margin: 0;
     justify-content: center;
   }
@@ -49,6 +50,7 @@
   &__button {
     @include h3-mobile;
     padding: 0.5rem 2.5rem;
+    
 
     @include navlink-default;
     font-weight: $regular;
@@ -67,6 +69,7 @@
 
     @include tablet {
       padding: 0.5rem 1rem;
+      margin: 0;
     }
   }
 }
