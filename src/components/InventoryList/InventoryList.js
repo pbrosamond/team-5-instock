@@ -5,10 +5,13 @@ import InventoryItem from '../InventoryItem/InventoryItem';
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import InventoryDelete from '../InventoryDelete/InventoryDelete';
 const { REACT_APP_API_BASE_PATH } = process.env;
 
 function InventoryList() {
   const [invnetoriesList, setInvnetoriesList] = useState();
+  const [showDelete, setShowDelete] = useState(false);
+  const [inventoryId, setInventoryId] = useState();
 
   const getList = async () => {
     const resInventory = await axios.get(
@@ -21,6 +24,18 @@ function InventoryList() {
   useEffect(() => {
     getList();
   }, []);
+
+  const showModal = (id) => {
+    if (id) {
+      setInventoryId(id);
+    }
+    setShowDelete(!showDelete);
+  };
+
+  const updateList = (id) => {
+    const newList = invnetoriesList.filter((inventory) => inventory.id !== id);
+    setInvnetoriesList(newList);
+  };
 
   return (
     <>
@@ -67,9 +82,25 @@ function InventoryList() {
         </section>
         {invnetoriesList &&
           invnetoriesList.map((inventory) => {
-            return <InventoryItem inventory={inventory} />;
+            return (
+              <InventoryItem
+                key={inventory.id}
+                showModal={showModal}
+                inventory={inventory}
+              />
+            );
           })}
       </section>
+      {invnetoriesList && showDelete && (
+        <InventoryDelete
+          inventory={invnetoriesList.find(
+            (inventory) => inventory.id === inventoryId
+          )}
+          showModal={showModal}
+          id={inventoryId}
+          updateList={updateList}
+        />
+      )}
     </>
   );
 }
