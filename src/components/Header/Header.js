@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 
 function Header() {
   const location = useLocation();
-
+  // console.log(location);
 
   return (
     <header className="header">
@@ -16,12 +16,12 @@ function Header() {
         </Link>
         <ul className="header__menu">
           <li className="header__item">
-            <Link to={`/warehouses`} className="header__link">
+            <Link to={`api/warehouses`} className="header__link">
               <button
                 type="submit"
                 className={
                   "header__button " +
-                  (location.pathname === "/warehouses" ? "active" : "")
+                  (location.pathname === "/api/warehouses" ? "active" : "")
                 }
               >
                 Warehouses
@@ -29,12 +29,12 @@ function Header() {
             </Link>
           </li>
           <li className="header__item">
-            <Link to={`/inventories`} className="header__link">
+            <Link to={`api/inventories`} className="header__link">
               <button
                 type="submit"
                 className={
                   "header__button " +
-                  (location.pathname === "/inventories" ? "active" : "")
+                  (location.pathname === "/api/inventories" ? "active" : "")
                 }
               >
                 Inventory
