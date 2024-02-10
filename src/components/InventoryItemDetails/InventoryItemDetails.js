@@ -21,7 +21,7 @@ function InventoryItemDetails({ item }) {
           </div>
           <button className="item__edit-button">
             <img src={editButton} />
-            <p className="item__edit-button-word">Edit</p>
+            <p className="item__edit-button--word">Edit</p>
           </button>
         </div>
         <div className="item__container">
