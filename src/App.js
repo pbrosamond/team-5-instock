@@ -6,7 +6,7 @@ import WarehouseEditPage from "./pages/WarehouseEditPage/WarehouseEditPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import InventoryEditPage from "./pages/InventoryEditPage/InventoryEditPage";
 import InventoryItemDetailsPage from "./pages/InventoryItemDetailsPage/InventoryItemDetailsPage";
-
+import InventoryAddPage from "./pages/InventoryAddPage/InventoryAddPage";
 import Footer from "./components/Footer/Footer";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -25,6 +25,7 @@ function App() {
           path="/inventories/:id/details"
           element={<InventoryItemDetailsPage />}
         />
+        <Route path="/inventories/add" element={<InventoryAddPage />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
