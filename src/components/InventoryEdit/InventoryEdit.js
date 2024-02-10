@@ -173,3 +173,4 @@ function InventoryEdit({item, invenotryList}) {
 }
 
 export default InventoryEdit;
+
