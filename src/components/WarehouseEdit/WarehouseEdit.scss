@@ -9,6 +9,10 @@
     }
 }
 
+body {
+    background-color: $color-lightgrey;
+}
+
 .form {
     &__container {
         min-width: 20rem;
