@@ -43,7 +43,7 @@ function InventoryItem({ inventory }) {
       </div>
       <div className="wrapper2__warehouse">
         <h4 className="wrapper2__titles">WAREHOUSE</h4>
-        <p className="wrapper2__details">{warehouse_name}</p>
+        <p className="wrapper2__details">{warehouse_name ?? warehouse_id}</p>
       </div>
       <div className="wrapper2__icons">
         <img className="wrapper2__icon" src={deleteIcon}></img>
