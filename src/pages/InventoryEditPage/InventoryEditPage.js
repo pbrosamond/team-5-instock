@@ -45,10 +45,27 @@ function InventoryEditPage() {
       }
     },[id])
 
+    const [ allWarehouses, setWarehouse] = useState(null)
+   
+    const fetchWarehouse = async() => {
+        try {
+            const response = await axios.get(`${REACT_APP_API_BASE_PATH}/api/warehouses/`);
+            const data = response.data;
+            console.log(data);
+            setWarehouse(data);
+        } catch (error) {
+            console.error(`Cannot get warehouse information`, error);
+        }
+    };
+
+    useEffect(() => {
+      fetchWarehouse();
+    },[])
+
   return (
     <>
-    {item && inventoryList &&
-      <InventoryEdit item={item} inventoryList={inventoryList} />
+    {item && inventoryList && allWarehouses &&
+      <InventoryEdit item={item} inventoryList={inventoryList} allWarehouses={allWarehouses} />
     }
     </>
   )
