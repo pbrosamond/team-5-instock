@@ -28,6 +28,14 @@ function WarehouseDetailsPage() {
     }
   };
 
+  useEffect(() => {
+    if (id) {
+      fetchWarehouse(id);
+    } else {
+      fetchWarehouse(null);
+    }
+  }, [id]);
+
   const fetchAllInventory = async () => {
     try {
       const response = await axios.get(
@@ -40,14 +48,6 @@ function WarehouseDetailsPage() {
       console.error(`Cannot get all iventory information`, error);
     }
   };
-
-  useEffect(() => {
-    if (id) {
-      fetchWarehouse(id);
-    } else {
-      fetchWarehouse(null);
-    }
-  }, [id]);
 
   useEffect(() => {
     fetchAllInventory();

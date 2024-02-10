@@ -5,6 +5,7 @@ import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 import backArrow from "../../assets/icons/arrow_back-24px.svg";
 import editButton from "../../assets/icons/edit-24px white.svg";
+import sort from "../../assets/icons/sort-default-24px.svg";
 
 import { Link } from "react-router-dom";
 
@@ -29,6 +30,7 @@ function WarehouseDetails({ warehouse, inventoryList }) {
             <p className="item__edit-button-word">Edit</p>
           </button>
         </div>
+
         <div className="item__container">
           <section className="item__wrapper item__left-container">
             <div className="item__block">
@@ -54,12 +56,29 @@ function WarehouseDetails({ warehouse, inventoryList }) {
             </div>
           </section>
         </div>
-        <WarehouseDetailsItem />
-        <WarehouseDetailsItem />
-        <WarehouseDetailsItem />
-        <WarehouseDetailsItem />
-        <WarehouseDetailsItem />
-        <WarehouseDetailsItem />
+
+        <section className="warehouse__filter">
+          <div className="warehouse__sorts">
+            <h4 className="warehouse__subtitle">INVENTORY ITEM</h4>
+            <img src={sort}></img>
+          </div>
+          <div className="warehouse__sorts">
+            <h4 className="warehouse__subtitle">CATEGORY</h4>
+            <img src={sort}></img>
+          </div>
+          <div className="warehouse__sorts">
+            <h4 className="warehouse__subtitle">STATUS</h4>
+            <img src={sort}></img>
+          </div>
+          <div className="warehouse__sorts">
+            <h4 className="warehouse__subtitle">QUANTITY</h4>
+            <img src={sort}></img>
+          </div>
+          <div className="warehouse__sorts actions">
+            <h4 className="warehouse__subtitle">ACTIONS</h4>
+          </div>
+        </section>
+
         <WarehouseDetailsItem />
       </main>
     </>

@@ -6,7 +6,7 @@
 .wrapper2 {
   display: grid;
   grid-template-columns: 0.8fr 1fr;
-  padding: 1rem 1rem 0 1rem;
+  padding: 1rem;
   grid-gap: 1rem 2.8125rem;
   border-top: 0.0625rem solid $color-cloud;
 
@@ -14,7 +14,7 @@
     display: grid;
     grid-template-columns: 1fr 1.5fr 1.5fr 1fr 1fr;
     align-items: center;
-    padding: 0 2rem 1.5rem 2rem;
+    // padding: 0 2rem 1.5rem 2rem;
     border-bottom: 0.0625rem solid $color-cloud;
     border-top: none;
 
