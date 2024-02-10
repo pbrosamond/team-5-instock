@@ -5,11 +5,11 @@ import { useState, useEffect} from 'react';
 import axios from "axios";
 const { REACT_APP_API_BASE_PATH } = process.env
 
-function InventoryEdit({item, invenotryList}) {
+function InventoryEdit({item, inventoryList}) {
 
   //Create's Drop Down Lists 
-  const categories = invenotryList.map(category => category.category);
-  const warehouses = invenotryList.map(place => place.warehouse_id);
+  const categories = inventoryList.map(category => category.category);
+  const warehouses = inventoryList.map(place => place.warehouse_id);
   const warehouseList = [...new Set(warehouses)];
 
   //States
@@ -36,10 +36,6 @@ function InventoryEdit({item, invenotryList}) {
         }));
       }
   };
-  const handleCancel = () => {
-      setItem(item);
-      alert('refreshed to original values')
-  }
 
   const handleSubmit = async(e) => {
       e.preventDefault();
@@ -72,8 +68,12 @@ function InventoryEdit({item, invenotryList}) {
         window.location.href="/";
       } catch (error) {
         console.error('Error update item:', error);
-      }
-      
+      } 
+  }
+
+  const handleCancel = () => {
+    setItem(item);
+    return alert('refreshed to original values')
   }
 
   return (

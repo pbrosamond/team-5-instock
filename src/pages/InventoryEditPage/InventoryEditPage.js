@@ -48,7 +48,7 @@ function InventoryEditPage() {
   return (
     <>
     {item && inventoryList &&
-      <InventoryEdit item={item} invenotryList={inventoryList} />
+      <InventoryEdit item={item} inventoryList={inventoryList} />
     }
     </>
   )
