@@ -1,6 +1,5 @@
 import './App.scss';
 
-import WarehouseAdd from './components/WarehouseAdd/WarehouseAdd';
 import Header from "./components/Header/Header";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import WarehouseEditPage from "./pages/WarehouseEditPage/WarehouseEditPage";
