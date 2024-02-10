@@ -5,11 +5,11 @@ import { useState, useEffect} from 'react';
 import axios from "axios";
 const { REACT_APP_API_BASE_PATH } = process.env
 
-function InventoryEdit({item, inventoryList}) {
+function InventoryEdit({item, inventoryList, allWarehouses}) {
 
   //Create's Drop Down Lists 
   const categories = inventoryList.map(category => category.category);
-  const warehouses = inventoryList.map(place => place.warehouse_id);
+  const warehouses = allWarehouses.map(place => place.warehouse_name);
   const warehouseList = [...new Set(warehouses)];
 
   //States

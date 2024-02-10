@@ -6,11 +6,11 @@ const { REACT_APP_API_BASE_PATH } = process.env
 
 
 
-function InventoryAdd({inventoryList}) {
+function InventoryAdd({inventoryList, allWarehouses}) {
 
   //Create Drop Down Lists
   const categories = inventoryList.map(category => category.category);
-  const warehouses = inventoryList.map(place => place.warehouse_id);
+  const warehouses = allWarehouses.map(place => place.warehouse_name);
   const warehouseList = [...new Set(warehouses)];
 
   //States

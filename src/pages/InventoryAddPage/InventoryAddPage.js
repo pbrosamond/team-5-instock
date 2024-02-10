@@ -24,7 +24,24 @@ function InventoryAddPage() {
     fetchAllInventory();
   }, []);
 
-  return <>{inventoryList && <InventoryAdd inventoryList={inventoryList} />}</>;
+  const [ allWarehouses, setWarehouse] = useState(null)
+   
+    const fetchWarehouse = async() => {
+        try {
+            const response = await axios.get(`${REACT_APP_API_BASE_PATH}/api/warehouses/`);
+            const data = response.data;
+            console.log(data);
+            setWarehouse(data);
+        } catch (error) {
+            console.error(`Cannot get warehouse information`, error);
+        }
+    };
+
+    useEffect(() => {
+      fetchWarehouse();
+    },[])
+
+  return <>{inventoryList && allWarehouses && <InventoryAdd inventoryList={inventoryList} allWarehouses={allWarehouses}/>}</>;
 }
 
 export default InventoryAddPage;
