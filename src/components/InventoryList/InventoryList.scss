@@ -9,7 +9,6 @@
   box-shadow: 0 2px 5px rgba(19, 24, 44, 0.1);
   z-index: 1;
   border-radius: .1875rem;
-  background-color: $color-lightgrey;
 
   @include tablet {
     margin: 0 auto;
@@ -93,18 +92,18 @@
     display: none;
 
     @include tablet {
-      display: grid;
-      grid-template-columns: 0.89fr 0.7fr 0.7fr 0.6fr 0.2fr 0.6fr;
-      align-items: center;
-      grid-gap: 1rem;
-      padding: 0 2rem;
       background-color: $color-lightgrey;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      align-items: center;
+      gap: 0;
+      padding: 0 2rem;
       height: 2.5rem;
     }
 
     @include desktop {
       padding: 0 2.5rem;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: repeat(6, 1fr);
     }
 
   }
@@ -116,6 +115,7 @@
       display: block;
       @include flexbox(row, .25rem);
       align-items: center;
+      white-space: nowrap;
 
       &--category {
         grid-column: 2;
