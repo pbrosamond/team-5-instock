@@ -36,18 +36,13 @@ function WarehouseList() {
 
   return (
     <>
-      <section className="warehouse">
-        <div className="warehouse__header">
-          <h1 className="warehouse__title">Warehouses</h1>
-          <div className="warehouse__actions">
-            <input
-              className="warehouse__search"
-              type="text"
-              id="search"
-              placeholder="Search..."
-            ></input>
-            <button className="warehouse__button">+ Add New Warehouse</button>
-          </div>
+    <div className="body__block"></div>
+    <section className="warehouse form__container">
+      <div className="warehouse__header">
+        <h1 className="warehouse__title">Warehouses</h1>
+        <div className="warehouse__actions">
+        <input className="warehouse__search" type="text" id="search" placeholder="Search..."></input>
+        <button className="warehouse__button">+ Add New Warehouse</button>
         </div>
 
         <section className="warehouse__filter">
@@ -78,6 +73,7 @@ function WarehouseList() {
             );
           })}
       </section>
+    </section>
       {showDelete && (
         <WarehouseDelete
           showModal={showModal}

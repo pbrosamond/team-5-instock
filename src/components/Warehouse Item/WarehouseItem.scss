@@ -10,6 +10,11 @@
   grid-gap: 1rem 2.8125rem;
   border-top: .0625rem solid $color-cloud;
 
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 1.5rem;
+  }
+
   @include tablet {
     display: grid;
     grid-template-columns: 1fr 1.5fr 1.5fr 1fr 1fr;
@@ -20,7 +25,7 @@
     
     &:last-child {
       border-bottom: none;
-      padding-bottom: 0.5rem;
+      padding-bottom: 1.5rem;
     }
   }
 
