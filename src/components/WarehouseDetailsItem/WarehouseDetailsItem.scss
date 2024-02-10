@@ -3,29 +3,34 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 
-.wrapper2 {
+.wrapper {
   display: grid;
   grid-template-columns: 0.8fr 1fr;
   padding: 1rem;
   grid-gap: 1rem 2.8125rem;
   border-top: 0.0625rem solid $color-cloud;
 
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 1.5rem;
+  }
+
   @include tablet {
     display: grid;
     grid-template-columns: 1fr 1.5fr 1.5fr 1fr 1fr;
     align-items: center;
-    // padding: 0 2rem 1.5rem 2rem;
+    padding: 1rem 2rem 1.5rem 2rem;
     border-bottom: 0.0625rem solid $color-cloud;
     border-top: none;
 
     &:last-child {
       border-bottom: none;
-      padding-bottom: 0.5rem;
+      padding-bottom: 1.5rem;
     }
   }
 
   @include desktop {
-    padding: 0 2.5rem 1.5rem 2.5rem;
+    padding: 1rem 2.5rem 1.5rem 2.5rem;
     grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr;
   }
 

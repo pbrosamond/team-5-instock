@@ -75,7 +75,7 @@ function WarehouseDetails({ warehouse, inventoryList }) {
             <h4 className="warehouse__subtitle">ACTIONS</h4>
           </div>
         </section>
-
+        <WarehouseDetailsItem />
         <WarehouseDetailsItem />
       </main>
     </>

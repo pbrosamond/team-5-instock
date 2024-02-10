@@ -11,6 +11,7 @@ const { REACT_APP_API_BASE_PATH } = process.env;
 function WarehouseDetailsPage() {
   const [warehouse, setWarehouse] = useState(null);
   const [inventoryList, setInventoryList] = useState(null);
+  const [item, setItem] = useState(null);
 
   const { id } = useParams();
 
@@ -40,6 +41,27 @@ function WarehouseDetailsPage() {
     }
   };
 
+  const fetchInventoryID = async (id) => {
+    try {
+      const response = await axios.get(
+        `${REACT_APP_API_BASE_PATH}/api/inventories/${id}`
+      );
+      const data = response.data;
+      console.log(data);
+      setItem(data);
+    } catch (error) {
+      console.error(`Cannot get item information`, error);
+    }
+  };
+
+  useEffect(() => {
+    if (id) {
+      fetchInventoryID(id);
+    } else {
+      fetchInventoryID(null);
+    }
+  }, [id]);
+
   useEffect(() => {
     if (id) {
       fetchWarehouse(id);
@@ -55,7 +77,11 @@ function WarehouseDetailsPage() {
   return (
     <>
       {warehouse && (
-        <WarehouseDetails warehouse={warehouse} inventoryList={inventoryList} />
+        <WarehouseDetails
+          warehouse={warehouse}
+          inventoryList={inventoryList}
+          item={item}
+        />
       )}
     </>
   );
