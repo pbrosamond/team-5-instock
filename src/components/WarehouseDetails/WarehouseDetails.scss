@@ -7,7 +7,7 @@ p {
   @include p2-mobile;
 }
 
-.item2 {
+.item {
   &__name {
     @include h1-mobile;
   }
@@ -69,6 +69,11 @@ p {
     @include tablet {
       @include flexbox;
       padding: 1rem;
+      gap: 7.75rem;
+    }
+
+    @include desktop {
+      gap: 15.3125rem;
     }
   }
 
@@ -83,14 +88,23 @@ p {
     }
   }
 
-  &__left-container {
+  &__right-container {
     @include tablet {
-      border-right: 1px $color-cloud solid;
+      padding-left: 2.5rem;
+      border-left: 1px $color-cloud solid;
     }
   }
 
   &__wrap {
     @include flexbox;
+
+    @include tablet {
+      gap: 2.6875rem;
+    }
+
+    @include desktop {
+      gap: 7.625rem;
+    }
   }
 
   &__block {

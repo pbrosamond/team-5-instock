@@ -9,32 +9,32 @@ function WarehouseDetailsItem({ warehouse, inventoryList, item }) {
   // console.log(warehouseInventoryList);
   return (
     <>
-      <section className="wrapper">
+      <section className="wrapper3">
         <div>
-          <h4 className="wrapper__titles">INVENTORY ITEM</h4>
+          <h4 className="wrapper3__titles">INVENTORY ITEM</h4>
 
-          <div className="wrapper__link">
-            <h3 className="wrapper__textlink">test</h3>
-            <img className="wrapper__icon" src={chevronIcon}></img>
+          <div className="wrapper3__link">
+            <h3 className="wrapper3__textlink">test</h3>
+            <img className="wrapper3__icon" src={chevronIcon}></img>
           </div>
         </div>
-        <div className="wrapper__name">
-          <h4 className="wrapper__titles">STATUS</h4>
-          <p className="wrapper__details">status</p>
+        <div className="wrapper3__name">
+          <h4 className="wrapper3__titles">STATUS</h4>
+          <p className="wrapper3__details">status</p>
         </div>
-        <div className="wrapper__address">
-          <h4 className="wrapper__titles">CATEGORY</h4>
-          <p className="wrapper__details">category</p>
+        <div className="wrapper3__address">
+          <h4 className="wrapper3__titles">CATEGORY</h4>
+          <p className="wrapper3__details">category</p>
         </div>
         <div>
-          <div className="wrapper__contact">
-            <h4 className="wrapper__titles">QUANTITY</h4>
-            <p className="wrapper__details">quantity</p>
+          <div className="wrapper3__contact">
+            <h4 className="wrapper3__titles">QUANTITY</h4>
+            <p className="wrapper3__details">quantity</p>
           </div>
         </div>
-        <div className="wrapper__icons">
-          <img className="wrapper__icon" src={deleteIcon}></img>
-          <img className="wrapper__icon" src={editIcon}></img>
+        <div className="wrapper3__icons">
+          <img className="wrapper3__icon" src={deleteIcon}></img>
+          <img className="wrapper3__icon" src={editIcon}></img>
         </div>
       </section>
     </>
