@@ -9,7 +9,6 @@
   box-shadow: 0 2px 5px rgba(19, 24, 44, 0.1);
   z-index: 1;
   border-radius: .1875rem;
-  background-color: $color-lightgrey;
 
   @include tablet {
     margin: 0 auto;
@@ -93,12 +92,12 @@
     display: none;
 
     @include tablet {
+      background-color: $color-lightgrey;
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       align-items: center;
       gap: 0;
       padding: 0 2rem;
-      background-color: $color-lightgrey;
       height: 2.5rem;
     }
 
