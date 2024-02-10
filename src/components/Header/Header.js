@@ -16,12 +16,12 @@ function Header() {
         </Link>
         <ul className="header__menu">
           <li className="header__item">
-            <Link to={`api/warehouses`} className="header__link">
+            <Link to={`warehouses`} className="header__link">
               <button
                 type="submit"
                 className={
                   "header__button " +
-                  (location.pathname === "/api/warehouses" ? "active" : "")
+                  (location.pathname === "/warehouses" ? "active" : "")
                 }
               >
                 Warehouses
@@ -29,12 +29,12 @@ function Header() {
             </Link>
           </li>
           <li className="header__item">
-            <Link to={`api/inventories`} className="header__link">
+            <Link to={`inventories`} className="header__link">
               <button
                 type="submit"
                 className={
                   "header__button " +
-                  (location.pathname === "/api/inventories" ? "active" : "")
+                  (location.pathname === "/inventories" ? "active" : "")
                 }
               >
                 Inventory
