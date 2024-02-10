@@ -1,8 +1,5 @@
 import "./WarehouseDetails.scss";
 import WarehouseDetailsItem from "../WarehouseDetailsItem/WarehouseDetailsItem";
-import chevronIcon from "../../assets/icons/chevron_right-24px.svg";
-import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
-import editIcon from "../../assets/icons/edit-24px.svg";
 import backArrow from "../../assets/icons/arrow_back-24px.svg";
 import editButton from "../../assets/icons/edit-24px white.svg";
 import sort from "../../assets/icons/sort-default-24px.svg";
