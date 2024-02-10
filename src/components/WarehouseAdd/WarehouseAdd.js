@@ -65,8 +65,6 @@ function WarehouseAdd() {
       }
     }
 
-    console.log(formFields['contact_email']);
-
     if (formIsValid || !formErrors['contact_email']) {
       //Email must include @
       if (!chkEmail(formFields['contact_email'])) {
@@ -151,8 +149,8 @@ function WarehouseAdd() {
         newWarehouse[e.target[i].name] = e.target[i].value;
       }
       AddWarehouse(newWarehouse).then((res) => {
-        console.log(res);
-        navigate('/api/warehouses');
+        form.reset();
+        setFields({});
       });
     } else {
       return;
