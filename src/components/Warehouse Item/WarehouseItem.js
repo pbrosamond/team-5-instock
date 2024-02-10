@@ -3,19 +3,17 @@ import chevronIcon from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 function WarehouseItem() {
   return (
     <section className="wrapper">
       <div>
         <h4 className="wrapper__titles">WAREHOUSE</h4>
-        <Link className='wrapper__decoration' to='/api/warehouse/details'>
         <div className="wrapper__link">
-        <h3 className="wrapper__textlink">Manhattan</h3>
-        <img className="wrapper__icon" src={chevronIcon}></img>
+          <h3 className="wrapper__textlink">Manhattan</h3>
+          <img className="wrapper__icon" src={chevronIcon}></img>
         </div>
-        </Link>
       </div>
       <div className="wrapper__name">
         <h4 className="wrapper__titles">CONTACT NAME</h4>

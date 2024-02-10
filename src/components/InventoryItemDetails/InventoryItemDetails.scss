@@ -65,10 +65,34 @@ p {
 
   &__container {
     margin: 1rem;
+
+    @include tablet {
+      @include flexbox;
+      padding: 1rem;
+    }
   }
 
   &__subtitle {
     @include h4-mobile;
+  }
+
+  &__wrapper {
+    @include tablet {
+      max-width: 50%;
+      padding-right: 3rem;
+    }
+  }
+
+  &__left-container {
+    @include tablet {
+      border-right: 1px $color-cloud solid;
+    }
+  }
+
+  &__right-container {
+    @include tablet {
+      margin-left: 2rem;
+    }
   }
 
   &__wrap {
