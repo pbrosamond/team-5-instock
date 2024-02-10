@@ -10,7 +10,6 @@ function InventoryEditPage() {
     const [ item, setItem] = useState(null)
     const [inventoryList, setInventoryList] = useState(null)
     const { id } = useParams()
-    console.log(id)
 
     const fetchAllInventory = async() => {
       try {
