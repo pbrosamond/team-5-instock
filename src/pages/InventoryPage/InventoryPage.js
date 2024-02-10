@@ -15,9 +15,9 @@ function InventoryPage() {
     <>
       <InventoryList />
       {/* <InventoryItemDetails /> */}
-      <InventoryAdd />
+      {/* <InventoryAdd /> */}
       {/* <InventoryEdit /> */}
-      <InventoryDelete />
+      {/* <InventoryDelete /> */}
     </>
   );
 }
