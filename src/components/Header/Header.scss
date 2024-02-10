@@ -1,14 +1,14 @@
-@use "../../styles/partials/global" as *;
-@use "../../styles/partials/variables" as *;
-@use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/typography" as *;
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
 
 .header {
   background-color: $color-graphite;
-  height: 12.5rem;
+  height: 8.5rem;
 
   @include tablet {
-    height: 11.625rem
+    height: 5.75rem
   }
 
   &__navigation {
