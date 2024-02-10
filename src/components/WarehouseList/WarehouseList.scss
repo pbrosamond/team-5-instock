@@ -7,15 +7,16 @@
   margin: 0 1rem;
   @include flexbox(column, 1.5rem);
   box-shadow: 0 2px 5px rgba(19, 24, 44, 0.1);
+  z-index: 1;
   border-radius: .1875rem;
   background-color: $color-lightgrey;
 
   @include tablet {
-    margin: 0 2rem;
+    margin: 0 auto;
   }
 
   @include desktop {
-    margin: 0 8.125rem;
+    margin: 0 auto;
     @include padding-desktop;
   }
 

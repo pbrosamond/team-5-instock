@@ -237,34 +237,43 @@
 
 // Tags
 @mixin tag-mobile-red {
+  @include flexbox;
+  align-items: center;
   height: 1.5rem;
   color: $color-red;
   background-color: rgba(201, 69, 21, 0.07);
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem;
   border-radius: 1.25rem;
 }
 
 @mixin tag-mobile-green {
+  @include flexbox;
+  align-items: center;
   height: 1.5rem;
   color: $color-green;
   background-color: rgba(21, 132, 99, 0.07);
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem;
   border-radius: 1.25rem;
+  width: fit-content;
 }
 
 @mixin tag-desktop-red {
+  @include flexbox;
+  align-items: center;
   height: 1.625rem;
   color: $color-red;
   background-color: rgba(201, 69, 21, 0.07);
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem;
   border-radius: 1.25rem;
 }
 
 @mixin tag-desktop-green {
+  @include flexbox;
+  align-items: center;
   height: 1.625rem;
   color: $color-green;
   background-color: rgba(21, 132, 99, 0.07);
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem;
   border-radius: 1.25rem;
 }
 
