@@ -1,32 +1,33 @@
 import "./InventoryEdit.scss";
-import data from '../../data/inventories.json';
-import { useState} from 'react';
-
-
+// import data from '../../data/inventories.json';
 import { Link } from "react-router-dom";
+import { useState, useEffect} from 'react';
+import axios from "axios";
+const { REACT_APP_API_BASE_PATH } = process.env
 
-function InventoryEdit({id}) {
-  const paramId = Number(id);
-  const inventoryItem = data.find(item => item.id === paramId);
+function InventoryEdit({item, invenotryList}) {
 
   //Create's Drop Down Lists 
-  const categories = data.map(category => category.category);
-  const warehouses = data.map(place => place.warehouse_id);
+  const categories = invenotryList.map(category => category.category);
+  const warehouses = invenotryList.map(place => place.warehouse_id);
   const warehouseList = [...new Set(warehouses)];
 
   //States
-  const [currentItem, setItem] = useState(inventoryItem)
-  const [selectedStatus, setSelectedStatus] = useState(currentItem.status);
+  const [originalStatus, setOriginalStatus] = useState(item.status);
+  const [currentItem, setItem] = useState(item)
 
+  useEffect(() => {
+    setOriginalStatus(item.status);
+  }, [item.status]);
 
   const handleChange = (e) => {
       const { name, value, type } = e.target;
 
-      if (type == 'radio') {
-        setSelectedStatus(value)
+      if (type === 'radio') {
         setItem((prevItem) => ({
           ...prevItem,
           [name]: value,
+          quantity: value === 'Out of Stock' ? 0 : prevItem.quantity,
         }))
       } else {
         setItem((prevItem) => ({
@@ -36,33 +37,61 @@ function InventoryEdit({id}) {
       }
   };
   const handleCancel = () => {
-      setItem(inventoryItem);
+      setItem(item);
+      alert('refreshed to original values')
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
       e.preventDefault();
 
-      const updatedData = data.map((item) =>
-          item.id === currentItem.id ? currentItem : item
-      );
+      if (
+        !currentItem.item_name ||
+        !currentItem.description
+        ){
+          alert('All fields must be filled');
+          return;
+        }
+
+      if (currentItem.status === 'In Stock' && currentItem.quantity === 0) {
+        alert('Quantity cannot be 0');
+        return;
+      }
+
+      try {
+        const updatedItem = {
+          warehouse_id: Number(currentItem.warehouse_id),
+          item_name: String(currentItem.item_name),
+          description: String(currentItem.description),
+          category: String(currentItem.category),
+          status: String(currentItem.status),
+          quantity: String(currentItem.quantity),
+        }
+        console.log(updatedItem)
+        const response = await axios.put (`${REACT_APP_API_BASE_PATH}/api/inventories/${item.id}`,updatedItem )
+        alert("Updates Successful");
+        window.location.href="/";
+      } catch (error) {
+        console.error('Error update item:', error);
+      }
+      
   }
 
   return (
     <>
     <div className="body__block"></div>
     <main className="form__container">
-    <h1 className="form__title">Edit Inventory Item</h1>
+    <Link to="/" className="link"><h1 className="form__title">Edit Inventory Item</h1></Link>
     <form onSubmit={handleSubmit}>
       <section className="form__section__container">
         <section className="form__section">
           <h2 className="form__section__title">Item Details</h2>
           <div className="form__questions">
               <label htmlFor="item_name" className="form__label">Item Name</label>
-              <input type="text" name="item_name" className="form__input" placeholder={`${currentItem.item_name}`} value={`${currentItem.item_name}`} onChange={handleChange}></input>
+              <input type="text" name="item_name" className="form__input" placeholder="Please enter item name" value={`${currentItem.item_name}`} onChange={handleChange}></input>
           </div>
           <div className="form__questions">
               <label htmlFor="description" className="form__label">Item Description</label>
-              <textarea type="text" name="description" className="form__input custom__input" placeholder={`${currentItem.description}`} value={`${currentItem.description}`} onChange={handleChange}></textarea>
+              <textarea type="text" name="description" className="form__input custom__input" placeholder="Please enter a brief description..." value={`${currentItem.description}`} onChange={handleChange}></textarea>
           </div>
           <div className="form__questions">
               <label htmlFor="category" className="form__label">Item Category</label>
@@ -73,7 +102,7 @@ function InventoryEdit({id}) {
               onChange={handleChange}
               required
               >
-                <option value="" disabled>Select a Category</option>
+                <option value="" disabled>Please Select</option>
                 {Array.from(new Set(categories)).map((category)=> (
                   <option key={category} value={category}>{category}</option>
                 ))}
@@ -91,7 +120,7 @@ function InventoryEdit({id}) {
                 name="status"
                 className="radio__button"
                 value="In Stock"
-                checked={selectedStatus === 'In Stock'}
+                checked={currentItem.status === 'In Stock'}
                 onChange={handleChange}
                 required
               />
@@ -102,7 +131,7 @@ function InventoryEdit({id}) {
                 name="status"
                 className="radio__button"
                 value="Out of Stock"
-                checked={selectedStatus === 'Out of Stock'}
+                checked={currentItem.status === 'Out of Stock'}
                 onChange={handleChange}
                 required
               />
@@ -112,7 +141,7 @@ function InventoryEdit({id}) {
           {currentItem.status === 'In Stock' && (
           <div className="form__questions">
               <label htmlFor="quantity" className="form__label">Quantity</label>
-              <input type="number" name="quantity" className="form__input" placeholder={`${currentItem.quantity}`} value={`${currentItem.quantity}`} onChange={handleChange} required></input>
+              <input type="number" name="quantity" className="form__input" placeholder="Please enter quantity" value={`${currentItem.quantity}`} onChange={handleChange} required></input>
           </div>
           )}
           <div className="form__questions">
@@ -123,7 +152,7 @@ function InventoryEdit({id}) {
               value={`${currentItem.warehouse_id}`} 
               onChange={handleChange}
               >
-                <option value="" disabled>Select a Warehouse</option>
+                <option value="" disabled>Please Select</option>
                 {warehouseList.map((location) => (
                   <option key={location} value={location}>{location}</option>
                 ))}
