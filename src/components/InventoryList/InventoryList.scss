@@ -3,6 +3,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 
+
 .inventory {
   margin: 0 auto;
   @include flexbox(column, 1.5rem);
