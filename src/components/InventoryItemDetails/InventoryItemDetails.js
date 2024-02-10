@@ -5,9 +5,7 @@ import backArrow from "../../assets/icons/arrow_back-24px.svg";
 import { Link } from "react-router-dom";
 
 function InventoryItemDetails({ item }) {
-
-  console.log(item)
-;
+  console.log(item);
   return (
     <>
       <div className="body__block"></div>
@@ -34,7 +32,7 @@ function InventoryItemDetails({ item }) {
             <p>{item.category}</p>
           </div>
           <div>
-            <div className="item__wrap">
+            <div className="item__wrap2">
               <div>
                 <div className="item__block">
                   <h4 className="item__subtitle">STATUS:</h4>
