@@ -43,6 +43,14 @@
     @include padding-desktop();
   }
 
+  &__message {
+    @include p1-mobile;
+
+    @include tablet {
+      @include p1-tablet;
+    }
+  }
+
   &__button-container {
     display: flex;
     justify-content: space-between;
