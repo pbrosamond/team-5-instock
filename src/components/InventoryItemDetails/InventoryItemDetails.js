@@ -4,7 +4,6 @@ import backArrow from '../../assets/icons/arrow_back-24px.svg';
 import { Link } from 'react-router-dom';
 
 function InventoryItemDetails({ id, item }) {
-
   return (
     <>
       <div className="body__block"></div>
@@ -29,11 +28,11 @@ function InventoryItemDetails({ id, item }) {
           <div className="inventory-item__container-left">
             <div className="inventory-item__block">
               <h4 className="inventory-item__subtitle">ITEM DESCRIPTION:</h4>
-              <p>{item.description}</p>
+              <p className="inventory-item__content">{item.description}</p>
             </div>
             <div className="inventory-item__block">
               <h4 className="inventory-item__subtitle">CATEGORY:</h4>
-              <p>{item.category}</p>
+              <p className="inventory-item__content">{item.category}</p>
             </div>
           </div>
           <div className="inventory-item__container-right">
@@ -55,13 +54,13 @@ function InventoryItemDetails({ id, item }) {
               <div>
                 <div className="inventory-item__block">
                   <h4 className="inventory-item__subtitle">QUANTITY:</h4>
-                  <p>{item.quantity}</p>
+                  <p className="inventory-item__content">{item.quantity}</p>
                 </div>
               </div>
             </div>
             <div className="inventory-item__block inventory-item__container-down">
               <h4 className="inventory-item__subtitle">WAREHOUSE:</h4>
-              <p>{item.warehouse_id}</p>
+              <p className="inventory-item__content">{item.warehouse_id}</p>
             </div>
           </div>
         </div>
