@@ -45,6 +45,7 @@ p {
       @include flexbox;
       align-items: center;
     }
+    // Need to be check
   }
 
   &__edit-button {
@@ -62,10 +63,19 @@ p {
       padding: 0.5rem 1rem;
       gap: 0.5rem;
       justify-content: center;
+      cursor: pointer;
+
     }
 
     &--link {
       text-decoration: none;
+      // Need to be check
+      @include flexbox;
+      align-items: center;
+      border: none;
+      background-color: $color-indigo;
+      border-radius: 100%;
+
     }
 
     &--word {
@@ -81,6 +91,15 @@ p {
 
   &__container {
     margin: 1rem;
+    gap: 2rem;
+  }
+
+  &__container2 {
+    @include tablet {
+      max-width: 50%;
+      padding-right: 3rem;
+      border-right: 1px $color-cloud solid;
+    }
   }
 
   &__subtitle {
@@ -88,8 +107,18 @@ p {
   }
 
   &__wrap2 {
+    @include flexbox(column);
+
+    @include tablet {
+    }
+  }
+
+  &__wrap3 {
     @include flexbox;
-    gap: 9.75rem;
+
+    @include tablet {
+      gap: 5rem;
+    }
   }
 
   &__block {

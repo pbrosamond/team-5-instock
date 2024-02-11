@@ -28,8 +28,12 @@ function WarehouseList() {
   };
 
   const getList = async () => {
-    const res = await axios.get(`${REACT_APP_API_BASE_PATH}/api/warehouses`);
-    setWarehouseList(res.data);
+    try {
+      const res = await axios.get(`${REACT_APP_API_BASE_PATH}/api/warehouses`);
+      setWarehouseList(res.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
