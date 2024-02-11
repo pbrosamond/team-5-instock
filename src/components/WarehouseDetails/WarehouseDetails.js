@@ -3,7 +3,6 @@ import WarehouseDetailsItem from "../WarehouseDetailsItem/WarehouseDetailsItem";
 import backArrow from "../../assets/icons/arrow_back-24px.svg";
 import editButton from "../../assets/icons/edit-24px white.svg";
 import sort from "../../assets/icons/sort-default-24px.svg";
-
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -36,7 +35,7 @@ function WarehouseDetails({ id, warehouse }) {
       );
       setWarehouseInvntoryList(response.data);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -64,7 +63,6 @@ function WarehouseDetails({ id, warehouse }) {
             </button>
           </Link>
         </div>
-
         <div className="item__container">
           <section className="item__wrapper item__left-container">
             <div className="item__block">

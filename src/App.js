@@ -21,17 +21,11 @@ function App() {
         <Route path="/" element={<WarehousePage />} />
         <Route path="/warehouses" element={<WarehousePage />} />
         <Route path="/warehouses/:id" element={<WarehouseEditPage />} />
-        <Route
-          path="/warehouses/:id/details"
-          element={<WarehouseDetailsPage />}
-        />
+        <Route path="/warehouses/:id/details" element={<WarehouseDetailsPage />}/>
         <Route path="/warehouses/add" element={<WarehouseAdd />} />
         <Route path="/inventories" element={<InventoryPage />} />
         <Route path="/inventories/:id" element={<InventoryEditPage />} />
-        <Route
-          path="/inventories/:id/details"
-          element={<InventoryItemDetailsPage />}
-        />
+        <Route path="/inventories/:id/details" element={<InventoryItemDetailsPage />}/>
         <Route path="/inventories/add" element={<InventoryAddPage />}></Route>
       </Routes>
       <Footer />

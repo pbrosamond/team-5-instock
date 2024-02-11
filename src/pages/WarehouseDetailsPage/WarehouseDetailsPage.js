@@ -1,5 +1,3 @@
-// import "./WarehousePage.scss";
-
 import WarehouseDetails from '../../components/WarehouseDetails/WarehouseDetails';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';

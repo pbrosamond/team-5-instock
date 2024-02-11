@@ -132,6 +132,7 @@ p {
 
   &__subtitle {
     @include h4-mobile;
+    padding-bottom: 0.25rem;
   }
 
   &__wrap2 {
@@ -155,5 +156,13 @@ p {
 
   &-edit-link {
     text-decoration: none;
+  }
+
+  &__instock {
+    @include tag-mobile-green;
+  }
+
+  &__out-of-stock {
+    @include tag-mobile-red;
   }
 }

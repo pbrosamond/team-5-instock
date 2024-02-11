@@ -1,12 +1,10 @@
 import "./Header.scss";
 import logo from "../../assets/logo/InStock-Logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import React from "react";
-import { useLocation } from "react-router-dom";
 
 function Header() {
   const location = useLocation();
-  // console.log(location);
 
   return (
     <header className="header">
