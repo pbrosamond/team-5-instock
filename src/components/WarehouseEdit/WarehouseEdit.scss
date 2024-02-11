@@ -41,7 +41,9 @@ body {
         }
 
         @include desktop {
-            padding: 2rem 2.5rem 1.375rem 2.5rem;
+            @include h1-tablet;
+            padding: 2rem 2.5rem 1.375rem 3.5rem;
+            background-position-x: 1.25rem;
         }
     }
 
@@ -52,7 +54,7 @@ body {
         }
 
         @include desktop {
-            padding: 1.5rem 1rem;
+            padding: 1.5rem 0rem;
         }
     }
 

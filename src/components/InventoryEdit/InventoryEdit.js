@@ -1,5 +1,4 @@
 import "./InventoryEdit.scss";
-// import data from '../../data/inventories.json';
 import { Link } from "react-router-dom";
 import { useState, useEffect} from 'react';
 import axios from "axios";
@@ -65,13 +64,13 @@ function InventoryEdit({item, inventoryList, allWarehouses}) {
         console.log(updatedItem)
         const response = await axios.put (`${REACT_APP_API_BASE_PATH}/api/inventories/${item.id}`,updatedItem )
         alert("Updates Successful");
-        window.location.href="/";
       } catch (error) {
         console.error('Error update item:', error);
       } 
   }
 
-  const handleCancel = () => {
+  const handleCancel = (e) => {
+    e.preventDefault();
     setItem(item);
     return alert('refreshed to original values')
   }
