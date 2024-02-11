@@ -37,7 +37,7 @@
   }
 
   @include desktop {
-    @include padding-desktop();
+    @include padding-desktop;
   }
 
   &__button-container {
