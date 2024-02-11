@@ -15,6 +15,7 @@ body {
 
 .form {
     &__container {
+        max-width: 80rem;
         min-width: 20rem;
         width: 90%;
         margin: 0 auto;
