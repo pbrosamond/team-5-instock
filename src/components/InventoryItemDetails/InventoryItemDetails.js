@@ -11,7 +11,7 @@ function InventoryItemDetails({ id, item }) {
       <main className="inventory-item__card">
         <div className="inventory-item__header">
           <div className="inventory-item__header-container">
-            <Link to={`/inventories/`}>
+            <Link onClick={() => window.history.back()}>
               <button className="inventory-item__back-button">
                 <img src={backArrow} />
               </button>
