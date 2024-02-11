@@ -4,7 +4,7 @@ import backArrow from "../../assets/icons/arrow_back-24px.svg";
 
 import { Link } from "react-router-dom";
 
-function InventoryItemDetails({ item }) {
+function InventoryItemDetails({ id, item }) {
   console.log(item);
   return (
     <>
@@ -12,15 +12,15 @@ function InventoryItemDetails({ item }) {
       <main className="item__card">
         <div className="item__header">
           <div className="item__header-container">
-            <button className="item__back-button">
+            <Link to={`/inventories/`}><button className="item__back-button">
               <img src={backArrow} />
-            </button>
+            </button></Link>
             <h1 className="item__name">{item.item_name}</h1>
           </div>
-          <button className="item__edit-button">
+          <Link to={`/inventories/${id}`}><button className="item__edit-button">
             <img src={editButton} />
             <p className="item__edit-button--word">Edit</p>
-          </button>
+          </button></Link>
         </div>
         <div className="item__container">
           <div className="item__block">

@@ -81,6 +81,7 @@ function WarehouseDetailsPage() {
           warehouse={warehouse}
           inventoryList={inventoryList}
           item={item}
+          id={id}
         />
       )}
     </>

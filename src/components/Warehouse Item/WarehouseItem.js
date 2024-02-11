@@ -21,7 +21,7 @@ function WarehouseItem({ showModal, warehouse }) {
       <section className="wrapper">
         <div>
           <h4 className="wrapper__titles">WAREHOUSE</h4>
-          <Link className="wrapper__decoration" to="warehouse/details">
+          <Link className="wrapper__decoration" to={`/warehouses/${id}/details`}>
             <div className="wrapper__link">
               <h3 className="wrapper__textlink">{warehouse_name}</h3>
               <img className="wrapper__icon" src={chevronIcon}></img>
@@ -47,7 +47,7 @@ function WarehouseItem({ showModal, warehouse }) {
             src={deleteIcon}
             onClick={() => showModal(id)}
           ></img>
-          <img className="wrapper__icon" src={editIcon}></img>
+          <Link to={`/warehouses/${id}`}><img className="wrapper__icon" src={editIcon}></img></Link>
         </div>
       </section>
     </>

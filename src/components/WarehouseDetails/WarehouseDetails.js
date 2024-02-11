@@ -6,7 +6,7 @@ import sort from "../../assets/icons/sort-default-24px.svg";
 
 import { Link } from "react-router-dom";
 
-function WarehouseDetails({ warehouse, inventoryList }) {
+function WarehouseDetails({ id, warehouse, inventoryList }) {
   console.log(warehouse, inventoryList);
   // const warehouseInventory = inventoryList.map((place) => place.warehouse_id);
   // const warehouseInventoryList = [...new Set(warehouseInventory)];
@@ -17,15 +17,15 @@ function WarehouseDetails({ warehouse, inventoryList }) {
       <main className="item__card">
         <div className="item__header">
           <div className="item__header-container">
-            <button className="item__back-button">
+            <Link to={`/warehouses`}><button className="item__back-button">
               <img src={backArrow} />
-            </button>
+            </button></Link>
             <h1 className="item__name">{warehouse.warehouse_name}</h1>
           </div>
-          <button className="item__edit-button">
+          <Link to={`/warehouses/${id}`}><button className="item__edit-button">
             <img src={editButton} />
             <p className="item__edit-button-word">Edit</p>
-          </button>
+          </button></Link>
         </div>
 
         <div className="item__container">
