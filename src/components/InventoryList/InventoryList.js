@@ -1,6 +1,6 @@
 import './InventoryList.scss';
 import sort from '../../assets/icons/sort-default-24px.svg';
-
+import { Link } from 'react-router-dom';
 import InventoryItem from '../InventoryItem/InventoryItem';
 
 import { useEffect, useState } from 'react';
@@ -51,7 +51,7 @@ function InventoryList() {
               id="search"
               placeholder="Search..."
             ></input>
-            <button className="inventory__button">+ Add New Item</button>
+            <Link to="/inventories/add"><button className="inventory__button">+ Add New Item</button></Link>
           </div>
         </div>
 

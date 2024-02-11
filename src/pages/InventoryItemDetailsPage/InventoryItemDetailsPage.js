@@ -32,7 +32,7 @@ function InventoryItemDetailsPage() {
     }
   }, [id]);
 
-  return <>{item && <InventoryItemDetails item={item} />}</>;
+  return <>{item && id && <InventoryItemDetails id={id} item={item} />}</>;
 }
 
 export default InventoryItemDetailsPage;

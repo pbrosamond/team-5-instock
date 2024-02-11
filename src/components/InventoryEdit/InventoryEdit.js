@@ -4,7 +4,7 @@ import { useState, useEffect} from 'react';
 import axios from "axios";
 const { REACT_APP_API_BASE_PATH } = process.env
 
-function InventoryEdit({item, inventoryList, allWarehouses}) {
+function InventoryEdit({id, item, inventoryList, allWarehouses}) {
 
   //Create's Drop Down Lists 
   const categories = inventoryList.map(category => category.category);
@@ -79,7 +79,7 @@ function InventoryEdit({item, inventoryList, allWarehouses}) {
     <>
     <div className="body__block"></div>
     <main className="form__container">
-    <Link to="/" className="link"><h1 className="form__title">Edit Inventory Item</h1></Link>
+    <Link to={`/inventories/${id}/details`} className="link"><h1 className="form__title">Edit Inventory Item</h1></Link>
     <form onSubmit={handleSubmit}>
       <section className="form__section__container">
         <section className="form__section">
