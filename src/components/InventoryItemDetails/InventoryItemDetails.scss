@@ -10,6 +10,8 @@ p {
 .item {
   &__name {
     @include h1-mobile;
+    @include flexbox;
+    align-items: center;
   }
 
   &__card {
@@ -20,6 +22,7 @@ p {
     border-radius: 0.25rem;
     box-shadow: 0px 2px 5px 0px #13182c1a;
     position: relative;
+    z-index: 1;
   }
 
   &__header {
@@ -35,41 +38,49 @@ p {
 
   &__back-button {
     @include flexbox;
-    align-items: center;
     border: none;
     background-color: $color-white;
 
-    &--img {
+    &--link {
       @include flexbox;
-      align-content: center;
+      align-items: center;
     }
+    // Need to be check
   }
 
   &__edit-button {
-    @include flexbox;
-    align-items: center;
-    border: none;
+    height: 2.25rem;
+    width: 2.25rem;
     background-color: $color-indigo;
     border-radius: 100%;
 
     @include tablet {
+      @include flexbox;
+      align-items: center;
+      border: none;
+      width: 5.0625rem;
       border-radius: 20px;
       padding: 0.5rem 1rem;
       gap: 0.5rem;
+      justify-content: center;
       cursor: pointer;
+
     }
 
     &--link {
       text-decoration: none;
+      // Need to be check
       @include flexbox;
       align-items: center;
       border: none;
       background-color: $color-indigo;
       border-radius: 100%;
+
     }
 
     &--word {
       display: none;
+      text-decoration: none;
 
       @include tablet {
         display: block;

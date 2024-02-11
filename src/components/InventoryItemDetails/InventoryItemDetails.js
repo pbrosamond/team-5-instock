@@ -12,44 +12,42 @@ function InventoryItemDetails({ id, item }) {
       <main className="item__card">
         <div className="item__header">
           <div className="item__header-container">
-            <Link className="item__back-button--img" to={`/inventories/`}>
-              <button className="item__back-button">
-                <img src={backArrow} />
-              </button>
-            </Link>
+            <Link className="item__back-button--link" to={`/inventories/`}><button className="item__back-button">
+              <img src={backArrow} />
+            </button></Link>
             <h1 className="item__name">{item.item_name}</h1>
           </div>
-          <Link className="item__edit-button--link" to={`/inventories/${id}`}>
-            <button className="item__edit-button">
-              <img className="item__edit-button--img" src={editButton} />
-              <p className="item__edit-button--word">Edit</p>
-            </button>
-          </Link>
+          <Link className="item__edit-button--link" to={`/inventories/${id}`}><button className="item__edit-button">
+            <img src={editButton} />
+            <p className="item__edit-button--word">Edit</p>
+          </button></Link>
         </div>
         <div className="item__container">
-          <div className="item__container2">
-            <div className="item__block">
-              <h4 className="item__subtitle">ITEM DESCRIPTION:</h4>
-              <p>{item.description}</p>
-            </div>
-            <div className="item__block">
-              <h4 className="item__subtitle">CATEGORY:</h4>
-              <p>{item.category}</p>
-            </div>
+          <div className="item__block">
+            <h4 className="item__subtitle">ITEM DESCRIPTION</h4>
+            <p>{item.description}</p>
           </div>
-          <div className="item__wrap2">
-            <div className="item__wrap3">
-              <div className="item__block">
-                <h4 className="item__subtitle">STATUS:</h4>
-                <p>{item.status}</p>
+          <div className="item__block">
+            <h4 className="item__subtitle">CATEGORY</h4>
+            <p>{item.category}</p>
+          </div>
+          <div>
+            <div className="item__wrap2">
+              <div>
+                <div className="item__block">
+                  <h4 className="item__subtitle">STATUS</h4>
+                  <p>{item.status}</p>
+                </div>
               </div>
-              <div className="item__block">
-                <h4 className="item__subtitle">QUANTITY:</h4>
-                <p>{item.quantity}</p>
+              <div>
+                <div className="item__block">
+                  <h4 className="item__subtitle">QTY</h4>
+                  <p>{item.quantity}</p>
+                </div>
               </div>
             </div>
             <div className="item__block">
-              <h4 className="item__subtitle">WAREHOUSE:</h4>
+              <h4 className="item__subtitle">WAREHOUSE</h4>
               <p>{item.warehouse_id}</p>
             </div>
           </div>
