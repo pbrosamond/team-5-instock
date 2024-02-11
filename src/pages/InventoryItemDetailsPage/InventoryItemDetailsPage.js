@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 const { REACT_APP_API_BASE_PATH } = process.env;
 
-// import { Link } from "react-router-dom";
-
 function InventoryItemDetailsPage() {
   const [item, setItem] = useState(null);
   const { id } = useParams();

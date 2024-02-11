@@ -1,11 +1,10 @@
 import './InventoryItemDetails.scss';
 import editButton from '../../assets/icons/edit-24px white.svg';
 import backArrow from '../../assets/icons/arrow_back-24px.svg';
-
 import { Link } from 'react-router-dom';
 
 function InventoryItemDetails({ id, item }) {
-  console.log(item);
+
   return (
     <>
       <div className="body__block"></div>

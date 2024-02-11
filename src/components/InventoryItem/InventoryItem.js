@@ -2,7 +2,6 @@ import './InventoryItem.scss';
 import chevronIcon from '../../assets/icons/chevron_right-24px.svg';
 import deleteIcon from '../../assets/icons/delete_outline-24px.svg';
 import editIcon from '../../assets/icons/edit-24px.svg';
-
 import { Link } from 'react-router-dom';
 
 function InventoryItem({ showModal, inventory }) {
