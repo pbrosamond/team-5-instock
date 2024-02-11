@@ -14,11 +14,15 @@ function InventoryList() {
   const [inventoryId, setInventoryId] = useState();
 
   const getList = async () => {
-    const resInventory = await axios.get(
-      `${REACT_APP_API_BASE_PATH}/api/inventories`
-    );
+    try {
+      const resInventory = await axios.get(
+        `${REACT_APP_API_BASE_PATH}/api/inventories`
+      );
 
-    setInvnetoriesList(resInventory.data);
+      setInvnetoriesList(resInventory.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -51,7 +55,9 @@ function InventoryList() {
               id="search"
               placeholder="Search..."
             ></input>
-            <Link to="/inventories/add"><button className="inventory__button">+ Add New Item</button></Link>
+            <Link to="/inventories/add">
+              <button className="inventory__button">+ Add New Item</button>
+            </Link>
           </div>
         </div>
 
