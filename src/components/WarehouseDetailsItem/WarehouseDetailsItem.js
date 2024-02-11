@@ -46,7 +46,7 @@ function WarehouseDetailsItem({ inventory, showModal }) {
             className="wrapper3__icon"
             src={deleteIcon}
             onClick={() => showModal(id)}
-          ></img>
+          />
           <Link to={`/inventories/${id}`}>
             <img className="wrapper3__icon" src={editIcon}></img>
           </Link>

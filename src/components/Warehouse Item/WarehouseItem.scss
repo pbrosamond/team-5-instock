@@ -8,7 +8,7 @@
   grid-template-columns: 0.8fr 1fr;
   padding: 1rem 1rem 0 1rem;
   gap: 1rem 2.8125rem;
-  border-top: .0625rem solid $color-cloud;
+  border-top: 0.0625rem solid $color-cloud;
 
   &:last-child {
     border-bottom: none;
@@ -20,10 +20,10 @@
     grid-template-columns: repeat(5, 1fr);
     align-items: center;
     padding: 0 2rem 1.5rem 2rem;
-    border-bottom: .0625rem solid $color-cloud;
+    border-bottom: 0.0625rem solid $color-cloud;
     border-top: none;
     gap: 0;
-    
+
     &:last-child {
       border-bottom: none;
       padding-bottom: 1.5rem;
@@ -33,7 +33,6 @@
   @include desktop {
     padding: 0 2.5rem 1.5rem 2.5rem;
     grid-template-columns: repeat(5, 1fr);
-
   }
 
   &__link {
@@ -65,7 +64,6 @@
       &:hover {
         @include textlink-default-hover;
       }
-
     }
   }
 
@@ -85,7 +83,7 @@
   }
 
   &__details {
-    @include p2-mobile; 
+    @include p2-mobile;
 
     @include tablet {
       @include p2-tablet;
@@ -115,6 +113,12 @@
 
   &__icon {
     height: 1.5rem;
+  }
+
+  &__delete-button {
+    background-color: $color-white;
+    border: none;
+    padding: 0;
   }
 }
 

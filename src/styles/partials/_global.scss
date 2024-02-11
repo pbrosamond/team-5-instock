@@ -20,12 +20,16 @@ body {
 .body__block {
   background-color: $color-graphite;
   position: absolute;
-  left:0;
+  left: 0;
   height: 4rem;
   width: 100vw;
 
   @include tablet {
-      height: 5.875rem;
-      width: 100vw;
+    height: 5.875rem;
+    width: 100vw;
   }
+}
+
+button {
+  cursor: pointer;
 }

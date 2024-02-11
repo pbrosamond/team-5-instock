@@ -1,7 +1,7 @@
-@use '../../styles/partials/global' as *;
-@use '../../styles/partials/variables' as *;
-@use '../../styles/partials/mixins' as *;
-@use '../../styles/partials/typography' as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
 
 .wrapper2 {
   display: grid;
@@ -158,6 +158,12 @@
 
   &__icon {
     height: 1.5rem;
+  }
+
+  &__delete-button {
+    background-color: $color-white;
+    border: none;
+    padding: 0;
   }
 }
 
