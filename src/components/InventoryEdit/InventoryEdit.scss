@@ -25,6 +25,7 @@
     width: 1rem;
     height: 1rem;
     margin: 0 0.5rem 0 0;
+    border: 1px $color-cloud solid;
 
     &:checked + label {
       color: $color-black;
