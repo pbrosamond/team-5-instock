@@ -50,15 +50,19 @@ function WarehouseDetails({ id, warehouse }) {
       <main className="item__card">
         <div className="item__header">
           <div className="item__header-container">
-            <Link className="item__back-button--link" to={`/warehouses`}><button className="item__back-button">
-              <img src={backArrow} />
-            </button></Link>
+            <Link className="item__back-button--link" to={`/warehouses`}>
+              <button className="item__back-button">
+                <img src={backArrow} />
+              </button>
+            </Link>
             <h1 className="item__name">{warehouse.warehouse_name}</h1>
           </div>
-          <Link className="item__edit-button--link" to={`/warehouses/${id}`}><button className="item__edit-button">
-            <img src={editButton} />
-            <p className="item__edit-button-word">Edit</p>
-          </button></Link>
+          <Link className="item__edit-button--link" to={`/warehouses/${id}`}>
+            <button className="item__edit-button">
+              <img src={editButton} />
+              <p className="item__edit-button-word">Edit</p>
+            </button>
+          </Link>
         </div>
 
         <div className="item__container">
@@ -109,7 +113,7 @@ function WarehouseDetails({ id, warehouse }) {
           </div>
         </section>
         {warehouseInvntoryList &&
-          warehouseInvntoryList.map &&((inventory) => {
+          warehouseInvntoryList.map((inventory) => {
             return (
               <WarehouseDetailsItem
                 key={inventory.id}

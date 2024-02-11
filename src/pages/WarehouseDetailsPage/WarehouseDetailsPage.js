@@ -6,8 +6,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 const { REACT_APP_API_BASE_PATH } = process.env;
 
-// import { Link } from "react-router-dom";
-
 function WarehouseDetailsPage() {
   const [warehouse, setWarehouse] = useState(null);
   const { id } = useParams();

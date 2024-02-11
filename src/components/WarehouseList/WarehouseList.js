@@ -82,7 +82,11 @@ function WarehouseList() {
         {warehouseList &&
           warehouseList.map((warehouse) => {
             return (
-              <WarehouseItem showModal={showModal} warehouse={warehouse} />
+              <WarehouseItem
+                key={warehouse.id}
+                showModal={showModal}
+                warehouse={warehouse}
+              />
             );
           })}
       </section>
