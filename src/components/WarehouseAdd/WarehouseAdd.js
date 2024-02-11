@@ -164,7 +164,6 @@ function WarehouseAdd() {
     <>
       <div className="body__block"></div>
       <main className="addForm__container">
-        {/* <h1 className="addForm__title">Add Warehouse</h1> */}
         <div className="item__header">
           <div className="item__header-container">
             <Link className="item__back-button--link" to="/warehouses"><button className="item__back-button">

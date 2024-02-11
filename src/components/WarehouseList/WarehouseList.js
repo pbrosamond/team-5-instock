@@ -1,8 +1,6 @@
 import './WarehouseList.scss';
 import sort from '../../assets/icons/sort-default-24px.svg';
-
 import WarehouseItem from '../Warehouse Item/WarehouseItem';
-
 import WarehouseDelete from '../WarehouseDelete/WarehouseDelete';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -32,7 +30,7 @@ function WarehouseList() {
       const res = await axios.get(`${REACT_APP_API_BASE_PATH}/api/warehouses`);
       setWarehouseList(res.data);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 

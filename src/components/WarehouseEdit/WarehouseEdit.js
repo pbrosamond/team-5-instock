@@ -17,12 +17,12 @@ const WarehouseEdit = ({warehouse}) => {
         }));
 
     };
+
     const handleCancel = (e) => {
         e.preventDefault();
         setWarehouse(warehouse);
         return alert('Refreshed to original values');
     }
-
 
     const handleSubmit = async(e) => {
         e.preventDefault();
