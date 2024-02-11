@@ -101,8 +101,17 @@ body {
         padding-left: 1rem;
         padding-right: 1rem;
         min-width: 18.0938rem;
-        border: 1px solid $color-cloud;
+        // Need to check
+        // border: 1px solid $color-cloud;
         color: $color-black;
+
+        &--addPage {
+            @include form-mobile-default;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            min-width: 18.0938rem;
+            color: $color-slate;
+        }
 
         @include tablet {
             max-width: 32.9844rem;
