@@ -9,7 +9,6 @@ const { REACT_APP_API_BASE_PATH } = process.env;
 function InventoryItemDetailsPage() {
   const [item, setItem] = useState(null);
   const { id } = useParams();
-  console.log(id);
 
   const fetchInventoryID = async (id) => {
     try {
@@ -17,7 +16,6 @@ function InventoryItemDetailsPage() {
         `${REACT_APP_API_BASE_PATH}/api/inventories/${id}`
       );
       const data = response.data;
-      console.log(data);
       setItem(data);
     } catch (error) {
       console.error(`Cannot get item information`, error);

@@ -113,8 +113,7 @@ function WarehouseDetails({ id, warehouse }) {
           </div>
         </section>
         {warehouseInvntoryList &&
-          warehouseInvntoryList.map &&
-          ((inventory) => {
+          warehouseInvntoryList.map((inventory) => {
             return (
               <WarehouseDetailsItem
                 key={inventory.id}

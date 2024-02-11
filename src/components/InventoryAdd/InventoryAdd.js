@@ -1,6 +1,7 @@
 import "./InventoryAdd.scss";
 import { Link } from "react-router-dom";
 import { useState, useEffect} from 'react';
+import backArrow from '../../assets/icons/arrow_back-24px.svg';
 import axios from "axios";
 const { REACT_APP_API_BASE_PATH } = process.env
 
@@ -48,8 +49,7 @@ function InventoryAdd({inventoryList, allWarehouses}) {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    // Your form submission logic
-
+    
     if (
       !currentItem.item_name ||
       !currentItem.description
@@ -73,7 +73,8 @@ function InventoryAdd({inventoryList, allWarehouses}) {
         quantity: String(currentItem.quantity),
       }
       const response = await axios.post(`${REACT_APP_API_BASE_PATH}/api/inventories/`,updatedItem )
-      alert("Updates Successful");
+      alert("Added new item");
+      setItem(item);
     } catch (error) {
       console.error('Error update item:', error);
     }
@@ -81,8 +82,8 @@ function InventoryAdd({inventoryList, allWarehouses}) {
   };
 
   const handleCancel = (e) => {
-    // Reset the form to initial values
     e.preventDefault();
+    
     setItem({
       item_name: "",
       description: "",
@@ -98,7 +99,14 @@ function InventoryAdd({inventoryList, allWarehouses}) {
     <>
     <div className="body__block"></div>
     <main className="form__container">
-    <Link to="/" className="link"><h1 className="form__title">Add Inventory Item</h1></Link>
+    <div className="item__header">
+      <div className="item__header-container">
+        <Link className="item__back-button--link" to="/inventories"><button className="item__back-button">
+          <img src={backArrow} />
+        </button></Link>
+        <h1 className="item__name">Add Inventory Item</h1>
+      </div>
+    </div>
     <form onSubmit={handleSubmit}>
       <section className="form__section__container">
         <section className="form__section">
