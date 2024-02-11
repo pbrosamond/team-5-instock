@@ -34,6 +34,11 @@
     vertical-align: top;
     color: $color-slate;
     padding-top:1rem;
+    // max-width: 40.325rem;
+
+    @include tablet {
+        // width: ;
+    }
   }
 
 .link {
