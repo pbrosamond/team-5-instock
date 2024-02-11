@@ -414,11 +414,13 @@
 @mixin search {
   min-height: 2.25rem;
   width: 100%;
-  border: 0.0625rem solid $color-cloud;
+  outline: 0.0625rem solid $color-cloud;
+  border: none;
   border-radius: 1.25rem;
   padding: .5rem 1rem;
 }
 
 @mixin search-active {
-  border: 0.0625rem solid $color-indigo;
+  outline: 0.0625rem solid $color-indigo;
+  border: none;
 }
