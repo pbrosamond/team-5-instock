@@ -21,7 +21,15 @@ function WarehouseDetailsItem({ inventory, showModal }) {
         </div>
         <div className="wrapper3__name">
           <h4 className="wrapper3__titles">STATUS</h4>
-          <p className="wrapper3__details">{status}</p>
+          <p
+            className={
+              quantity === 0
+                ? 'wrapper3__details-instock wrapper3__details-out-of-stock'
+                : 'wrapper3__details-instock'
+            }
+          >
+            {status}
+          </p>
         </div>
         <div className="wrapper3__address">
           <h4 className="wrapper3__titles">CATEGORY</h4>

@@ -30,10 +30,14 @@ function WarehouseDetails({ id, warehouse }) {
   };
 
   const fetchWarehouseInvntoryList = async () => {
-    const response = await axios.get(
-      `${REACT_APP_API_BASE_PATH}/api/warehouses/${id}/inventories`
-    );
-    setWarehouseInvntoryList(response.data);
+    try {
+      const response = await axios.get(
+        `${REACT_APP_API_BASE_PATH}/api/warehouses/${id}/inventories`
+      );
+      setWarehouseInvntoryList(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
