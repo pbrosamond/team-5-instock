@@ -15,7 +15,6 @@ function InventoryEditPage() {
       try {
           const response = await axios.get(`${REACT_APP_API_BASE_PATH}/api/inventories/`);
           const data = response.data;
-          console.log(data);
           setInventoryList(data);
       } catch (error) {
           console.error(`Cannot get all iventory information`, error);
@@ -26,7 +25,6 @@ function InventoryEditPage() {
       try {
           const response = await axios.get(`${REACT_APP_API_BASE_PATH}/api/inventories/${id}`);
           const data = response.data;
-          console.log(data);
           setItem(data);
       } catch (error) {
           console.error(`Cannot get item information`, error);
@@ -51,7 +49,6 @@ function InventoryEditPage() {
         try {
             const response = await axios.get(`${REACT_APP_API_BASE_PATH}/api/warehouses/`);
             const data = response.data;
-            console.log(data);
             setWarehouse(data);
         } catch (error) {
             console.error(`Cannot get warehouse information`, error);

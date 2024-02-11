@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './WarehouseAdd.scss';
+import { Link } from 'react-router-dom';
 import backArrow from '../../assets/icons/arrow_back-24px.svg';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
@@ -163,7 +164,15 @@ function WarehouseAdd() {
     <>
       <div className="body__block"></div>
       <main className="addForm__container">
-        <h1 className="addForm__title">Add Warehouse</h1>
+        {/* <h1 className="addForm__title">Add Warehouse</h1> */}
+        <div className="item__header">
+          <div className="item__header-container">
+            <Link className="item__back-button--link" to="/warehouses"><button className="item__back-button">
+              <img src={backArrow} />
+            </button></Link>
+            <h1 className="item__name">Add Warehouse</h1>
+          </div>
+        </div>
         <form id="addForm__form" onSubmit={handleSubmit}>
           <section className="addForm__section__container">
             <section className="addForm__section">
