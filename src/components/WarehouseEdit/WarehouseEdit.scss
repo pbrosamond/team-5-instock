@@ -110,7 +110,18 @@ body {
             padding-left: 1rem;
             padding-right: 1rem;
             min-width: 18.0938rem;
+            max-width: 32.9844rem;
             color: $color-slate;
+
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: url('../../assets/icons/arrow_drop_down-default-24px.svg') no-repeat right 1rem center;
+              
+            /* Optional: Style the dropdown list */
+            .form__input--addPage::-ms-expand {
+            display: none;
+            }
         }
 
         @include tablet {
