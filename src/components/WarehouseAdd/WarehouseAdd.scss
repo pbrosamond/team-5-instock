@@ -1,7 +1,7 @@
-@use '../../styles/partials/global' as *;
-@use '../../styles/partials/variables' as *;
-@use '../../styles/partials/mixins' as *;
-@use '../../styles/partials/typography' as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
 
 .divider {
   @include tablet {
@@ -31,7 +31,7 @@
     @include h1-mobile;
     @include padding-mobile;
     padding-left: 3rem;
-    background-image: url('../../assets/icons/arrow_back-24px.svg');
+    background-image: url("../../assets/icons/arrow_back-24px.svg");
     background-repeat: no-repeat;
     background-position: left bottom 40%;
     background-position-x: 1rem;
@@ -99,6 +99,7 @@
     @include form-mobile-default;
     padding-left: 1rem;
     color: $color-black;
+    border: 1px $color-cloud solid;
 
     &:active {
       @include form-mobile-active;
