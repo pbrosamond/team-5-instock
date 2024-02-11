@@ -34,7 +34,7 @@ function WarehouseEditPage() {
   return (
     <>
     {warehouse && 
-      <WarehouseEdit id={id} warehouse={warehouse} />
+      <WarehouseEdit warehouse={warehouse} />
     }
     </>
   );
