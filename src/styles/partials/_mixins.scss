@@ -111,7 +111,7 @@
 
 @mixin form-mobile-active {
   color: $color-black;
-  border: 0.0625rem solid $color-indigo;
+  outline: 0.0625rem solid $color-indigo;
 }
 
 @mixin form-mobile-error {
@@ -406,7 +406,8 @@
 }
 
 @mixin form-field-error {
-  border: 0.0625rem solid $color-red;
+  outline: 0.0625rem solid $color-red;
+  border: none;
 }
 
 // Search Bar

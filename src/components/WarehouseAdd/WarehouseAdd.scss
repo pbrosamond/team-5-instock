@@ -100,7 +100,7 @@
     padding-left: 1rem;
     color: $color-black;
 
-    &:active {
+    &:focus {
       @include form-mobile-active;
     }
 
