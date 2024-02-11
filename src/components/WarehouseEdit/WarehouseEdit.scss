@@ -101,6 +101,7 @@ body {
         padding-left: 1rem;
         padding-right: 1rem;
         min-width: 18.0938rem;
+        color: $color-black;
 
         @include tablet {
             max-width: 32.9844rem;
