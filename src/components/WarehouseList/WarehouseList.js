@@ -6,12 +6,14 @@ import WarehouseItem from '../Warehouse Item/WarehouseItem';
 import WarehouseDelete from '../WarehouseDelete/WarehouseDelete';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link, useLocation } from 'react-router-dom';
 const { REACT_APP_API_BASE_PATH } = process.env;
 
 function WarehouseList() {
   const [showDelete, setShowDelete] = useState(false);
   const [warehouseList, setWarehouseList] = useState();
   const [warehouseId, setWarehouseId] = useState();
+  const location = useLocation();
 
   const showModal = (id) => {
     if (id) {
@@ -47,7 +49,9 @@ function WarehouseList() {
               id="search"
               placeholder="Search..."
             ></input>
-            <button className="warehouse__button">+ Add New Warehouse</button>
+            <Link to={location.pathname === '/' ? '/warehouses/add' : './add'}>
+              <button className="warehouse__button">+ Add New Warehouse</button>
+            </Link>
           </div>
         </div>
         <section className="warehouse__filter">
