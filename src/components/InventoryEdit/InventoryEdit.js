@@ -7,8 +7,10 @@ function InventoryEdit({ item, inventoryList, allWarehouses}) {
 
   //Create's Drop Down Lists 
   const categories = inventoryList.map(category => category.category);
-  const warehouses = allWarehouses.map(place => place.warehouse_name);
-  const warehouseList = [...new Set(warehouses)];
+  const warehouseList = allWarehouses.map(place => ({ id: place.id, name: place.warehouse_name }));
+
+  // const warehouses = allWarehouses.map(place => place.warehouse_name);
+  // const warehouseList = [...new Set(warehouses)];
 
   //States
   const [originalStatus, setOriginalStatus] = useState(item.status);
@@ -30,7 +32,8 @@ function InventoryEdit({ item, inventoryList, allWarehouses}) {
       } else {
         setItem((prevItem) => ({
         ...prevItem,
-        [name]: value,
+        // [name]: value,
+        [name]: name === 'warehouse_id' ? Number(value) : value,
         }));
       }
   };
@@ -152,7 +155,7 @@ function InventoryEdit({ item, inventoryList, allWarehouses}) {
               >
                 <option value="" disabled>Please Select</option>
                 {warehouseList.map((location) => (
-                  <option key={location} value={location}>{location}</option>
+                  <option key={location.id} value={location.id}>{location.name}</option>
                 ))}
 
               </select>
