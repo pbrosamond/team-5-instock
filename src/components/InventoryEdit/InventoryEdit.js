@@ -69,7 +69,8 @@ function InventoryEdit({item, inventoryList, allWarehouses}) {
       } 
   }
 
-  const handleCancel = () => {
+  const handleCancel = (e) => {
+    e.preventDefault();
     setItem(item);
     return alert('refreshed to original values')
   }

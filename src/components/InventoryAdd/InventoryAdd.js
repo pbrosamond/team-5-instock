@@ -14,7 +14,6 @@ function InventoryAdd({inventoryList, allWarehouses}) {
   const warehouseList = [...new Set(warehouses)];
 
   //States
-  // const [originalStatus, setOriginalStatus] = useState("Out of Stock");
   const item = {
     item_name: "",
     description: "",
@@ -78,16 +77,23 @@ function InventoryAdd({inventoryList, allWarehouses}) {
       const response = await axios.post(`${REACT_APP_API_BASE_PATH}/api/inventories/`,updatedItem )
       console.log(response)
       alert("Updates Successful");
-      window.location.href="/";
     } catch (error) {
       console.error('Error update item:', error);
     }
     
   };
 
-  const handleCancel = () => {
+  const handleCancel = (e) => {
     // Reset the form to initial values
-    setItem("")
+    e.preventDefault();
+    setItem({
+      item_name: "",
+      description: "",
+      category: "",
+      status: "Out of Stock",
+      quantity: "0",
+      warehouse_id: "",
+    })
     return alert('form has been cleared')
   };
 
@@ -97,7 +103,6 @@ function InventoryAdd({inventoryList, allWarehouses}) {
     <main className="form__container">
     <Link to="/" className="link"><h1 className="form__title">Add Inventory Item</h1></Link>
     <form onSubmit={handleSubmit}>
-    {/* <form> */}
       <section className="form__section__container">
         <section className="form__section">
           <h2 className="form__section__title">Item Details</h2>
