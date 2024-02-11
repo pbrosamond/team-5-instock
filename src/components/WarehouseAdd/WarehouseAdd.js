@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './WarehouseAdd.scss';
+import backArrow from '../../assets/icons/arrow_back-24px.svg';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
 
@@ -150,6 +151,7 @@ function WarehouseAdd() {
       }
       AddWarehouse(newWarehouse).then((res) => {
         form.reset();
+        alert('Adds Successful');
         setFields({});
       });
     } else {
