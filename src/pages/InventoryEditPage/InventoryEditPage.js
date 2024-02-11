@@ -65,7 +65,7 @@ function InventoryEditPage() {
   return (
     <>
     {item && inventoryList && allWarehouses &&
-      <InventoryEdit id={id} item={item} inventoryList={inventoryList} allWarehouses={allWarehouses} />
+      <InventoryEdit item={item} inventoryList={inventoryList} allWarehouses={allWarehouses} />
     }
     </>
   )
