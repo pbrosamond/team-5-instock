@@ -38,6 +38,12 @@ p {
     align-items: center;
     border: none;
     background-color: $color-white;
+
+    &--link {
+      @include flexbox;
+      align-items: center;
+      text-decoration: none;
+    }
   }
 
   &__edit-button {
