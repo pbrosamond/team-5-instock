@@ -1,13 +1,13 @@
-import './WarehouseDetails.scss';
-import WarehouseDetailsItem from '../WarehouseDetailsItem/WarehouseDetailsItem';
-import backArrow from '../../assets/icons/arrow_back-24px.svg';
-import editButton from '../../assets/icons/edit-24px white.svg';
-import sort from '../../assets/icons/sort-default-24px.svg';
+import "./WarehouseDetails.scss";
+import WarehouseDetailsItem from "../WarehouseDetailsItem/WarehouseDetailsItem";
+import backArrow from "../../assets/icons/arrow_back-24px.svg";
+import editButton from "../../assets/icons/edit-24px white.svg";
+import sort from "../../assets/icons/sort-default-24px.svg";
 
-import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import InventoryDelete from '../InventoryDelete/InventoryDelete';
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import InventoryDelete from "../InventoryDelete/InventoryDelete";
 const { REACT_APP_API_BASE_PATH } = process.env;
 
 function WarehouseDetails({ id, warehouse }) {
@@ -50,14 +50,14 @@ function WarehouseDetails({ id, warehouse }) {
       <main className="item__card">
         <div className="item__header">
           <div className="item__header-container">
-            <Link to={`/warehouses`}>
+            <Link className="item__back-button--link" to={`/warehouses`}>
               <button className="item__back-button">
                 <img src={backArrow} />
               </button>
             </Link>
             <h1 className="item__name">{warehouse.warehouse_name}</h1>
           </div>
-          <Link to={`/warehouses/${id}`}>
+          <Link className="item__edit-button--link" to={`/warehouses/${id}`}>
             <button className="item__edit-button">
               <img src={editButton} />
               <p className="item__edit-button-word">Edit</p>
@@ -113,7 +113,8 @@ function WarehouseDetails({ id, warehouse }) {
           </div>
         </section>
         {warehouseInvntoryList &&
-          warehouseInvntoryList.map &&((inventory) => {
+          warehouseInvntoryList.map &&
+          ((inventory) => {
             return (
               <WarehouseDetailsItem
                 key={inventory.id}

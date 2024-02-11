@@ -38,6 +38,12 @@ p {
     align-items: center;
     border: none;
     background-color: $color-white;
+    cursor: pointer;
+
+    &--link {
+      @include flexbox;
+      align-content: center;
+    }
   }
 
   &__edit-button {
@@ -55,6 +61,15 @@ p {
       &:hover {
         @include button-tablet-hover;
       }
+    }
+
+    &--link {
+      text-decoration: none;
+      @include flexbox;
+      align-items: center;
+      border: none;
+      background-color: $color-indigo;
+      border-radius: 100%;
     }
 
     &-word {
