@@ -20,7 +20,10 @@ function InventoryItem({ showModal, inventory }) {
     <section className="wrapper2">
       <div>
         <h4 className="wrapper2__titles">INVENTORY ITEM</h4>
-        <Link className="wrapper2__decoration" to={`/inventories/${id}/details`}>
+        <Link
+          className="wrapper2__decoration"
+          to={`/inventories/${id}/details`}
+        >
           <div className="wrapper2__link">
             <h3 className="wrapper2__textlink">{item_name}</h3>
             <img className="wrapper2__icon" src={chevronIcon}></img>
@@ -30,7 +33,15 @@ function InventoryItem({ showModal, inventory }) {
 
       <div className="wrapper2__status">
         <h4 className="wrapper2__titles">Status</h4>
-        <p className="wrapper2__stock">{status}</p>
+        <p
+          className={
+            quantity === 0
+              ? 'wrapper2__stock wrapper2__stock-out-of-stock'
+              : 'wrapper2__stock'
+          }
+        >
+          {status}
+        </p>
       </div>
       <div className="wrapper2__category">
         <h4 className="wrapper2__titles">CATEGORY</h4>
@@ -50,7 +61,9 @@ function InventoryItem({ showModal, inventory }) {
           src={deleteIcon}
           onClick={() => showModal(id)}
         ></img>
-        <Link to={`/inventories/${id}`}><img className="wrapper2__icon" src={editIcon}></img></Link>
+        <Link to={`/inventories/${id}`}>
+          <img className="wrapper2__icon" src={editIcon}></img>
+        </Link>
       </div>
     </section>
   );
