@@ -2,10 +2,7 @@ import "./WarehouseItem.scss";
 import chevronIcon from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
-
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import WarehouseDelete from "../WarehouseDelete/WarehouseDelete";
 
 function WarehouseItem({ showModal, warehouse }) {
   const {

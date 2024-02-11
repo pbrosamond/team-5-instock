@@ -78,7 +78,6 @@ function InventoryEdit({ item, inventoryList, allWarehouses}) {
     <>
     <div className="body__block"></div>
     <main className="form__container">
-    {/* <h1 className="form__title" onClick={() => window.history.back()}>Edit Inventory Item</h1> */}
     <div className="item__header">
       <div className="item__header-container">
         <Link className="item__back-button--link" onClick={() => window.history.back()}><button className="item__back-button">

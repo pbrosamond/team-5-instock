@@ -2,7 +2,6 @@ import './InventoryList.scss';
 import sort from '../../assets/icons/sort-default-24px.svg';
 import { Link } from 'react-router-dom';
 import InventoryItem from '../InventoryItem/InventoryItem';
-
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import InventoryDelete from '../InventoryDelete/InventoryDelete';
@@ -21,7 +20,7 @@ function InventoryList() {
 
       setInvnetoriesList(resInventory.data);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -60,7 +59,6 @@ function InventoryList() {
             </Link>
           </div>
         </div>
-
         <section className="inventory__filter">
           <div className="inventory__sorts">
             <h4 className="inventory__subtitle">INVENTORY ITEM</h4>
