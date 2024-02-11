@@ -10,8 +10,7 @@ function InventoryAdd({inventoryList, allWarehouses}) {
 
   //Create Drop Down Lists
   const categories = inventoryList.map(category => category.category);
-  const warehouses = allWarehouses.map(place => place.warehouse_name);
-  const warehouseList = [...new Set(warehouses)];
+  const warehouseList = allWarehouses.map(place => ({ id: place.id, name: place.warehouse_name }));
 
   //States
   const item = {
@@ -42,7 +41,7 @@ function InventoryAdd({inventoryList, allWarehouses}) {
     } else {
       setItem((prevItem) => ({
       ...prevItem,
-      [name]: value,
+      [name]: name === 'warehouse_id' ? Number(value) : value,
       }));
     }
   };
@@ -73,9 +72,7 @@ function InventoryAdd({inventoryList, allWarehouses}) {
         status: String(currentItem.status),
         quantity: String(currentItem.quantity),
       }
-      console.log(updatedItem)
       const response = await axios.post(`${REACT_APP_API_BASE_PATH}/api/inventories/`,updatedItem )
-      console.log(response)
       alert("Updates Successful");
     } catch (error) {
       console.error('Error update item:', error);
@@ -184,7 +181,7 @@ function InventoryAdd({inventoryList, allWarehouses}) {
               >
                 <option value="">Please Select</option>
                 {warehouseList.map((location) => (
-                  <option key={location} value={location}>{location}</option>
+                  <option key={location.id} value={location.id}>{location.name}</option>
                 ))}
 
               </select>
@@ -193,7 +190,7 @@ function InventoryAdd({inventoryList, allWarehouses}) {
         </section>
         <div className="form__button__container">
             <button type="cancel" className="form__button-cancel" onClick={handleCancel}>CANCEL</button>
-            <button type="submit" className="form__button-save">SAVE</button>
+            <button type="submit" className="form__button-save">+ Add Item</button>
         </div>
     </form>
     </main>

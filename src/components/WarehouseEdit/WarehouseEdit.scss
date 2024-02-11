@@ -101,6 +101,8 @@ body {
         padding-left: 1rem;
         padding-right: 1rem;
         min-width: 18.0938rem;
+        border: 1px solid $color-cloud;
+        color: $color-black;
 
         @include tablet {
             max-width: 32.9844rem;
@@ -109,7 +111,10 @@ body {
         &:active {
             @include form-mobile-active;
         }
-
+        &:focus {
+            @include form-mobile-active;
+        }
+    
         &:invalid {
             @include form-field-error;
         }
