@@ -1,8 +1,8 @@
 import "./WarehouseEdit.scss";
+import { Link } from "react-router-dom";
 import { useState} from 'react';
 import axios from "axios";
 const { REACT_APP_API_BASE_PATH } = process.env
-// import { Link } from "react-router-dom";
 
 
 const WarehouseEdit = ({warehouse}) => {
@@ -18,11 +18,26 @@ const WarehouseEdit = ({warehouse}) => {
     };
     const handleCancel = () => {
         setWarehouse(warehouse);
+        return alert('refreshed to original values');
     }
 
 
     const handleSubmit = async(e) => {
         e.preventDefault();
+
+        if (
+            !currentWarehouse.warehouse_name ||
+            !currentWarehouse.address ||
+            !currentWarehouse.city ||
+            !currentWarehouse.country ||
+            !currentWarehouse.contact_name ||
+            !currentWarehouse.contact_position ||
+            !currentWarehouse.contact_phone ||
+            !currentWarehouse.contact_email
+            ){
+              alert('All fields must be filled');
+              return;
+            }
 
         try {
             const updatedWarehouse = {
@@ -35,8 +50,8 @@ const WarehouseEdit = ({warehouse}) => {
                 contact_phone: currentWarehouse.contact_phone,
                 contact_email: currentWarehouse.contact_email,
             };
-            const response = await axios.put(
-              `${REACT_APP_API_BASE_PATH}/api/warehouses/${warehouse.id}`,updatedWarehouse);
+            const response = await axios.put(`${REACT_APP_API_BASE_PATH}/api/warehouses/${warehouse.id}`,updatedWarehouse);
+            alert("Updates Successful");
           } catch (error) {
             console.error('Error updating warehouse:', error);
    
@@ -48,7 +63,7 @@ const WarehouseEdit = ({warehouse}) => {
         <>
         <div className="body__block"></div>
         <main className="form__container">
-        <h1 className="form__title">Edit Warehouse</h1>
+        <Link to="/" className="link"><h1 className="form__title">Edit Warehouse</h1></Link>
         <form onSubmit={handleSubmit}>
           <section className="form__section__container">
             <section className="form__section">
