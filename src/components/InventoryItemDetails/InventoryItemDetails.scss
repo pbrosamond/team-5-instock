@@ -133,6 +133,18 @@ p {
   &__subtitle {
     @include h4-mobile;
     padding-bottom: 0.25rem;
+
+    @include tablet {
+      @include h4-tablet;
+    }
+  }
+
+  &__content {
+    @include p2-mobile;
+
+    @include tablet {
+      @include p2-tablet;
+    }
   }
 
   &__wrap2 {

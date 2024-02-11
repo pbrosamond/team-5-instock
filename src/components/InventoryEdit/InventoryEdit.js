@@ -47,7 +47,7 @@ function InventoryEdit({ item, inventoryList, allWarehouses}) {
           return;
         }
 
-      if (currentItem.status === 'In Stock' && currentItem.quantity === 0) {
+      if (currentItem.status === 'In Stock' && currentItem.quantity === "0") {
         alert('Quantity cannot be 0');
         return;
       }
