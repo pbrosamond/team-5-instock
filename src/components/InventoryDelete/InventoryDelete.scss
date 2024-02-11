@@ -17,7 +17,6 @@
 }
 
 .delete {
-  @include padding-mobile(3.75rem);
   padding-bottom: 2.5rem;
   background-color: $color-white;
   position: fixed;
@@ -25,13 +24,11 @@
   height: 100vh;
   z-index: 2;
   top: 0;
-  display: flex;
-  flex-direction: column;
+  @include flexbox (column, 2rem);
   justify-content: space-between;
 
   @include tablet {
-    padding-left: 4rem;
-    padding-top: 2.5rem;
+    padding: 2.5rem;
     width: 60%;
     margin: 0 auto;
     top: 23%;

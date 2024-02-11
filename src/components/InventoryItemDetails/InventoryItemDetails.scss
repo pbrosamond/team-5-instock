@@ -5,6 +5,10 @@
 
 p {
   @include p2-mobile;
+
+  @include tablet {
+    @include p2-tablet;
+  }
 }
 
 .inventory-item {
