@@ -1,5 +1,6 @@
 import "./InventoryAdd.scss";
 import { Link } from "react-router-dom";
+import backArrow from '../../assets/icons/arrow_back-24px.svg';
 import { useState, useEffect} from 'react';
 import axios from "axios";
 const { REACT_APP_API_BASE_PATH } = process.env
@@ -10,8 +11,7 @@ function InventoryAdd({inventoryList, allWarehouses}) {
 
   //Create Drop Down Lists
   const categories = inventoryList.map(category => category.category);
-  const warehouses = allWarehouses.map(place => place.warehouse_name);
-  const warehouseList = [...new Set(warehouses)];
+  const warehouseList = allWarehouses.map(place => ({ id: place.id, name: place.warehouse_name }));
 
   //States
   const item = {
@@ -42,7 +42,7 @@ function InventoryAdd({inventoryList, allWarehouses}) {
     } else {
       setItem((prevItem) => ({
       ...prevItem,
-      [name]: value,
+      [name]: name === 'warehouse_id' ? Number(value) : value,
       }));
     }
   };
@@ -59,7 +59,7 @@ function InventoryAdd({inventoryList, allWarehouses}) {
         return;
       }
 
-    if (currentItem.status === 'In Stock' && currentItem.quantity === 0) {
+    if (currentItem.status === 'In Stock' && currentItem.quantity === "0") {
       alert('Quantity cannot be 0');
       return;
     }
@@ -73,10 +73,8 @@ function InventoryAdd({inventoryList, allWarehouses}) {
         status: String(currentItem.status),
         quantity: String(currentItem.quantity),
       }
-      console.log(updatedItem)
       const response = await axios.post(`${REACT_APP_API_BASE_PATH}/api/inventories/`,updatedItem )
-      console.log(response)
-      alert("Updates Successful");
+      alert("Success! New item has been added.");
     } catch (error) {
       console.error('Error update item:', error);
     }
@@ -101,7 +99,14 @@ function InventoryAdd({inventoryList, allWarehouses}) {
     <>
     <div className="body__block"></div>
     <main className="form__container">
-    <Link to="/" className="link"><h1 className="form__title">Add Inventory Item</h1></Link>
+    <div className="item__header">
+      <div className="item__header-container">
+        <Link className="item__back-button--link" to="/inventories"><button className="item__back-button">
+          <img src={backArrow} />
+        </button></Link>
+        <h1 className="item__name">Add Inventory Item</h1>
+      </div>
+    </div>
     <form onSubmit={handleSubmit}>
       <section className="form__section__container">
         <section className="form__section">
@@ -184,7 +189,7 @@ function InventoryAdd({inventoryList, allWarehouses}) {
               >
                 <option value="">Please Select</option>
                 {warehouseList.map((location) => (
-                  <option key={location} value={location}>{location}</option>
+                  <option key={location.id} value={location.id}>{location.name}</option>
                 ))}
 
               </select>
