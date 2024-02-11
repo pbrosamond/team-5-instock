@@ -1,5 +1,7 @@
 import "./InventoryEdit.scss";
+import { Link } from "react-router-dom";
 import { useState, useEffect} from 'react';
+import backArrow from '../../assets/icons/arrow_back-24px.svg';
 import axios from "axios";
 const { REACT_APP_API_BASE_PATH } = process.env
 
@@ -8,9 +10,6 @@ function InventoryEdit({ item, inventoryList, allWarehouses}) {
   //Create's Drop Down Lists 
   const categories = inventoryList.map(category => category.category);
   const warehouseList = allWarehouses.map(place => ({ id: place.id, name: place.warehouse_name }));
-
-  // const warehouses = allWarehouses.map(place => place.warehouse_name);
-  // const warehouseList = [...new Set(warehouses)];
 
   //States
   const [originalStatus, setOriginalStatus] = useState(item.status);
@@ -32,7 +31,6 @@ function InventoryEdit({ item, inventoryList, allWarehouses}) {
       } else {
         setItem((prevItem) => ({
         ...prevItem,
-        // [name]: value,
         [name]: name === 'warehouse_id' ? Number(value) : value,
         }));
       }
@@ -63,7 +61,6 @@ function InventoryEdit({ item, inventoryList, allWarehouses}) {
           status: String(currentItem.status),
           quantity: String(currentItem.quantity),
         }
-        console.log(updatedItem)
         const response = await axios.put (`${REACT_APP_API_BASE_PATH}/api/inventories/${item.id}`,updatedItem )
         alert("Updates Successful");
       } catch (error) {
@@ -81,7 +78,15 @@ function InventoryEdit({ item, inventoryList, allWarehouses}) {
     <>
     <div className="body__block"></div>
     <main className="form__container">
-    <h1 className="form__title" onClick={() => window.history.back()}>Edit Inventory Item</h1>
+    {/* <h1 className="form__title" onClick={() => window.history.back()}>Edit Inventory Item</h1> */}
+    <div className="item__header">
+      <div className="item__header-container">
+        <Link className="item__back-button--link" onClick={() => window.history.back()}><button className="item__back-button">
+          <img src={backArrow} />
+        </button></Link>
+        <h1 className="item__name">Edit Inventory Item</h1>
+      </div>
+    </div>
     <form onSubmit={handleSubmit}>
       <section className="form__section__container">
         <section className="form__section">
