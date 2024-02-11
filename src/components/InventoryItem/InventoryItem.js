@@ -1,9 +1,9 @@
-import './InventoryItem.scss';
-import chevronIcon from '../../assets/icons/chevron_right-24px.svg';
-import deleteIcon from '../../assets/icons/delete_outline-24px.svg';
-import editIcon from '../../assets/icons/edit-24px.svg';
+import "./InventoryItem.scss";
+import chevronIcon from "../../assets/icons/chevron_right-24px.svg";
+import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
+import editIcon from "../../assets/icons/edit-24px.svg";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function InventoryItem({ showModal, inventory }) {
   const {
@@ -36,8 +36,8 @@ function InventoryItem({ showModal, inventory }) {
         <p
           className={
             quantity === 0
-              ? 'wrapper2__stock wrapper2__stock-out-of-stock'
-              : 'wrapper2__stock'
+              ? "wrapper2__stock wrapper2__stock-out-of-stock"
+              : "wrapper2__stock"
           }
         >
           {status}
@@ -56,11 +56,13 @@ function InventoryItem({ showModal, inventory }) {
         <p className="wrapper2__details">{warehouse_name ?? warehouse_id}</p>
       </div>
       <div className="wrapper2__icons">
-        <img
-          className="wrapper2__icon"
-          src={deleteIcon}
-          onClick={() => showModal(id)}
-        ></img>
+        <button className="wrapper2__delete-button">
+          <img
+            className="wrapper2__icon"
+            src={deleteIcon}
+            onClick={() => showModal(id)}
+          ></img>
+        </button>
         <Link to={`/inventories/${id}`}>
           <img className="wrapper2__icon" src={editIcon}></img>
         </Link>
