@@ -41,6 +41,7 @@
     color: $color-black;
     padding-top:1rem;
     resize: vertical; /* Allow vertical resizing only */
+    min-height: 7.5rem;
   }
 
 .link {
