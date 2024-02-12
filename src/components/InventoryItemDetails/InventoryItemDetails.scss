@@ -46,30 +46,27 @@ p {
       @include flexbox;
       align-items: center;
     }
-    // Need to be check
   }
 
   &__edit-button {
-    height: 2.25rem;
-    width: 2.25rem;
+    @include flexbox;
+    align-items: center;
+    border: none;
     background-color: $color-indigo;
     border-radius: 100%;
 
     @include tablet {
-      @include flexbox;
-      align-items: center;
-      border: none;
-      width: 5.0625rem;
       border-radius: 20px;
       padding: 0.5rem 1rem;
       gap: 0.5rem;
-      justify-content: center;
-      cursor: pointer;
+
+      &:hover {
+        @include button-tablet-hover;
+      }
     }
 
     &--link {
       text-decoration: none;
-      // Need to be check
       @include flexbox;
       align-items: center;
       border: none;
@@ -77,9 +74,8 @@ p {
       border-radius: 100%;
     }
 
-    &--word {
+    &-word {
       display: none;
-      text-decoration: none;
 
       @include tablet {
         display: block;

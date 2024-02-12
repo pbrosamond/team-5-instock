@@ -17,10 +17,13 @@ function InventoryItemDetails({ id, item }) {
             </Link>
             <h1 className="inventory-item__name">{item.item_name}</h1>
           </div>
-          <Link className="inventory-item-edit-link" to={`/inventories/${id}`}>
+          <Link
+            className="inventory-item__edit-button--link"
+            to={`/inventories/${id}`}
+          >
             <button className="inventory-item__edit-button">
               <img src={editButton} />
-              <p className="inventory-item__edit-button--word">Edit</p>
+              <p className="inventory-item__edit-button-word">Edit</p>
             </button>
           </Link>
         </div>
