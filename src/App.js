@@ -1,5 +1,3 @@
-import "./App.scss";
-
 import Header from "./components/Header/Header";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import WarehouseEditPage from "./pages/WarehouseEditPage/WarehouseEditPage";

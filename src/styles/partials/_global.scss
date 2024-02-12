@@ -2,19 +2,17 @@
 @use "./mixins" as *;
 @use "./typography" as *;
 
-// Global Classes
 * {
   box-sizing: border-box;
-  font-family: $font-family; // Sets default font to Avenir or Sans-Serif
+  font-family: $font-family;
 }
 
 html {
-  font-size: 100%; // Default font-size 16px
+  font-size: 100%;
 }
 
 body {
-  margin: 0; // Removes white border of entire website
-  font-family: $font-family; // Sets default font to Avenir or Sans-Serif
+  margin: 0;
 }
 
 .body__block {
