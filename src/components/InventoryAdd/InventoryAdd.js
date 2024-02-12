@@ -130,7 +130,7 @@ function InventoryAdd({inventoryList, allWarehouses}) {
               <label htmlFor="category" className="form__label">Item Category</label>
               <select
               name="category"
-              className="form__input--addPage"
+              className="form__input--addPage2"
               value={`${currentItem.category}`} 
               onChange={handleChange}
               >
@@ -183,7 +183,7 @@ function InventoryAdd({inventoryList, allWarehouses}) {
               <label htmlFor="warehouse_id" className="form__label">Warehouse</label>
               <select 
               name="warehouse_id" 
-              className="form__input--addPage" 
+              className="form__input--addPage2" 
               value={`${currentItem.warehouse_id}`} 
               onChange={handleChange}
               >

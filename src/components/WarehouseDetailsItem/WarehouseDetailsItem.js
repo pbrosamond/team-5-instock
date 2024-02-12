@@ -13,7 +13,7 @@ function WarehouseDetailsItem({ inventory, showModal }) {
           <h4 className="wrapper3__titles">INVENTORY ITEM</h4>
 
           <div className="wrapper3__link">
-            <Link to={`/inventories/${id}/details`}>
+            <Link className="wrapper3__link--link" to={`/inventories/${id}/details`}>
               <h3 className="wrapper3__textlink">{item_name}</h3>
             </Link>
             <img className="wrapper3__icon" src={chevronIcon}></img>

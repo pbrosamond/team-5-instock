@@ -102,8 +102,13 @@ body {
         padding-right: 1rem;
         min-width: 18.0938rem;
         // Need to check
-        // border: 1px solid $color-cloud;
+        border: 1px solid $color-cloud;
         color: $color-black;
+
+        &:focus {
+            @include form-mobile-active;
+            border: none;
+          }
 
         &--addPage {
             @include form-mobile-default;
@@ -111,7 +116,8 @@ body {
             padding-right: 1rem;
             min-width: 18.0938rem;
             max-width: 32.9844rem;
-            color: $color-slate;
+            color: $color-black;
+            border: 1px solid $color-cloud;
 
             -webkit-appearance: none;
             -moz-appearance: none;
@@ -122,6 +128,36 @@ body {
             .form__input--addPage::-ms-expand {
             display: none;
             }
+
+            &:focus {
+                @include form-mobile-active;
+                border: none;
+              }
+        }
+
+        &--addPage2 {
+            @include form-mobile-default;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            min-width: 18.0938rem;
+            max-width: 32.9844rem;
+            color: $color-slate;
+            border: 1px solid $color-cloud;
+
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: url('../../assets/icons/arrow_drop_down-default-24px.svg') no-repeat right 1rem center;
+              
+            /* Optional: Style the dropdown list */
+            .form__input--addPage::-ms-expand {
+            display: none;
+            }
+
+            &:focus {
+                @include form-mobile-active;
+                border: none;
+              }
         }
 
         @include tablet {

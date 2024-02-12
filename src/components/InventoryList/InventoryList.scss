@@ -70,7 +70,7 @@
       width: 17.125rem;
     }
 
-    &:active {
+    &:focus {
       @include search-active;
     }
   }

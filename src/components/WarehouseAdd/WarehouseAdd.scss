@@ -99,14 +99,16 @@
     @include form-mobile-default;
     padding-left: 1rem;
     color: $color-black;
-    border: 1px $color-cloud solid;
+    border: .0625rem solid $color-cloud;
 
-    &:active {
+    &:focus {
       @include form-mobile-active;
+      border: none;
     }
 
     &-invalid {
       @include form-field-error;
+      border: none;
     }
   }
 
