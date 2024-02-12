@@ -67,10 +67,12 @@ function WarehouseDetails({ id, warehouse }) {
           <section className="item__wrapper item__left-container">
             <div className="item__block">
               <h4 className="item__subtitle">WAREHOUSE ADDRESS</h4>
-              <p>{warehouse.address}</p>
-              <p>
-                {warehouse.city}, {warehouse.country}
-              </p>
+              <div className="item__address">
+                <p>{warehouse.address}</p>
+                <p>
+                  {warehouse.city}, {warehouse.country}
+                </p>
+              </div>
             </div>
           </section>
           <section className="item__wrapper item__right-container">
