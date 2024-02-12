@@ -5,6 +5,7 @@ import WarehouseDelete from '../WarehouseDelete/WarehouseDelete';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useLocation } from 'react-router-dom';
+import Loader from '../Loader/Loader';
 const { REACT_APP_API_BASE_PATH } = process.env;
 
 function WarehouseList() {
@@ -37,6 +38,8 @@ function WarehouseList() {
   useEffect(() => {
     getList();
   }, []);
+
+  if (!warehouseList) return <Loader />;
 
   return (
     <>

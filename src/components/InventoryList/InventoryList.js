@@ -5,6 +5,7 @@ import InventoryItem from '../InventoryItem/InventoryItem';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import InventoryDelete from '../InventoryDelete/InventoryDelete';
+import Loader from '../Loader/Loader';
 const { REACT_APP_API_BASE_PATH } = process.env;
 
 function InventoryList() {
@@ -20,7 +21,7 @@ function InventoryList() {
 
       setInvnetoriesList(resInventory.data);
     } catch (error) {
-      console.error(error);
+      console.error('Cannot get list of inventories', error);
     }
   };
 
@@ -40,6 +41,7 @@ function InventoryList() {
     setInvnetoriesList(newList);
   };
 
+  if (!invnetoriesList) return <Loader />;
   return (
     <>
       <div className="body__block"></div>

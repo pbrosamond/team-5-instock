@@ -1,12 +1,32 @@
-import "./WarehouseEdit.scss";
-import { Link } from "react-router-dom";
-import backArrow from "../../assets/icons/arrow_back-24px.svg";
-import { useState } from "react";
-import axios from "axios";
+import './WarehouseEdit.scss';
+import { Link } from 'react-router-dom';
+import backArrow from '../../assets/icons/arrow_back-24px.svg';
+import { useState } from 'react';
+import axios from 'axios';
 const { REACT_APP_API_BASE_PATH } = process.env;
 
 const WarehouseEdit = ({ warehouse }) => {
   const [currentWarehouse, setWarehouse] = useState(warehouse);
+
+  const chkPhone = (phone) => {
+    var cleaned = phone.replace(/\ |\(|\)|-/g, '');
+    if (cleaned[0] === '+' && cleaned.length < 12) return;
+    cleaned = cleaned.replace('+', '');
+    var match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/);
+    if (match) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const chkEmail = (email) => {
+    //Email must include @
+    if (email.lastIndexOf('@') === -1) {
+      return false;
+    }
+    return true;
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,7 +39,7 @@ const WarehouseEdit = ({ warehouse }) => {
   const handleCancel = (e) => {
     e.preventDefault();
     setWarehouse(warehouse);
-    return alert("Refreshed to original values");
+    return alert('Refreshed to original values');
   };
 
   const handleSubmit = async (e) => {
@@ -35,7 +55,19 @@ const WarehouseEdit = ({ warehouse }) => {
       !currentWarehouse.contact_phone ||
       !currentWarehouse.contact_email
     ) {
-      alert("All fields must be filled");
+      alert('All fields must be filled');
+      return;
+    }
+
+    if (!chkEmail(currentWarehouse.contact_email)) {
+      alert('Not a valid email address');
+      return;
+    }
+
+    if (!chkPhone(currentWarehouse.contact_phone)) {
+      alert(
+        'Phone number format should be (236) 332-1115 or +1 (236) 332-1115'
+      );
       return;
     }
 
@@ -54,9 +86,9 @@ const WarehouseEdit = ({ warehouse }) => {
         `${REACT_APP_API_BASE_PATH}/api/warehouses/${warehouse.id}`,
         updatedWarehouse
       );
-      return alert("Updates Successful");
+      return alert('Updates Successful');
     } catch (error) {
-      console.error("Error updating warehouse:", error);
+      console.error('Error updating warehouse:', error);
     }
   };
 
@@ -180,7 +212,6 @@ const WarehouseEdit = ({ warehouse }) => {
                   Email
                 </label>
                 <input
-                  type="email"
                   name="contact_email"
                   className="form__input"
                   placeholder="example@example.com"

@@ -1,0 +1,14 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  color: $color-indigo;
+
+  @include tablet {
+    height: 100vh;
+  }
+}
