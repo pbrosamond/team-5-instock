@@ -1,7 +1,7 @@
-import './InventoryItemDetails.scss';
-import editButton from '../../assets/icons/edit-24px white.svg';
-import backArrow from '../../assets/icons/arrow_back-24px.svg';
-import { Link } from 'react-router-dom';
+import "./InventoryItemDetails.scss";
+import editButton from "../../assets/icons/edit-24px white.svg";
+import backArrow from "../../assets/icons/arrow_back-24px.svg";
+import { Link } from "react-router-dom";
 
 function InventoryItemDetails({ id, item }) {
   return (
@@ -12,7 +12,7 @@ function InventoryItemDetails({ id, item }) {
           <div className="inventory-item__header-container">
             <Link onClick={() => window.history.back()}>
               <button className="inventory-item__back-button">
-                <img src={backArrow} />
+                <img alt="Back Arrow Icon" src={backArrow} />
               </button>
             </Link>
             <h1 className="inventory-item__name">{item.item_name}</h1>
@@ -22,7 +22,7 @@ function InventoryItemDetails({ id, item }) {
             to={`/inventories/${id}`}
           >
             <button className="inventory-item__edit-button">
-              <img src={editButton} />
+              <img alt="Edit Icon" src={editButton} />
               <p className="inventory-item__edit-button-word">Edit</p>
             </button>
           </Link>
@@ -46,8 +46,8 @@ function InventoryItemDetails({ id, item }) {
                   <p
                     className={
                       item.quantity === 0
-                        ? 'inventory-item__out-of-stock'
-                        : 'inventory-item__instock'
+                        ? "inventory-item__out-of-stock"
+                        : "inventory-item__instock"
                     }
                   >
                     {item.status}

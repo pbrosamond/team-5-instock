@@ -13,7 +13,10 @@ function WarehouseDetailsItem({ inventory, showModal }) {
           <h4 className="wrapper3__titles">INVENTORY ITEM</h4>
 
           <div className="wrapper3__link">
-            <Link className="wrapper3__link--link" to={`/inventories/${id}/details`}>
+            <Link
+              className="wrapper3__link--link"
+              to={`/inventories/${id}/details`}
+            >
               <h3 className="wrapper3__textlink">{item_name}</h3>
             </Link>
             <img className="wrapper3__icon" src={chevronIcon}></img>
@@ -44,13 +47,18 @@ function WarehouseDetailsItem({ inventory, showModal }) {
         <div className="wrapper3__icons">
           <button className="wrapper3__delete-button">
             <img
+              alt="Delete Icon"
               className="wrapper3__icon"
               src={deleteIcon}
               onClick={() => showModal(id)}
             />
           </button>
           <Link to={`/inventories/${id}`}>
-            <img className="wrapper3__icon" src={editIcon}></img>
+            <img
+              alt="Edit Icon"
+              className="wrapper3__icon"
+              src={editIcon}
+            ></img>
           </Link>
         </div>
       </section>

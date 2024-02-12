@@ -51,14 +51,14 @@ function WarehouseDetails({ id, warehouse }) {
           <div className="item__header-container">
             <Link className="item__back-button--link" to={`/warehouses`}>
               <button className="item__back-button">
-                <img src={backArrow} />
+                <img alt="Back Arrow Icon" src={backArrow} />
               </button>
             </Link>
             <h1 className="item__name">{warehouse.warehouse_name}</h1>
           </div>
           <Link className="item__edit-button--link" to={`/warehouses/${id}`}>
             <button className="item__edit-button">
-              <img src={editButton} />
+              <img alt="Edit Icon" src={editButton} />
               <p className="item__edit-button-word">Edit</p>
             </button>
           </Link>
