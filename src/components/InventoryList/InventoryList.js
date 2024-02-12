@@ -9,7 +9,7 @@ import Loader from '../Loader/Loader';
 const { REACT_APP_API_BASE_PATH } = process.env;
 
 function InventoryList() {
-  const [invnetoriesList, setInvnetoriesList] = useState();
+  const [inventoriesList, setinventoriesList] = useState();
   const [showDelete, setShowDelete] = useState(false);
   const [inventoryId, setInventoryId] = useState();
 
@@ -19,7 +19,7 @@ function InventoryList() {
         `${REACT_APP_API_BASE_PATH}/api/inventories`
       );
 
-      setInvnetoriesList(resInventory.data);
+      setinventoriesList(resInventory.data);
     } catch (error) {
       console.error('Cannot get list of inventories', error);
     }
@@ -37,11 +37,11 @@ function InventoryList() {
   };
 
   const updateList = (id) => {
-    const newList = invnetoriesList.filter((inventory) => inventory.id !== id);
-    setInvnetoriesList(newList);
+    const newList = inventoriesList.filter((inventory) => inventory.id !== id);
+    setinventoriesList(newList);
   };
 
-  if (!invnetoriesList) return <Loader />;
+  if (!inventoriesList) return <Loader />;
   return (
     <>
       <div className="body__block"></div>
@@ -86,8 +86,8 @@ function InventoryList() {
             <h4 className="inventory__subtitle">ACTIONS</h4>
           </div>
         </section>
-        {invnetoriesList &&
-          invnetoriesList.map((inventory) => {
+        {inventoriesList &&
+          inventoriesList.map((inventory) => {
             return (
               <InventoryItem
                 key={inventory.id}
@@ -97,9 +97,9 @@ function InventoryList() {
             );
           })}
       </section>
-      {invnetoriesList && showDelete && (
+      {inventoriesList && showDelete && (
         <InventoryDelete
-          inventory={invnetoriesList.find(
+          inventory={inventoriesList.find(
             (inventory) => inventory.id === inventoryId
           )}
           showModal={showModal}
