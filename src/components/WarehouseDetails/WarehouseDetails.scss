@@ -66,6 +66,15 @@ p {
       }
     }
 
+    &--link {
+      text-decoration: none;
+      @include flexbox;
+      align-items: center;
+      border: none;
+      background-color: $color-indigo;
+      border-radius: 100%;
+    }
+
     &-word {
       display: none;
 
