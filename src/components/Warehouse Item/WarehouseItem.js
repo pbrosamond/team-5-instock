@@ -44,13 +44,14 @@ function WarehouseItem({ showModal, warehouse }) {
         <div className="wrapper__icons">
           <button className="wrapper__delete-button">
             <img
+              alt="Delete Icon"
               className="wrapper__icon"
               src={deleteIcon}
               onClick={() => showModal(id)}
             ></img>
           </button>
           <Link to={`/warehouses/${id}`}>
-            <img className="wrapper__icon" src={editIcon}></img>
+            <img alt="Edit Icon" className="wrapper__icon" src={editIcon}></img>
           </Link>
         </div>
       </section>

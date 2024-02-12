@@ -57,13 +57,14 @@ function InventoryItem({ showModal, inventory }) {
       <div className="wrapper2__icons">
         <button className="wrapper2__delete-button">
           <img
+            alt="Delete Icon"
             className="wrapper2__icon"
             src={deleteIcon}
             onClick={() => showModal(id)}
           ></img>
         </button>
         <Link to={`/inventories/${id}`}>
-          <img className="wrapper2__icon" src={editIcon}></img>
+          <img alt="Edit Icon" className="wrapper2__icon" src={editIcon}></img>
         </Link>
       </div>
     </section>
