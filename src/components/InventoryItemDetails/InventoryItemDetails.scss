@@ -1,0 +1,176 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+
+p {
+  @include p2-mobile;
+}
+
+.inventory-item {
+  &__name {
+    @include h1-mobile;
+    @include flexbox;
+    align-items: center;
+  }
+
+  &__card {
+    min-width: 20rem;
+    width: 90%;
+    margin: 0 auto;
+    background-color: $color-white;
+    border-radius: 0.25rem;
+    box-shadow: 0px 2px 5px 0px #13182c1a;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__header {
+    @include flexbox;
+    justify-content: space-between;
+    border-bottom: 1px $color-cloud solid;
+    padding: 1.75rem 1rem;
+
+    &-container {
+      @include flexbox;
+      align-items: center;
+    }
+  }
+
+  &__back-button {
+    @include flexbox;
+    border: none;
+    background-color: $color-white;
+
+    &--link {
+      @include flexbox;
+      align-items: center;
+    }
+  }
+
+  &__edit-button {
+    @include flexbox;
+    align-items: center;
+    border: none;
+    background-color: $color-indigo;
+    border-radius: 100%;
+
+    @include tablet {
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      gap: 0.5rem;
+
+      &:hover {
+        @include button-tablet-hover;
+      }
+    }
+
+    &--link {
+      text-decoration: none;
+      @include flexbox;
+      align-items: center;
+      border: none;
+      background-color: $color-indigo;
+      border-radius: 100%;
+    }
+
+    &-word {
+      display: none;
+
+      @include tablet {
+        display: block;
+        color: $color-white;
+      }
+    }
+  }
+
+  &__container {
+    @include padding-mobile;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include tablet {
+      @include padding-tablet;
+      flex-direction: row;
+    }
+
+    @include desktop {
+      @include padding-desktop;
+    }
+
+    &-left {
+      width: 100%;
+
+      @include tablet {
+        padding-right: 2.4rem;
+        width: 50%;
+        border-right: 1px $color-cloud solid;
+      }
+    }
+
+    &-right {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @include tablet {
+        width: 50%;
+        padding-left: 2.5rem;
+      }
+    }
+
+    &-top {
+      display: flex;
+      gap: 50%;
+    }
+  }
+
+  &__subtitle {
+    @include h4-mobile;
+    padding-bottom: 0.25rem;
+
+    @include tablet {
+      @include h4-tablet;
+    }
+  }
+
+  &__content {
+    @include p2-mobile;
+
+    @include tablet {
+      @include p2-tablet;
+    }
+  }
+
+  &__wrap2 {
+    @include flexbox(column);
+
+    @include tablet {
+    }
+  }
+
+  &__wrap3 {
+    @include flexbox;
+
+    @include tablet {
+      gap: 5rem;
+    }
+  }
+
+  &__block {
+    padding-bottom: 1rem;
+  }
+
+  &-edit-link {
+    text-decoration: none;
+  }
+
+  &__instock {
+    @include tag-mobile-green;
+  }
+
+  &__out-of-stock {
+    @include tag-mobile-red;
+  }
+}

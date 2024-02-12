@@ -1,0 +1,33 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./typography" as *;
+
+* {
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.body__block {
+  background-color: $color-graphite;
+  position: absolute;
+  left: 0;
+  height: 4rem;
+  width: 100vw;
+
+  @include tablet {
+    height: 5.875rem;
+    width: 100vw;
+  }
+}
+
+button {
+  cursor: pointer;
+}

@@ -1,0 +1,76 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+
+.header {
+  background-color: $color-graphite;
+  height: 8.5rem;
+
+
+  @include tablet {
+    height: 5.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__navigation {
+    @include tablet {
+      @include flexbox;
+      justify-content: space-between;
+      width: 90%;
+      margin: 0 auto;
+      max-width: 80rem;
+    }
+  }
+
+  &__logo {
+    @include flexbox;
+    justify-content: center;
+    padding-top: 1.5rem;
+    margin-bottom: 0.5rem;
+
+    @include tablet {
+      padding-top: 0;
+    }
+  }
+
+  &__menu {
+    @include flexbox(row, 1rem);
+    padding-left: 0;
+    margin: 0;
+    justify-content: center;
+  }
+
+  &__item {
+    list-style: none;
+    text-align: center;
+  }
+
+  &__button {
+    @include h3-mobile;
+    padding: 0.5rem 2.5rem;
+    
+
+    @include navlink-default;
+    font-weight: $regular;
+
+    &:hover {
+      @include navlink-default-hover;
+    }
+
+    &.active {
+      @include navlink-active;
+
+      @include tablet {
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    @include tablet {
+      padding: 0.5rem 1rem;
+      margin: 0;
+    }
+  }
+}

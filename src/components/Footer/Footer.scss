@@ -1,0 +1,18 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.footer {
+  position: relative;
+  background-color: $color-lightgrey;
+  height: 10vh;
+
+  &__copyright {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: $color-slate;
+    padding: 5rem 0;
+  }
+}
