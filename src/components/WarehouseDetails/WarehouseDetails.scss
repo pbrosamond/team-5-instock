@@ -107,6 +107,16 @@ p {
     }
   }
 
+  &__address {
+    @include flexbox;
+    gap: 0.25rem;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
   &__right-container {
     @include tablet {
       padding-left: 2.5rem;
