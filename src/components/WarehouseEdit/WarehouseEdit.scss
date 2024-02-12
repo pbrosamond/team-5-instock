@@ -101,7 +101,6 @@ body {
         padding-left: 1rem;
         padding-right: 1rem;
         min-width: 18.0938rem;
-        // Need to check
         border: 1px solid $color-cloud;
         color: $color-black;
 
@@ -124,7 +123,6 @@ body {
             appearance: none;
             background: url('../../assets/icons/arrow_drop_down-default-24px.svg') no-repeat right 1rem center;
               
-            /* Optional: Style the dropdown list */
             .form__input--addPage::-ms-expand {
             display: none;
             }
@@ -149,7 +147,6 @@ body {
             appearance: none;
             background: url('../../assets/icons/arrow_drop_down-default-24px.svg') no-repeat right 1rem center;
               
-            /* Optional: Style the dropdown list */
             .form__input--addPage::-ms-expand {
             display: none;
             }

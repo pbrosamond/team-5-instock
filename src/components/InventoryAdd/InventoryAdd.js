@@ -1,4 +1,3 @@
-import "./InventoryAdd.scss";
 import { Link } from "react-router-dom";
 import backArrow from '../../assets/icons/arrow_back-24px.svg';
 import { useState, useEffect} from 'react';
