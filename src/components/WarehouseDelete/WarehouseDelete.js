@@ -4,9 +4,13 @@ const { REACT_APP_API_BASE_PATH } = process.env;
 
 function WarehouseDelete({ id, showModal, updateList, warehouse }) {
   const handleDelete = async (id) => {
-    await axios.delete(`${REACT_APP_API_BASE_PATH}/api/warehouses/${id}`);
-    updateList(id);
-    showModal();
+    try {
+      await axios.delete(`${REACT_APP_API_BASE_PATH}/api/warehouses/${id}`);
+      updateList(id);
+      showModal();
+    } catch (error) {
+      console.log('Failed delete warehouse', error);
+    }
   };
 
   return (

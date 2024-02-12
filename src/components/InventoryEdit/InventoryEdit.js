@@ -1,8 +1,8 @@
-import "./InventoryEdit.scss";
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import backArrow from "../../assets/icons/arrow_back-24px.svg";
-import axios from "axios";
+import './InventoryEdit.scss';
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import backArrow from '../../assets/icons/arrow_back-24px.svg';
+import axios from 'axios';
 const { REACT_APP_API_BASE_PATH } = process.env;
 
 function InventoryEdit({ item, inventoryList, allWarehouses }) {
@@ -24,16 +24,16 @@ function InventoryEdit({ item, inventoryList, allWarehouses }) {
   const handleChange = (e) => {
     const { name, value, type } = e.target;
 
-    if (type === "radio") {
+    if (type === 'radio') {
       setItem((prevItem) => ({
         ...prevItem,
         [name]: value,
-        quantity: value === "Out of Stock" ? 0 : prevItem.quantity,
+        quantity: value === 'Out of Stock' ? 0 : prevItem.quantity,
       }));
     } else {
       setItem((prevItem) => ({
         ...prevItem,
-        [name]: name === "warehouse_id" ? Number(value) : value,
+        [name]: name === 'warehouse_id' ? Number(value) : value,
       }));
     }
   };
@@ -42,12 +42,15 @@ function InventoryEdit({ item, inventoryList, allWarehouses }) {
     e.preventDefault();
 
     if (!currentItem.item_name || !currentItem.description) {
-      alert("All fields must be filled");
+      alert('All fields must be filled');
       return;
     }
 
-    if (currentItem.status === "In Stock" && currentItem.quantity === "0") {
-      alert("Quantity cannot be 0");
+    if (
+      currentItem.status === 'In Stock' &&
+      Number(currentItem.quantity) <= 0
+    ) {
+      alert('Quantity cannot be 0 or less than 0');
       return;
     }
 
@@ -64,16 +67,16 @@ function InventoryEdit({ item, inventoryList, allWarehouses }) {
         `${REACT_APP_API_BASE_PATH}/api/inventories/${item.id}`,
         updatedItem
       );
-      alert("Updates Successful");
+      alert('Updates Successful');
     } catch (error) {
-      console.error("Error update item:", error);
+      console.error('Error update item:', error);
     }
   };
 
   const handleCancel = (e) => {
     e.preventDefault();
     setItem(item);
-    return alert("refreshed to original values");
+    return alert('refreshed to original values');
   };
 
   return (
@@ -158,7 +161,7 @@ function InventoryEdit({ item, inventoryList, allWarehouses }) {
                     name="status"
                     className="radio__button"
                     value="In Stock"
-                    checked={currentItem.status === "In Stock"}
+                    checked={currentItem.status === 'In Stock'}
                     onChange={handleChange}
                     required
                   />
@@ -169,14 +172,14 @@ function InventoryEdit({ item, inventoryList, allWarehouses }) {
                     name="status"
                     className="radio__button"
                     value="Out of Stock"
-                    checked={currentItem.status === "Out of Stock"}
+                    checked={currentItem.status === 'Out of Stock'}
                     onChange={handleChange}
                     required
                   />
                   <label className="radio__label">Out of Stock</label>
                 </div>
               </div>
-              {currentItem.status === "In Stock" && (
+              {currentItem.status === 'In Stock' && (
                 <div className="form__questions">
                   <label htmlFor="quantity" className="form__label">
                     Quantity

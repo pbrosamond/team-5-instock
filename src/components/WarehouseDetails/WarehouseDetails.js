@@ -1,12 +1,13 @@
-import "./WarehouseDetails.scss";
-import WarehouseDetailsItem from "../WarehouseDetailsItem/WarehouseDetailsItem";
-import backArrow from "../../assets/icons/arrow_back-24px.svg";
-import editButton from "../../assets/icons/edit-24px white.svg";
-import sort from "../../assets/icons/sort-default-24px.svg";
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import InventoryDelete from "../InventoryDelete/InventoryDelete";
+import './WarehouseDetails.scss';
+import WarehouseDetailsItem from '../WarehouseDetailsItem/WarehouseDetailsItem';
+import backArrow from '../../assets/icons/arrow_back-24px.svg';
+import editButton from '../../assets/icons/edit-24px white.svg';
+import sort from '../../assets/icons/sort-default-24px.svg';
+import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import InventoryDelete from '../InventoryDelete/InventoryDelete';
+import Loader from '../Loader/Loader';
 const { REACT_APP_API_BASE_PATH } = process.env;
 
 function WarehouseDetails({ id, warehouse }) {
@@ -43,6 +44,7 @@ function WarehouseDetails({ id, warehouse }) {
     fetchWarehouseInvntoryList();
   }, [id]);
 
+  if (!warehouseInvntoryList) return <Loader />;
   return (
     <>
       <div className="body__block"></div>
